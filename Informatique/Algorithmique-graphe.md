@@ -91,3 +91,58 @@ Pour les graphes non orientés, cette représentation est inefficace (besoin de
 maintenir deux cases à chaque modification), à moins d'implémenter un tableau
 triangle (avec une fonction de calcul) qui n'a qu'une seule valeur pour chaque
 paire $\{x;y\}$.
+
+### Listes d'adjacence
+On initialise une liste chaînée pour chaque sommet dans un tableau. Ces listes
+chainées contiennent dans leurs nœuds les sommets vers lesquels il y a un arc.
+La complexité en mémoire est ainsi conservée (avec un multiplicateur plus grand
+néanmoins) à un facteur de $m$ (le nombre d'arcs dans le graphe) (c'est donc une
+représentation creuse des arcs).
+
+L'accès aux arcs (obtenir leur étiquette et vérifier leur présence) devient en
+revanche $O(n)$, bien qu'un parcours de tous les voisins d'un sommet soit plus
+court (seuls les voisins sont présents, pas les non-voisins), linéaire en le
+degré sortant du sommet. L'ajout et le retrait de voisins sont aussi linéaires
+en le degré sortant dans le pire des cas.
+
+### Graphes pondérés
+Dans le cas de la matrices d'adjacence, on peut mettre les valeurs d'étiquettes
+dans le graphe, tant qu'on a des valeurs particulières réservées à l'absence
+d'arc et à la valeur pour soi-même (sauf si elle est omise). Ainsi, il est utile
+de choisir des flottants pour les poids, puisqu'ils sont munis de valeurs
+spéciales (0, NaN, $+\infty$, $-\infty$).
+
+Pour les listes d'adjacence, il s'agit simplement d'adjoindre l'étiquette au
+nœuds qui représentent un successeur.
+
+## Algorithmique du graphe
+(Voir le polycopié pour les implémentations)
+
+Pour trouver les chemins les plus courts d'un sommet à tous les autres avec
+utilisation d'une queue. On peut ensuite utiliser ce même processus pour le
+calcul des distances ou pour le tableau de prédécesseurs dans le chemin, sans
+coût en temps supplémentaire. La complexité en temps de l'algorithme est de
+$O(|S| + |A|)$.
+
+### Graphes pondérés
+L'information supplémentaire des poids demande des algorithmes plus complets,
+comme Dijkstra qui permet de trouve les chemins de moindre poids.
+
+#### Algorithme de Dijkstra
+L'algorithme de Dijkstra utilise une file de priorité minimale (une structure de
+laquelle on peut extraire le plus petit élément). On peu
+utiliser un simple tableau ($O(n)$ pour l'extraction du minimum) ou un tas
+($O(\log n)$) (avec plus ou moins d'efficacité de chaque opération selon
+l'implémentation : les plus simples sont la binary heap (pas mal) et la pairing
+heap (très bonne)). La structure utilisée pour "la meilleure performance" sont
+les tas de Fibonacci, qui peuvent être assez compliqués à implémenter mais
+conviennent parfaitement car la modification de priorité peut se faire en $O(1)$
+(cette structure a d'ailleurs été spécialement inventée pour Dijkstra).
+
+L'algorithme de Dijkstra est ainsi de complexité en temps $O(|S| + |A|) \log(|S|))$
+(et $O(|S| \log(|S| + |A|))$ avec un tas de Fibonacci).
+
+#### A*
+L'algorithme de Dijkstra avance le mieux possible, mais dans le noir. On peut
+essayer d'obtenir plus d'information dans les situations concrètes pour guider
+la recherche.
