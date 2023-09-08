@@ -146,3 +146,44 @@ L'algorithme de Dijkstra est ainsi de complexité en temps $O(|S| + |A|) \log(|S
 L'algorithme de Dijkstra avance le mieux possible, mais dans le noir. On peut
 essayer d'obtenir plus d'information dans les situations concrètes pour guider
 la recherche.
+
+Une heuristique est ici une fonction entre deux sommets (une distance, d'une
+certaine façon). On impose que $h(s,s) = 0$. On choisit souvent la distance
+Euclidienne ou la distance de Manhattan dans les problèmes de recherche de
+chemin. Si on utilise l'heuristique toujours nulle, on retombe sur Dijkstra.
+
+> Une heuristique est dite admissible lorsqu'elle ne surpasse jamais la distance
+> entre deux sommets. Elle est dit monotone si $\forall t \in S, \forall u \to v \in A$,
+> $h(u,t) \leq \omega(u,v) + h(v,t)$. Si elle est monotone, alors elle est
+> admissible (on le prouve par récurrence sur les chemins).
+
+L'algorithme A* finit en temps polynomial (comme pour les algorithmes
+précédents, le fait qu'on ne repasse jamais par les mêmes sommets assure qu'on
+ne tourne pas en rond).
+
+> Si $h$ est monotone, alors l'algorithme A* calcule la distance entre deux
+> sommets et permet de reconstituer le plus court chemin.
+
+En corollaire, cela prouve que l'algorithme de Dijkstra est correct.
+
+#### Algorithme de Floyd-Warshall
+Pour calculer les chemins entre tous les sommets, il est plus efficace
+d'utiliser l'algorithme de Floyd-Warshall que de lancer $n$ fois Dijkstra.
+Le principe set de calculer successivement les matrices des longueurs des
+chemins les plus courts entre les sommets en utilisant seulement les sommets
+$[\![0;k-1]\!]$ comme sommets intermédiaires.
+
+On peut passer facilement d'une matrice à la suivante, en mettant dans chaque
+case à chaque passage le minimum entre le chemin déjà calculé et le chemin
+passant par $k$.
+
+### Parcours en profondeur
+Les parcours en profondeur sont souvent réalisés avec une pile, ou de façon
+équivalent avec une fonction récursive.
+
+Il est de complexité en temps $O(|S| + |A|)$
+
+#### Composantes connexes d'un graphe non orienté
+On lance un parcours en profondeur depuis un premier sommet, ce qui explore la
+composante connexe du sommet. On recommence ensuite jusqu'à ce qu'on ait tout
+listé.
