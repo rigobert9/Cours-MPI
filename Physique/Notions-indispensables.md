@@ -164,5 +164,117 @@ $u(g) = \sqrt{(\alpha u(x))^2 + (\beta v(y))^2}$,
 et celle de $G = X^{\alpha} Y^{\beta}$ qui est
 $\frac{u(g)}{g} = \sqrt{(\alpha \frac{u(x)}{x})^2 + (\beta \frac{u(y)}{y})^2}$.
 
-Z-Score ? Lol
-Monte-Carlo ? Lol
+## Équations différentielle linéaires
+### Généralités
+#### Définition
+Une EDL d'ordre $n$ s'écrit sous la forme $\sum\limits_{k = 0}^{n} a_k(x) \frac{d^k y}{dx^k} = C(x)$.
+La plupart du temps on étudiera des EDL dont les coefficients $a_k$ est
+constant (sans quoi ça se complique beaucoup). On appelle une équation
+différentielle non linéaire si elle présente des puissances de dérivées ou des
+puissances de la fonction qu'on recherche.
+
+#### Théorème
+Les solutions d'une EDL sont la somme d'une solution de
+l'équation homogène ($C(x) = 0$) et d'une solution particulière. De plus, pour
+$C(x) = C_1(x) + C_2(x)$, on peut décomposer le problème en une recherche de
+$y_1(x)$ et $y_2(x)$.
+
+La solution de l'équation homogène, pour une équation différentielle
+d'ordre $n$, possède $n$ constantes d'intégration. On détermine les constantes
+d'intégration à partir des conditions initiales du problème. Ces constante sont
+déterminées sur la solution totale (et pas la solution homogène). On tiendra à
+bien justifier ces conditions initiales.
+
+La solution homogène correspond au régime libre ou au régime transitoire du
+système. La solution particulière correspond au régime forcé ou permanent
+(stationnaire veut dire indépendant du temps, permanent signifie une fois que le
+régime transitoire est terminé (au bout de quelques $\tau$)).
+
+### Équations d'ordre 1
+#### Cas général
+$a_1(x) \frac{d y}{dx} + a_0(x) y = 0 \Rightarrow \frac{dy}{y} = - \frac{a_0(x)}{a_1(x)} dx$
+$\Rightarrow \ln(y) = \int - \frac{a_0(x)}{a_1(x)} dx + C$,
+donnant $y = e^{\int - \frac{a_0(x)}{a_1(x)} dx + C} = \lambda e^{\int - \frac{a_0(x)}{a_1(x)} dx}$.
+
+#### Cas particuliers à connaître
+$a \frac{d y}{dx} + by = 0 \Rightarrow y = A e^{\frac{-b}{a} x}$\\
+Pour que $y$ ne diverge pas, il faut $a$ et $b$ de même signe.
+Lorsque $y$ diverge, soit la solution n'a pas de sens physique, ou que le
+système s'éloigne de la position initiale et sort tout à coup de la
+modélisation (par exemple, une hypothèse d'élasticité infinie d'un ressort,
+qui en réalité va casser).
+
+### Équations d'ordre 2
+$a_2 \frac{d^2 y}{dx^2} + a_1 \frac{d y}{dx} + a_0 y = 0$\\
+$\Delta = a_1^2 - 4 a_2 a_0$.
+
+Pour $\Delta$ positif, on a $y = A e^{r_1 x} + B e^{r_2 x}$,
+pour $\Delta = 0$ on a  $(A + Bx) e^{r_0 x}$, et pour
+$\Delta$ négatif, on a $y = e^{\frac{-a_1}{a_2} x} (A \cos(\frac{\sqrt{- \Delta}}{2 a_2} x) + B \sin(\frac{\sqrt{- \Delta}}{2 a_2} x))$
+$= C e^{\frac{-a_1}{a_2} x} (\cos(\frac{\sqrt{-\Delta}}{2 a_2}) + \Phi)$.
+
+Ainsi, pour que $y(x)$ converge, il faut que $a_2, a_1$ et $a_0$ soient de même
+signe.
+
+## Repères, déplacements, surfaces, et volumes élémentaires
+### Systèmes de coordonnées
+#### Repère cartésien
+On se repère avec une origine et trois vecteurs formant une base orthonormée
+directe; on repère donc les points par trois valeurs (des facteurs de scaling
+des vecteurs de base).
+
+#### Repère cylindrique
+On repère dans le repère cartésien les points par une longueur radiale (la
+distance $OH$ pour le point $M$, dont $H$ est le projeté à $z = 0$), et $\theta$
+est l'angle algébrique (en général dans le sens positif, mais attention !) entre
+l'une des lignes engendrées par une base. On prend ainsi $\overrightarrow{\rm
+e_\theta}$ un vecteur unité orienté dans le sens de l'angle $\theta$ et placé
+tangent au cercle de rayon $r$. $z$ est simplement l'axe $z$ du repère
+cartésien.
+
+$\theta$ varie de $0$ à $2 \pi$ (le tour du cylindre).
+
+#### Repère sphérique
+On repère un point du repère cartésien par sa longueur radiale $r = OM$
+pour un point $M$, $\varphi$ l'angle (comme $\theta$ en cylindrique),
+et $\theta$ l'angle entre l'axe $z$ et $OM$. Les vecteurs
+$\overrightarrow{\rm e_\varphi}$ et $\overrightarrow{\rm e_\theta}$ sont
+orientés dans le sens de variation de l'angle.
+
+Ici, $\theta$ varie de $0$ à $\pi$ (du pôle nord au pôle sud, sinon on parcourt
+deux fois la sphère), et $\varphi$ de $0$ à $2 \pi$.
+
+#### Repère de Frenet
+On connait la trajectoire du point qu'on étudie, avec $s$ l'abscisse curviligne
+du point $M$. On définit alors le vecteur $\overrightarrow{\rm u_t}$ tangent à
+la courbe et le vecteur $\overrightarrow{\rm u_n}$ orthogonal pointant vers le
+centre de courbure de la courbe.
+
+### Déplacements, surfaces et volumes élémentaires
+#### Déplacements
+Un déplacement $ds$ est un petit déplacement de $M$ à $M'$ très proche.
+- Dans le repère cartésien, on a $ds = \sqrt{dx^2 + dy^2 + dz^2}$.
+- Dans le repère cylindrique, on a $ds = \sqrt{dr^2 + (r d \theta)^2 + dz^2}$.
+- Dans le repère sphérique, on a $ds = \sqrt{dr^2 + (r d \theta)^2 + (r \sin(\theta) d \varphi)^2}$.
+- Dans le repère de Frenet, CHERCHER.
+
+#### Surfaces élémentaires
+- Dans le repère cartésien, on prend $dx dy$, $dy dz$ ou $dz dx$.
+- Dans le repère cylindrique, on prend $dr \times r d\theta$, $dr dz$ ou $r d\theta \times  dz$.
+- Dans le repère sphérique, on prend $dr \times r d\theta$, $dr \times r \sin(\theta) d\varphi$ ou $r d\theta \times r \sin(\theta) d\varphi$.
+- Dans le repère de Frenet, CHERCHER.
+
+#### Volumes élémentaires
+- Dans le repère cartésien, on prend $dx dy dz$.
+- Dans le repère cylindrique, on prend $dr \times r d\theta \times dz$.
+- Dans le repère sphérique, on prend $dr \times r d\theta \times r \sin(\theta) d\varphi$.
+- Dans le repère de Frenet, CHERCHER.
+
+#### Quelques surfaces et volumes élémentaires à connaître
+La largeur d'un ruban de largeur $dr$ à partir de $r$ est de $2 \pi r dr$.
+L'aire d'un ruban sur une sphère est de $2 \pi r \sin(\theta) \times r d\theta$.
+Le volume de la coquille sphérique entre $r$ et $r + dr$
+est de $4 \pi r^2 dr$.
+
+Chercher la surface ou le volume le plus grand possible permet de repérer les
+symétries du problème et de faciliter le calcul.
