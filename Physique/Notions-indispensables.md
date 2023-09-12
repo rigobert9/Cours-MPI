@@ -278,3 +278,60 @@ est de $4 \pi r^2 dr$.
 
 Chercher la surface ou le volume le plus grand possible permet de repérer les
 symétries du problème et de faciliter le calcul.
+
+## Opérations sur les champs
+### Différents types de champs
+Un champ scalaire est une fonction associant une grandeur à un point de
+l'espace, dépendant du temps. De même, un champ vectoriel renvoie un vecteur.
+Au lieu de lier le temps à la position comme en mécanique, ces variables sont
+indépendantes.
+
+### Topographie
+Pour représenter un champ scalaire, on représente les surfaces équi-$\varphi$
+(donc des surfaces paramétrisées par $\varphi(x,y,z,t = c) = \text{constante}$)
+(lignes de niveau ou représentation du champ magnétique).
+Pour représenter un champ vectoriel, on trace les lignes de champ, les courbes
+tangentes en tout point au champ $\overrightarrow{\rm A}(M,t)$ orienté suivant
+le sens de $\overrightarrow{\rm A}$. Mathématiquement, cela correspond aux
+courbes telles que $\overrightarrow{\rm A}(M) \wedge d\overrightarrow{\rm \ell}(M) = \overrightarrow{\rm 0}$.
+
+### Dérivation spatiale
+On veut étudier des opérateurs de dérivation spatiale lié à $\frac{\partial}{\partial x}$,
+$\frac{\partial}{\partial y}$ et $\frac{\partial}{\partial z}$, mais qui soit
+indépendant du choix de repère.
+
+Il peut être montré qu'il n'existe que trois de ces opérateurs, tous notés avec
+l'opérateur Nabla $\overrightarrow{\rm \nabla} = \left|\begin{matrix} \frac{\partial}{\partial x} \\ \frac{\partial}{\partial y} \\ \frac{\partial}{\partial z} \end{matrix}\right.$.
+Ils sont $\overrightarrow{\rm \nabla} \varphi$ (le gradian),
+$\overrightarrow{\rm \nabla} \wedge \overrightarrow{\rm A}$ (le rotationnel)
+et $\overrightarrow{\rm \nabla} \cdot \overrightarrow{\rm A}$ (la divergence).
+On peut dériver comme d'habitude pour les autres repères.
+
+### Définition par les propriétés
+Le gradient est tel que $\int_{\overline{AB}} \overrightarrow{\rm \text{grad}} \varphi \cdot d \overrightarrow{\rm \ell} = \varphi(B) - \varphi(A)$
+(ce qu'on peut voir dans la formule en paramétrisant le chemin).
+
+Ainsi, une intégrale fermée du gradian produit scalaire le déplacement
+élémentaire est nulle. Le gradian est de plus perpendiculaire aux surfaces
+équi-$\varphi$ (en intégrant le chemin dessus).
+
+La divergence est caractérisée par le théorème d'Ostrogradski :
+$\bigcirc \! \! \! \! \! \! \! \iint_S \overrightarrow{\rm A} \cdot d \overrightarrow{\rm S} = \iiint_S \text{div} \overrightarrow{\rm A} d\tau$
+(sur la surface fermée définissant le volume fermé).
+
+Le rotationnel est caractérisé par le théorème de Stokes : $\iint_{S} \overrightarrow{\rm \text{rot}} \overrightarrow{\rm A} d\overrightarrow{\rm S} = \oint \overrightarrow{\rm A} d \overrightarrow{\rm l}$
+sur la surfacé définie par un contour et un contour fermé. Il faut toujours
+faire attention à orienter le contour.
+
+### Opérateurs du second ordre
+En appliquant une seconde fois Nabla de l'une des façons possibles.
+On peut calculer le divergent ou rotationnel du gradian, le gradian du
+divergent, ou encore le rotationnel du rotationnel.
+
+On a des cas particuliers : le rotationnel du gradian est nul, et la divergence
+du rotationnel est nulle.
+
+On appelle Laplacien la divergence du gradian, noté $\nabla^2 \varphi$
+ou $\Delta \Phi$ (un divergent avec des dérivées secondes).
+Enfin, le rotationnel du rotationnel est égal au gradian du divergent
+moins le laplacien : $\overrightarrow{\rm \text{rot}} \overrightarrow{\rm \text{rot}} \overrightarrow{\rm A} = \overrightarrow{\rm \text{grad}}(\overrightarrow{\rm \text{div}} \overrightarrow{\rm A}) - \Delta \overrightarrow{\rm A}$.
