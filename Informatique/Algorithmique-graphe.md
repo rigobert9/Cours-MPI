@@ -187,3 +187,67 @@ Il est de complexité en temps $O(|S| + |A|)$
 On lance un parcours en profondeur depuis un premier sommet, ce qui explore la
 composante connexe du sommet. On recommence ensuite jusqu'à ce qu'on ait tout
 listé.
+
+#### Différents parcours du graphe
+On peut parcourir le graphe en ordre préfixe, postfixe ou infixe (en fonction de
+si on relève d'abord le sommet par lequel on passe, celui dans lequel on
+descend, ou si on donne le sommet actuel entre plusieurs dans lesquels on
+passe).
+
+#### Détection de cycles
+On fait un parcours en profondeur en colorant de trois couleurs les sommets :
+pas visité, croisé (mais dans un appel pas terminé), et visité (dans un appel
+terminé). Si on retombe sur un sommet gris en passant dans les graphe, un cycle
+existe.
+
+#### Tri topologique
+(voir polycopié algorithme)
+Le tri topologique permet d'obtenir un ordre topologique sur un graphe
+acyclique, c'est à dire un ordre de sommets tel qu'on peut atteindre un sommet
+par les sommes précédents. On peut trouver cet ordre en même temps qu'on
+applique l'algorithme précédent.
+
+### Calcul des composantes fortement connexes d'un graphe orienté : algorithme de Kosaraju
+Pour calculer les composantes fortement connexes d'un graphe orienté, on combine
+les deux algorithmes précédents. On utilise d'abord un parcours en profondeur sur le
+graphe et on obtient l'ordre postfixe, puis on utilise le graphe transposé (le
+graphe avec les arêtes à l'envers), sur lequel on lance les parcours en
+profondeur dans l'ordre postfixe obtenu comme l'algorithme de composantes
+connexes vu précédemment.
+
+Le graphe des CFC de $G$ est le graphe ayant pour sommets les composantes fortement connexes
+et ayant pour arêtes les arêtes existant entre ces composantes. C'est donc un
+graphe acyclique.
+
+Cet algorithme s'applique en temps $O(|S| + |A|)$.
+
+### Arbre couvrant de poids minimum
+#### Structure union-find
+On cherche à pouvoir efficacement voir si deux sommets sont dans une même
+classe, et à pouvoir fusionner deux classes. Pour ceci, on utilise un
+union-find.
+
+On utilise des arbres et forêts. Lorsqu'on rassemble des classes, on accroche
+une des racines à l'autre. En conservant la hauteur avec chaque racine, on peut
+grandement améliorer les opérations en accrochant toujours l'arbre le moins haut
+au plus haut. De plus, on ajoute la "compression de chemin" : à chaque find, on
+obtient la racine de l'arbre, et on accroche du même coup tous les nœuds
+rencontrés comme enfants directs de la racine trouvée.
+
+On peut atteindre une complexité amortie pour les opérations d'union et find
+de $O(d(n))$, avec $d(n)$ la fonction réciproque de $A(n,n)$, avec $A$ la
+fonction d'Ackermann (la preuve est admise dans le programme).
+
+#### Algorithme de Kruskal
+On s'intéresse ici à des graphes pondérés acyclique non orientés et connexes.
+
+> Un arbre couvrant d'un graphe est un sous-ensemble des arcs du graphe tels que
+> ce sous-ensemble soit un arbre et aie tout sommet dans au moins l'une des
+> extrémités de ses arcs.
+
+Dans un graphe pondéré, on s'intéresse à la recherche de l'arbre couvrant
+minimal, celui dont la somme des poids des arcs est minimale. L'algorithme de
+Kruskal permet de trouver cet arbre, en une complexité temporelle $O(|A| \log(|A|))$,
+en utilisant un union-find des sommets, et en déroulant une file de priorité
+minimale avec tous les arcs dedans, on met dans la même classe lorsqu'on peut
+avec le nouvel arc jusqu'à ce que l'arbre contienne tous les sommets.
