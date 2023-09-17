@@ -47,7 +47,7 @@ Plus $k$ est grand, plus $s(t)$ ressemble à $e(t)$, et les discontinuités sero
 Un filtre passe-bas du premier ordre est de la forme
 $H(j \omega) = \frac{H_0}{1 + j \frac{\omega}{\omega_0}}$,
 soit la modélisation d'une équation différentielle
-$\frac{1}{\omega} \frac{d s}{dt} + s = H_0 e$.
+$\frac{1}{\omega_0} \frac{d s}{dt} + s = H_0 e$.
 
 On obtient les deux asymptotes, celle de $20 \log(H_0)$ pour $\omega \to 0$
 et de $20 \log(H_0) - 20 \log(\frac{\omega}{\omega_0})$ pour
