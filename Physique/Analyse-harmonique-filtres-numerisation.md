@@ -202,3 +202,58 @@ qu'on puisse faire beaucoup de choses avec de l'électronique). De plus, le
 stockage d'information binaire est très facile et peut se faire sur beaucoup de
 choses; pour enregistrer un signal analogique, il faut reproduire l'onde sur une
 surface ou volume solide (vinyles).
+
+Dans la suite, on prendre l'exemple général d'un signal sonore, reçu par un
+transducteur dont le signal électrique est numérisé, puis sera lu par un
+décodeur et le transducteur du haut-parleur. Pour les humains, les fréquences
+d'une voix sont entre $20 Hz$ et $3000 Hz$, et l'oreille peut entendre les
+fréquences entre $20 Hz$ et $20 kHz$
+
+### Échantillonnage
+#### Principe d'un échantillonneur
+Un échantillonneur est un système qui prélève des éléments régulièrement espacés
+du signal $s(t)$, selon une période d'échantillonnage $T_0$.
+
+On va en général générer un signal $e(t)$ d'impulsions de largeur $\tau$ tous les
+$T_0$, puis on les fait passer dans un multiplieur avec les signal d'entrée,
+donnant une sortie $s_n(t) = k e(t) s(t)$. En choisissant la hauteur des
+impulsions de $e(t)$ de valeur $\frac{1}{k}$, on veut obtenir des
+échantillons quasiment ponctuels ($\tau \ll T_0$), constants par morceaux
+($\tau \ll T_s$, avec $T_s$ le temps caractéristique de variation du signal
+d'entrée), et dont les échantillons reflètent les variations du signal
+($T_e \ll T_s$). On a donc besoin de $\tau \ll T_e \ll T_s$. On considèrera donc
+que $\tau \to 0$, et on traitera $s_n(t)$ comme une suite à coder. En
+pratique, on utilise un échantillon bloqueur qui maintient la valeur $s_n$
+pendant $T_e$ (et donc le codage doit se faire en moins de temps).
+
+#### Spectre du signal échantillonné et critère de Nyquist-Shannon
+##### Étude du spectre de $s_n(t)$ si $s(t) = s_0 \cos(\omega t)$
+On a $s_n(t) = k e(t) s(t)$, or $e(t)$ est périodique, donc $e(t) = e_n + \sum e_n \cos(n \omega_e t + \phi_n)$,
+avec $\omega_e$ la pulsation d'échantillonnage, donnant
+$s_n(t) = k e_n s_0 \cos(\omega_0 t) + \sum k e_n s_0 \cos(n \omega_e t + \phi_n) \cos(\omega_0 t)$\
+$= k e_n s_0 \cos(\omega_0 t) + \sum \frac{k e_n s_0}{2}(\cos(n \omega_e - \omega_0) t + \phi_n) + \cos((n \omega_e + \omega_0) t + \phi_n)$
+
+Ainsi, le spectre du signal échantillonné contient la pulsation fondamentale du
+signal échantillonné et autrement deux raies symétrique de distance $\omega_0$
+de part et d'autre des pulsations harmoniques du signal échantillonné.
+
+##### Généralisation
+On retrouve exactement le même phénomène pour un spectre compris dans
+$[0,f_\text{max}]$. Il nous faut donc que $f_e - f_\text{max} > f_\text{max}$
+(sinon les morceaux aux harmoniques vont empiéter les uns sur les autres).
+
+Ainsi, on obtient une justification au critère de Nyquist-Shannon.
+
+> (Nyquist-Shannon) Pour que le processus d'échantillonnage se fasse sans perte
+> d'information, il faut choisir une fréquence d'échantillonnage telle que
+> $f_e > 2 f_\text{max}$.
+
+Ainsi, il faut d'abord connaître la plage de fréquence du signal pour choisir la
+fréquence d'échantillonnage. Il nous faut alors éliminer les fréquences trop
+hautes que l'on ne veut pas échantillonner : elles peuvent se mêler aux
+harmoniques et les brouiller. On utilise donc un filtre passe-bas pour éliminer
+ces fréquences.
+
+Fun fact : si on subit un bruit à $38 kHz$ pour un échantillonnage à $40 kHz$,
+on entend un son à $2 kHz$ dans la piste (parasite grave dans un
+enregistrement).
