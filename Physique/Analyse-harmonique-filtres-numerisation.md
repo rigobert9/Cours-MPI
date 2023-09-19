@@ -257,3 +257,11 @@ ces fréquences.
 Fun fact : si on subit un bruit à $38 kHz$ pour un échantillonnage à $40 kHz$,
 on entend un son à $2 kHz$ dans la piste (parasite grave dans un
 enregistrement).
+
+### Convertisseurs (Analogique-numérique, CAN et Numérique-analogique, CNA)
+Un convertisseur est caractérisé par sa plage de conversion (ou tension en
+pleine échelle) $\Delta s$, le pas de quantification $q$ (qui caractérise le nombre de valeurs
+codées possibles), et le nombre de bits $n$ qui caractérise le nombre de valeurs
+possibles ($2^n$). On a donc $q = \frac{\Delta s}{2^n - 1}$.
+
+Voir polycopié.
