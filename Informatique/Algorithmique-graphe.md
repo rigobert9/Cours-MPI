@@ -251,3 +251,53 @@ Kruskal permet de trouver cet arbre, en une complexité temporelle $O(|A| \log(|
 en utilisant un union-find des sommets, et en déroulant une file de priorité
 minimale avec tous les arcs dedans, on met dans la même classe lorsqu'on peut
 avec le nouvel arc jusqu'à ce que l'arbre contienne tous les sommets.
+
+#### Couplage maximum dans un graphe bipartite
+On travaille ici sur des graphes non orientés bipartis.
+
+> Soit un graphe biparti, un couplage ("matching" en anglais) est un sous-ensemble
+> des arêtes du graphe tel que pour tout sommet, ce sommet est l'extrémité d'au plus une
+> arête du sous-ensemble.
+
+> Un couplage est maximal s'il est maximal pour l'inclusion, et est maximum s'il
+> est de cardinal maximal parmi tous les couplages possibles. Un sommet qui n'est
+> l'extrémité d'aucune arête du couplage est dit libre, et un couplage sans sommet
+> libre est appelé parfait.
+
+Par exemple, pour un graphe bipartites de chercheurs et de papiers liés par
+auteurs des papiers, un couplage maximum donne une solution pour organiser une
+conférence te faire présenter le plus d'article possible en même temps par un
+auteur de chaque article.
+
+> Un chemin augmentant pour un couplage est un chemin qui :
+> - commence et finit par des arêtes qui ne sont pas dans le couplage
+> - alterne entre des arêtes qui sont et ne sont pas dans le couplage
+> - a les deux sommets extrémités du chemin qui sont libres
+
+On peut alors augmenter le cardinal du couplage en inversant les arêtes le long
+de ce chemin (celles qui étaient dans le couplage ne sont pas dans le nouveau et
+inversement).
+
+Ainsi, on peut chercher un couplage maximum en traversant le graphe à la
+recherche de chemins augmentants. On va donc essayer de prouver que si le
+couplage n'est pas maximum, alors il existe un chemin augmentant.
+
+__Preuve :__ Soit $C_1$ et $C_2$ deux couplages de $G$, et $D$ la différence
+symétrique des deux ensembles. Un chemin dans $D$ alterne forcément entre les
+arêtes des deux couplages (par définition), et on peut l'étendre par la gauche
+et par la droite en un unique chemin de longueur maximale.
+
+Un tel chemin peut avoir 4 formes :
+- Il y a un cycle
+- La première et la dernière arête sont dans $C_2$
+- La première et la dernière arête sont dans $C_1$
+- La première est dans $C_1$ et l'autre est dans $C_2$
+
+On suppose maintenant $C_2$ non maximum, et alors $D$ contient strictement plus
+d'arêtes de $C_1$ que de $C_2$, donc il s'agit d'un chemin de type $4$. Un tel
+chemin est augmentant pour $C_2$.
+
+__Algorithme :__ On construit donc très simplement l'algorithme en cherchant un
+parcours augmentant avec un parcours en profondeur. Si ce chemin existe, on
+inverse les couplages le long du chemin lorsqu'on dépile les appels récursifs,
+et sinon, c'est qu'on a déjà un couplage maximum.
