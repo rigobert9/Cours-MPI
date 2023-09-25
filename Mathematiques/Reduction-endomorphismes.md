@@ -63,4 +63,6 @@ contraintes sur ces espaces).
 On peut remarquer que la dimension de chaque espace propre est alors égal à
 multiplicité de chaque racine.
 
-Cette CNS se vérifie en pratique (?).
+On utilise cette CNS en pratique, en obtenant les coefficients du polynôme
+caractéristique et en testant la correspondance entre la multiplicité des
+racines et la dimension des espaces propres.
