@@ -117,3 +117,70 @@ la valeur $m$ (pour les prochains appels récursifs). De même, sur un tour de M
 
 Ainsi, en avançant, la fenêtre $\alpha$-$\beta$ devient de plus en plus étroite,
 et tout particulièrement s'il analyse à fond un bon coup dès le début.
+
+## Algorithmes d'apprentissage
+Bien qu'il fût inventé dès les années 50 comme l'une des premières techniques
+d'apprentissage machine, le réseau de neurone n'a pu être testé que sur des
+machines très récentes et des bases de données très grandes, et fait ses preuve
+depuis une dizaine d'années. Il permet d'écrire un programme simple dont
+l'objectif est de s'entraîner sur des exemples d'un problème (en modifiant des
+valeurs de décision internes lorsque celles-ci sont infirmées ou confirmées)
+pour résoudre un problème pour lequel on ne trouve pas d'algorithme. On peut
+modéliser l'entraînement de ces neurones par une descente de gradian.
+
+On distingue deux types d'algorithmes d'apprentissage :
+- L'apprentissage supervisé, quand on a beaucoup d'exemples et qu'on essaie
+  d'entraîner la machine a réussir des cas pour lesquels on connaît la réponse.
+- L'apprentissage non supervisé, où on entraîne la machine sur des exemples dont
+  on ne connaît pas la réponse (et on espère que ça ira)
+
+Dans la suite, une donnée est un élément de $\mathbb{R}^{d}$, avec $d$ une
+dimension fixée. On cherche alors à classifier ces données sur $p$ catégories,
+numérotées de $0$ à $p - 1$.
+
+### Apprentissage supervisé
+Dans cette partie, on suppose disposer d'un ensemble d'entraînement $E$ de
+données d'entraînement de la forme $(x,c)$ avec $x \in \mathbb{R}^{d}$ et
+$c \in [\![0;p-1]\!]$. On cherche alors à trouver la catégorie de laquelle fait
+partie une donnée qui n'était pas dans $E$.
+
+#### Algorithme des $k$ plus proches voisins
+On fixe une distance (cet algorithme implique donc qu'on y arrive) $\delta$ sur
+$\mathbb{R}^d$, et un entire $k \in \mathbb{N}^{\ast}$. On applique les $k$-PPV :
+on calcule la liste $L$ des catégories des $k$ points les plus proches de notre
+nouveau point $y$, et on identifie la catégorie majoritaire (système de vote à
+la majorité des voisins).
+
+L'approche naïve correspondrait au tri de tous les points en fonction de la
+proximité à $y$ ($O(n \log n)$), mais on préfèrera utiliser une file de priorité max qui expulse
+les éléments quand ils sont plus petits que $k$ autres ($O(n \log k)$). Comme le
+plus souvent $n \gg k$, et dans tous les cas $n \geq k$, le second algorithme
+est plus efficace.
+
+Une autre technique est encore possible : les arbres $k$-dimensionnels, qu'on
+verra plus loin.
+
+Il reste encore un problème, celui de choix de $k$. On utilise une "matrice de
+confusion", qui est la matrice $C$ de taille $p$ fois $p$ telle que
+$C_{i,j}$ est le nombre d'éléments des données de test de catégorie $i$ et
+classifié $j$ par l'algorithme. Ainsi, les bonnes réponses sont répertoriées sur
+la diagonale (et les autres valeurs montrent des mauvais classifications). On
+cherche donc à maximiser la trace de cette matrice, ce qui pourrait être
+l'objectif d'un rapide script d'entraînement ou d'une autre IA.
+
+### Arbres $k$-dimensionnels
+Attention, ici $k$ fait simplement référence à la dimension de l'espace où se
+trouvent les données qu'on stock dans l'arbre. C'est simplement l'appellation
+standard de la structure.
+
+> Un arbre $k$-dimensionnel est un arbre binaire stockant des éléments de $\mathbb{R}^k$
+> en comparant à profondeur $i$ l'étiquette de la racine avec les autres éléments selon la $i [k]$-ème composante.
+
+Si on construit cet arbre de façon équilibrée et qu'on stocke tous les éléments
+de $E$ dans le problème des $k$-PPV, on va pouvoir grandement améliorer la
+recherche. Pour cela, on cherche les éléments proches de $y$ en feignant de
+l'insérer dans l'arbre, puis on garde en mémoire en remontant la plus grande
+distance à $y$ des voisins pour l'instant les plus proches. Si on croise en
+remontant un nœud tel que la $i [k]$-ème composant est strictement inférieure à
+cette valeur, il faut considérer ce nœud et l'autre sous-arbre (sinon, pas
+besoin).
