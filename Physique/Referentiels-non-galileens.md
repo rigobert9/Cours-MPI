@@ -110,3 +110,42 @@ d'entraînement et l'accélération de Coriolis $\overrightarrow{\rm A_C}(M) = 2
 
 Propriétés de l'accélération de Coriolis : le terme n'apparaît pas dans les
 mouvements de translation, ...
+
+## Dynamique non galiléenne
+### Référentiel galiléen
+> Un référentiel galiléen est un référentiel dans lequel s'applique les lois de la
+> dynamique. En particulier, le mouvement d'un système isolé est forcément
+> rectiligne uniforme.
+
+Le référentiel de Copernic (avec pour centre le centre de masse du soleil) ou le
+référentiel héliocentrique (avec pour centre le soleil) sont des bonnes
+approximations de référentiels galiléens.
+
+On considère de même le référentiel géocentrique comme galiléen pour des
+phénomènes courts devant $1$ an et sur des distances petites devant le diamètre
+de la Terre.
+
+Le référentiel terrestre sera considéré comme galiléen pour des durées faibles
+devant $24$ heures et des distances faibles devant le rayon de la Terre.
+
+### Loi de la dynamique du point matériel dans un référentiel non galiléen
+On peut par exemple étudier le mouvement d'un pendule à l'intérieur d'une
+voiture au démarrage. La voiture, lorsqu'elle est en mouvement uniformément
+accéléré, place le pendule dans un équilibre relatif dans la référentiel de la
+voiture.
+
+Dans n'importe quel référentiel non galiléen, on peut appliquer les lois de la
+dynamique à condition d'ajouter les forces d'inertie et de Coriolis,
+d'expression respectivement $- m \overrightarrow{\rm a_i}$ et $- m \overrightarrow{\rm a_c}$. On peut
+ainsi facilement prouver que le RFD et la TMC avec ces forces sont vrais,
+permettant de se replacer dans ce qu'on connaît déjà.
+
+### Rédaction
+Un exercice de dynamique non galiléenne se résout par :
+1. Bien définir $R$ et $R'$, ainsi que le mouvement de $R'$ par rapport à $R$ :
+   il doit être en translation ou en rotation autour d'un axe, sinon HP - soit
+   on s'est trompé, soit on est aidé, soit le concours nous demande vraiment du
+   HP.
+2. On calcule l'accélération d'entraînement et de Coriolis, puis les forces
+   associées.
+3. On déroule l'exercice de mécanique en restant prudent.
