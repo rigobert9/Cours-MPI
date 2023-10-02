@@ -66,3 +66,60 @@ multiplicité de chaque racine.
 On utilise cette CNS en pratique, en obtenant les coefficients du polynôme
 caractéristique et en testant la correspondance entre la multiplicité des
 racines et la dimension des espaces propres.
+
+## Action de $\mathbb{K}[X]$
+On définit facilement l'évaluation de polynômes sur des endomorphismes (avec la
+puissance appliquée sur la composition).
+L'application associant à un polynôme son action sur un certain $u$ est un morphisme d'algèbres (en les polynômes).
+
+### Polynôme minimal
+L'ensemble des polynômes annulant $u$ est un idéal et donc est engendré par un
+unique polynôme unitaire noté $\pi_u$ (qui divise alors tous les polynômes
+annulateurs). L'espace vectoriel $\mathbb{K}[u]$ est alors de dimension du degré
+de $\pi_u$.
+
+### Lemme des noyaux/Théorème de décomposition des noyaux
+> Soit $P$ et $Q$ des polynômes premiers entre eux, $\text{Ker}(PQ)(u) = \text{Ker}(P(u)) \oplus \text{Ker}(Q(u))$.
+
+__Preuve :__ Puisque $P$ et $Q$ sont premiers entre eux, on a une relation de
+Bézout entre eux, ce qui signifie que $x = (U(u) P(u))(x) + (V(u) Q(u))(x)$.
+Si $x \in \text{Ker}(P(u)) \cap \text{Ker}(Q(u))$, alors $x$ est donc $0$.
+Soit $x_1 = (U(u) P(u))(x)$ et $x_2 = (V(u) Q(u))(x)$, en retrouve l'inclusion
+$\subset$, et on fait facilement l'autre inclusion.
+
+Le théorème se généralise facilement à une famille plus grande de polynômes
+premiers entre eux.
+
+### Stabilité
+> Si $uv = vu$, alors $\text{Ker}(u)$ et $\text{Im}(u)$ sont stables par $v$.
+
+De même, les espaces propres et les $\text{Ker}$ des polynômes
+en $u$ sont stables.
+
+### Diagonalité
+> $u$ est diagonal si et seulement si $\pi_u$ est un polynôme scindé à racine
+> simples si et seulement si $u$ admet un polynôme annulateur à racines simples.
+
+En effet on a ainsi l'espace vectoriel qui est la somme directe des espaces
+propres de l'endomorphisme par le lemme des noyaux.
+
+> Les racines racines du polynôme minimal sont exactement les valeurs propres.
+
+__Preuve :__ On a facilement le fait que les valeurs propres sont annulées par
+le polynôme minimal. Dans l'autre sens, si $\lambda$ est racine de $\pi_u$,
+on montre que $\text{Ker}(u - \lambda \text{id}) \neq \{0\}$. Comme $\pi_u(\lambda) = 0$,
+il est égal à $(X - \lambda) Q$, et comme $\pi_u$ est minimal, il ne divise pas
+$Q$ et donc $Q$ ne s'annule pas en $\lambda$, donc $u - \lambda \text{id}$ n'est
+pas inversible.
+
+Puisque le polynôme caractéristique s'annule en l'endomorphisme, il est
+divisible par le polynôme minimal. Leurs racine étant les mêmes, la multiplicité
+est forcément plus grande ou égale dans le polynôme caractéristique.
+
+Attention en manipulant des complexes pour les espaces sur des sous-corps de $u$
+: il n'est pas possible de parler de vecteurs propres complexes puisque $\mathbb{C}$
+n'agit pas sur l'espace.
+
+> $u$ est diagonalisable si et seulement si le caractéristique est scindé et que
+> les espaces propres sont de dimension de la multiplicité de leur valeur propre
+> comme racine.
