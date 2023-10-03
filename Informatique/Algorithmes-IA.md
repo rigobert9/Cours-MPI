@@ -168,7 +168,7 @@ la diagonale (et les autres valeurs montrent des mauvais classifications). On
 cherche donc à maximiser la trace de cette matrice, ce qui pourrait être
 l'objectif d'un rapide script d'entraînement ou d'une autre IA.
 
-### Arbres $k$-dimensionnels
+#### Arbres $k$-dimensionnels
 Attention, ici $k$ fait simplement référence à la dimension de l'espace où se
 trouvent les données qu'on stock dans l'arbre. C'est simplement l'appellation
 standard de la structure.
@@ -184,3 +184,73 @@ distance à $y$ des voisins pour l'instant les plus proches. Si on croise en
 remontant un nœud tel que la $i [k]$-ème composant est strictement inférieure à
 cette valeur, il faut considérer ce nœud et l'autre sous-arbre (sinon, pas
 besoin).
+
+#### Arbres de décision et algorithme ID3
+On se place ici dans le cas particulier où chaque coordonnée est un booléen.
+On parle alors plutôt d'attribut que de coordonnée; les arbres $k$-dimensionnels
+sont des arbres de décision.
+
+On peut construire plusieurs arbres de décision selon l'ordre dans lequel on
+considère les attributs. On cherche à choisir l'ordre qui minimisera la hauteur
+de l'arbre de décision.
+
+> On définit l'entropie de Shannon comme la fonction qui évalue la quantité
+> d'information contenue dans un ensemble $S$ de données. Pour un ensemble de $S$
+> de $N$ données réparties en plusieurs classes $C$, l'entropie de $S$, notée
+> $H(S)$ est $H(S) = - \sum\limits_{c \in C} \frac{n_c}{N} \times \log_2(\frac{n_c}{N})$,
+> où $n_c$ est le nombre d'éléments dans $c$.
+
+Pour éviter les problèmes de calcul, on pose que le terme est nul si $n_c$ est
+nul par continuité, et si toutes les données de $S$ sont dans une unique
+catégorie, on obtient $0$.
+
+Pour choisir quel attribut tester en premier dans notre arbre de décision, on va
+regarder comment chaque choix d'attribut modifie l'entropie (à quelle point elle
+va augmenter, nous apporter de l'information nouvelle).
+
+> Avec les mêmes notations, le gain de l'attribut $a$ noté $G(a)$ est la valeur
+> $G(a) = H(S) - \sum\limits_{\nu \in \mathbb{B}} \frac{|S_{a = \nu}|}{|S|} \times H(S_{a = \nu})$,
+> avec $S_{a = \nu}$ le sous-ensemble de $S$ ou $a$ a la valeur $\nu$.
+
+Pour minimiser la hauteur de l'arbre de décision, une bonne heuristique est de
+choisir l'attribut $a$ qui maximise le gain. On sépare donc $S$ en les
+sous-ensembles $S_{a = \top}$ et $S_{a = \bot}$, et on recommence récursivement
+sur ces deux ensembles : c'est l'algorithme ID3.
+
+### Apprentissage non supervisé
+On essaie de faire la même chose, mais cette fois-ci sans ensemble
+d'entraînement $E$. On parle alors d'apprentissage non supervisé : l'algorithme
+terminer seul les points communs des données, et de les partitionner en $k$
+catégories pour une valeur $k$ fournie à l'algorithme.
+
+> Soit $C$ l'une des $k$ catégories, on note $\mu_j = \frac{1}{|C_j|} \times \sum\limits_{x \in C_j} x$
+> le barycentre de $C_j$ et $m_j = \sum\limits_{x \in C_j} \|x - \mu_j\|^2$ le
+> moment d'inertie de $C_j$.
+
+On considère alors que la meilleure partition est celle qui minimise $M = \sum\limits_{j = 0}^{k} m_j$,
+la partition qui prend des points assez collés entre eux et espacés des autres
+(des clusters de points).
+
+#### Algorithme des $k$-moyennes
+On choisit $k$ centres qu'on place soit aléatoirement, soit le plus loin
+possible les uns des autres, puis on associe chaque point au centre le plus
+proche (créant $k$ classes), et on replace les centres aux barycentres jusqu'à
+ce que les classes se stabilisent (on teste que les barycentres ne bougent
+plus).
+
+On admettra que cet algorithme se termine et fournit des classe comme demandé.
+
+Le but est d'obtenir des classes qui respectent les contraintes, mais aussi qui
+se répartissent de proche en proche en restant dans des classes collées entre
+elles. (Voir sur internet, ça marche plutôt bien mais peut aussi être très
+mauvais selon les distances utilisées)
+
+#### Classification hiérarchique ascendante
+Une autre manière d'obtenir les classes est de faire $n$ classes (les singletons
+de l'ensemble), puis de fusionner les classes les plus proches à chaque fois.
+
+La distance entre les classes peut être définies de plusieurs façons suivantes,
+que ce soit la distance minimale entre des points des classes, la maximale, la
+moyenne, ou encore la distance de Ward, définie pour $n_1$ la taille de la
+première classe et $n_2$ la taille de la seconde par la multiplication de
+la distance des barycentres avec $\frac{n_1 \times n_2}{n_1 + n_2}$.
