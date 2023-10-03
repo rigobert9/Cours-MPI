@@ -149,3 +149,38 @@ Un exercice de dynamique non galiléenne se résout par :
 2. On calcule l'accélération d'entraînement et de Coriolis, puis les forces
    associées.
 3. On déroule l'exercice de mécanique en restant prudent.
+
+### Effet du caractère non euclidien du référentiel terrestre
+La rotation instantanée du repère terrestre par rapport au repère géocentrique
+est de norme $\frac{2 \pi}{24 \times 360} = 7.31 \text{rad} \cdot s^{-1}$. La
+Terre n'étant pas un solide indéformable, elle est déformée (surtout à
+l'équateur) en une forme qu'on peut supposer éllipsoïdale.
+
+De plus, on peut redéfinir lorsque c'est nécessaire la pesanteur terrestre,
+donnant $\overrightarrow{\rm g} = \overrightarrow{\rm G} + \frac{\overrightarrow{\rm F_{ie}}}{m}$,
+soit dans un repère sphérique géocentrique $\overrightarrow{\rm G} = - G \frac{M}{(R_T + z)^2} \overrightarrow{\rm u_r}$
+et $\overrightarrow{\rm F_{ie}} = m \Omega_T^2 r_\bot \overrightarrow{\rm e_{r_\bot}}$, soit
+finalement $\overrightarrow{\rm g} = - G \frac{M_T}{r^2} \overrightarrow{\rm u_r} + \Omega_T^2 r_{\bot} \overrightarrow{\rm e_{r_\bot}}$.
+
+Dans les exercices, la force d'entraînement est toujours incluse dans $\overrightarrow{\rm g}$, donc si on
+prend le référentiel terrestre comme non galiléen il ne faut PAS ajouter $\overrightarrow{\rm F_{ei}}$.
+En effet, le poids ne pointe jamais vraiment vers le centre de la Terre (sauf
+aux pôles et à l'équateur), donc on prend simplement que la verticale d'un lieu
+est définie par le poids plus la force d'entraînement.
+
+Pour ce qui est de la force de Coriolis, la force ajoutée est $\overrightarrow{\rm F_{ic}} = - 2 m \overrightarrow{\rm \Omega_{R_T / R_\text{Géo}}} \wedge \overrightarrow{\rm V_{R_T}}(M)$.
+
+Pour les mouvement horizontaux, en évaluant la force en sa partie horizontale,
+on obtient $\overrightarrow{\rm F_{ic_H}} = - 2 m \Omega_T \sin(\lambda) \overrightarrow{\rm e_z} \wedge \overrightarrow{\rm v_{r_H}}$,
+avec $\lambda$ la latitude sur Terre. C'est ce qui crée le phénomène de
+tourbillons vers le centre d'une dépression, qui tournent dans le sens horaire
+dans l'hémisphère nord et dans le sens antihoraire dans l'hémisphère sud.
+Les alizés autour de l'équateur sont causés de la même façon. On peut aussi
+remarquer plus d'érosion selon cette force (à l'est dans l'hémisphère nord) sur
+le bord des fleuves ou sur les rails. Les boucles d'échappée des fleuves (comme
+Horseshoe Canyon) sont souvent dans ce sens aussi.
+
+Pour les mouvements verticaux, on obtient que les mouvement vers le bas (chute
+libre) sont déviés vers l'est et ceux vers le haut (fusées) vers l'ouest. Cette
+déviation est d'ailleurs plus faible plus on est proches de l'équateur (encore
+une autre difficulté diminuée en étant plus proche de l'équateur).
