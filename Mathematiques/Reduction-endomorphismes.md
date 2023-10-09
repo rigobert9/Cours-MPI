@@ -123,3 +123,42 @@ n'agit pas sur l'espace.
 > $u$ est diagonalisable si et seulement si le caractéristique est scindé et que
 > les espaces propres sont de dimension de la multiplicité de leur valeur propre
 > comme racine.
+
+## Trigonalisation
+Une matrice $M$ est trigonalisable s'il existe une matrice $P \in GL_n(\mathbb{K})$
+telle que $P M P^{-1}$ soit triangulaire. On le dit de la même façon pour un
+endomorphisme lorsqu'il est triangulaire dans une base.
+
+Soit un drapeau (une suite croissante pour l'inclusion de SEV) tel que la
+dimension du $i$-ème élément soit $i$, on définit un drapeau associé à une base
+comme la suite des espaces vectoriels générés par les $i$ premiers éléments de
+la base.
+
+> $Mat_{\mathcal{B}} u$ est triangulaire supérieure si et seulement si le
+> drapeau associé à $\mathcal{B}$ est stable par $u$.
+
+Un endomorphisme est trigonalisable si et seulement si $\pi_u$ est scindé si et
+seulement si $\Chi_u$ est scindé. La seule existence d'un annulateur scindé
+suffit.
+
+### Nilpotents
+> Un endomorphisme nilpotent d'indice $n$ est un endomorphisme tel que $u^{n-1} \neq 0$
+> et $u^n = 0$.
+
+$\lambda id - u$ est toujours inversible si $\lambda \neq 0$ (car $\pi_u = X^\ast$).
+
+Ces caractérisations sont toutes équivalentes :
+- $u^n = 0$
+- $\Chi_u = X^n$
+- $\pi_u = X^p$, $p \leq n$
+- $\exists \mathcal{B} \mid Mat_\mathcal{B} u$ est une matrice triangle
+  supérieure
+- La trace de $A^k$ est nulle pour tout $k \geq 1$
+
+### Commutant
+On note le commutant $\mathcal{C}(u) = \{v \mid uv = vu\}$.
+
+La classe de similitude de $u$ est l'ensemble des endomorphismes semblables à $u$.
+C'est un fermé si et seulement si $u$ est diagonalisable. Sur $\mathbb{C}$, deux
+endomorphismes sont semblables si et seulement si $\forall \lambda,\mu$
+$\text{rg}(u - \lambda id)^{\mu} = \text{rg}(v - \lambda id)^{\mu}$.
