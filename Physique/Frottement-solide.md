@@ -171,3 +171,21 @@ est de $R \omega \overrightarrow{\rm u_x}$ (ce qui a du sens).
 En reprenant le RFD sur la roue, projeté en $\overrightarrow{\rm u_x}$, on a
 $m \ddot{x} = T_{1 \to 2}$, et $0 = N_{1 \to 2} - mg$, donnant finalement que
 $\overline{T}_{1 \to 2} > 0$ si $\ddot{x} > 0$.
+
+On applique le théorème du moment cinétique en $G$ dans le référentiel de la
+roue (on peut puisque dans ce référentiel, $G$ est immobile), en projetant sur
+$\overrightarrow{\rm e_y}$. On a ainsi $J \frac{d \omega}{dt} = 0 + 0 + 0 - R \overline{T} + \Gamma_m$
+(avec $\Gamma_m$ le couple du moteur).
+
+Ainsi, on obtient le système $\left\{\begin{matrix} J \dot{\omega} = \Gamma_m - R T \\ m \ddot{x} = \overline{T} \\ \dot{x} = R \omega \end{matrix}\right.$,
+donnant $J \frac{\ddot{x}}{R} = \Gamma_m - R m \ddot{x} \Rightarrow \ddot{x} = \frac{R \Gamma_m}{m R^2 + J}$.
+On vérifie que notre hypothèse de roulement sans glissement tient (donc $\| \overrightarrow{\rm T} \| < f \| \overrightarrow{\rm N} \|$),
+or $\overline{T} = \frac{m R \Gamma_m}{m R^2 + J}$ (et est finalement positif car la roue
+avance). Comme $N = mg$, cette hypothèse est équivalente à $\Gamma_m < \frac{f g (n R^2 + J)}{R} = \Gamma_{m, \text{max}}$.
+Il s'agit du couple moteur qui donne l'accélération maximale avant que les roues
+glissent "inutilement" (sans ajouter d'accélération).
+
+Ainsi, l'hypothèse inverse est l'étude dans le cas ou le couple moteur est plus
+grande $\Gamma_{m,\text{max}}$, où l'accélération reste constante. On a alors
+$m \ddot{x} = f m g \Rightarrow \ddot{x} = f g$, et $J \dot{\omega} = \Gamma_m - R f m g$,
+soit $\omega = \frac{\Gamma_m - R f m g}{J} t$
