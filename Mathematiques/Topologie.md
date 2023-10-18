@@ -105,6 +105,14 @@ quantitatifs soient différents.
 
 En dimension finie, toutes les normes sont équivalentes.
 
+#### Cauchy-Schwarz en dimension finie
+Soit $( \cdot | \cdot )$ un produit scalaire d'un espace préhilbertien, Cauchy-Schwarz
+est un théorème sur la norme associée, donnant
+$|(x|y)| \leq N_2(x) N_2(y)$ (attention à ne définir ceci que sur une norme
+dérivée d'un produit scalaire, qui est en dimension finie la norme 2).
+
+REVOIR PREUVE PAR TRAVAIL SUR LES ESPACES PRÉHILBERTIENS
+
 ### Continuité et limites
 #### Adhérence, intérieur
 > L'intérieur $\mathring{A}$ d'un ensemble $A$ correspond aux points de l'ensemble
@@ -116,3 +124,40 @@ En dimension finie, toutes les normes sont équivalentes.
 L'intérieur est le plus petit ouvert contenu dans $A$, et l'adhérence est le
 plus petit fermé contenant $A$. Ainsi, $A = \mathring{A}$ si et seulement si
 $A$ est un ouvert, $A = \overline{A}$ si et seulement si $A$ est un fermé.
+
+#### Limite
+> Soit une fonction $f : A \subset E \to F$, avec $E$ et $F$ des espaces
+> vectoriels de dimension finie, soit $a \in \overline{A}$
+> $\lim\limits_{x \to a, x \in A} f(x) = \ell$
+> si $\forall \varepsilon > 0, \exists \alpha > 0, \| x - a \| \leq \alpha \Rightarrow \| f(x) - \ell \| \leq \varepsilon$.
+
+> Une définition équivalente (celle en topologie générale), est que pour tout
+> voisinage $V$ de $\ell$, il existe un voisinage $U$ de $a$ tel que
+> $f(U \cap A) \subset V$.
+
+Grâce à cette définition plus complète, on peut définir systématiquement la
+limite à l'infini ou les limites en l'infini.
+
+On définit de même la limite des suites. Attention comme toujours à ne pas
+présupposer l'existence de la limite.
+
+#### Continuité
+> $f$ est dite continue en $a \in A$ si $\lim\limits_{x \to a} f(x) = f(a)$.
+
+De façon équivalente, on peut définir en topologie générale qu'une application
+continue est une application qui associe des ouverts aux ouverts.
+
+#### Lipschitzianité
+> $f : A \subset E \to F$ est dite $K$-lipschitzienne si
+> $\forall x,y \in A, \| f(x) - f(y) \| \leq K \| x - y \|$.
+
+Une fonction lipschitzienne est toujours continue (au moins de classe $\mathcal{C}^0$)
+car on peut toujours prendre $\alpha = \frac{\varepsilon}{K}$.
+
+#### Caractérisation globale de la continuité
+> Une fonction est continue si et seulement si pour tout ouvert du codomaine,
+> l'application réciproque dessus est un ouvert si et seulement si pour tout
+> fermé du codomaine, l'application réciproque dessus est un fermé.
+
+Cette définition générale et fondamentale de topologie est équivalente à notre
+définition sur les espaces normés, répétée en chaque point.
