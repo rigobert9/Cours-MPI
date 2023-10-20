@@ -161,3 +161,27 @@ car on peut toujours prendre $\alpha = \frac{\varepsilon}{K}$.
 
 Cette définition générale et fondamentale de topologie est équivalente à notre
 définition sur les espaces normés, répétée en chaque point.
+
+## Suites
+### Valeurs d'adhérence
+> Une sous-suite extraite de $(u_{n})$ est la même suite, indexée par une fonction
+> strictement croissante d'entiers (une injection croissante).
+
+Si $(u_{n})$ converge vers une limite $\ell$, ses sous-suites extraites
+convergent aussi vers cette limite.
+
+Le cas réciproque est bien plus riche (par exemple pour une suite alternant
+entre deux valeurs), et motive la définition des valeurs d'adhérence.
+
+> Une valeur d'adhérence de la suite est une valeur vers laquelle converge une
+> sous-suite extraite de la suite.
+
+L'ensemble des valeurs de la suite rassemblé avec les valeurs d'adhérence de la
+suite correspond à l'adhérence de l'ensemble des valeurs de la suite.
+
+## Homéomorphismes
+> Un homéomorphisme est une application continue bijective dont la réciproque est
+> continue.
+
+> $f$, une application de classe $\mathcal{C}^k$ est un $\mathcal{C}^k$-difféomorphisme si elle
+> est bijective et que sa réciproque est de même classe.
