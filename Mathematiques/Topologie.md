@@ -144,9 +144,6 @@ présupposer l'existence de la limite.
 #### Continuité
 > $f$ est dite continue en $a \in A$ si $\lim\limits_{x \to a} f(x) = f(a)$.
 
-De façon équivalente, on peut définir en topologie générale qu'une application
-continue est une application qui associe des ouverts aux ouverts.
-
 #### Lipschitzianité
 > $f : A \subset E \to F$ est dite $K$-lipschitzienne si
 > $\forall x,y \in A, \| f(x) - f(y) \| \leq K \| x - y \|$.
@@ -161,6 +158,26 @@ car on peut toujours prendre $\alpha = \frac{\varepsilon}{K}$.
 
 Cette définition générale et fondamentale de topologie est équivalente à notre
 définition sur les espaces normés, répétée en chaque point.
+
+#### Continuité et linéarité
+> Soit $u \in \mathcal{L}(E,F)$, ces propriétés sont équivalentes :
+> - $u$ est continue sur $E$
+> - $u$ est continue en $0$
+> - $u$ est uniformément continue
+> - $u(B_f(0,1))$ est borné
+> - $u$ est lipschitzienne
+> - $\exists K \mid \forall x, \|u(x)\| \leq K \| x \|$
+
+#### Norme d'opérateur/triple/d'endomorphisme
+On prend une nouvelle norme $| \!| \!| u | \!| \!|$ pour $u$ une application de
+$\mathcal{L}_{\mathcal{C}}(E,F)$ (une application linéaire continue) qui est
+la valeur $\text{sup}_{x \neq 0} \frac{\| u(x) \|}{\| x \|} = \text{sup}_{x \in S(0,1)} \| u(x) \|$.
+On l'appelle norme d'opérateur associée à $\| \cdot \|$ (il est important de le
+préciser). En plus d'être une norme, elle satisfait l'inégalité des normes
+d'algèbre, $| \!| \!| uv | \!| \!| \leq | \!| \!| u | \!| \!| | \!| \!| v | \!| \!|$.
+
+Cette propriété permet beaucoup d'inégalités très pratique, utiles pour la
+convergence de séries sur des objets étranges.
 
 ## Suites
 ### Valeurs d'adhérence
