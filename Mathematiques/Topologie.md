@@ -202,3 +202,42 @@ suite correspond à l'adhérence de l'ensemble des valeurs de la suite.
 
 > $f$, une application de classe $\mathcal{C}^k$ est un $\mathcal{C}^k$-difféomorphisme si elle
 > est bijective et que sa réciproque est de même classe.
+
+## Points isolés, d'accumulation
+> Un point isolé dans $A$ est un point dont l'un des voisinages intersectés avec
+> $A$ est son singleton.
+
+De façon équivalente, cela signifie que pour toute suite dans $A$ convergeant
+vers un point isolé, la suite est égale à ce point à partir du certain rang.
+
+> Un point d'accumulation $a \in A$ est un point tel que pour tout voisinage,
+> l'intersection avec $A$ contient une infinité de points.
+
+Cela signifie que les ouverts contenant $a$ contiennent toujours un nombre
+infini de points. De façon équivalente, il existe une suite convergeant vers $a$
+dont aucun point n'est $a$.
+
+TODO: Définitions générales/pointless ?
+
+## Connexité
+### Connexité générale
+> Soit un ensemble $A \subset E$ les propriétés suivantes sont équivalentes :
+> - $A$ est connexe
+> - Toute fonction continue localement constante sur $A$ est constante
+> - Toute fonction continue vers $\{0,1\}$ avec la topologie discrète est constante
+
+Cette propriété se conserve par l'image par une fonction continue.
+
+### Connexité par arcs
+> Une partie $A \subset E$ est connexe par arcs si pour tout points $a,b \in A$
+> il existe une fonction continue $\gamma$ depuis $[0;1]$ telle que
+> $\gamma(0) = a$ et $\gamma(b) = 1$.
+
+Ceci implique la connexité. De plus, c'est impliqué par la convexité. Seule
+cette notion est au programme, pas la connexité générale.
+
+La réciproque est fausse, la courbe sinus des topologues est connexe mais pas
+connexe par arcs. La propriété est conservée par l'image d'une fonction continue.
+
+Un ouvert d'un espace métrique connexe est en revanche connexe par arcs, car
+l'ensemble des points reliables à un point est ouvert et fermé.
