@@ -241,3 +241,119 @@ connexe par arcs. La propriété est conservée par l'image d'une fonction conti
 
 Un ouvert d'un espace métrique connexe est en revanche connexe par arcs, car
 l'ensemble des points reliables à un point est ouvert et fermé.
+
+## Suites
+### Sous-suites, valeurs d'adhérence
+> Une sous-suite ou suite extraite d'une suite $u_k$ est la suite $u_{\sigma(k)}$,
+> avec $\sigma \in \mathbb{N}^{\mathbb{N}}$ une fonction injective strictement
+> croissante.
+
+> Une valeur d'adhérence de $(u_k)$ est la limite d'une sous-suite convergente de $(u_k)$.
+
+### Compacité
+> Une partie $A \subset E$ est compacte si toute suite d'éléments de $A$ admet une
+> valeur d'adhérence dans $A$.
+
+Cette définition est la définition de la compacité séquentielle, différente
+d'autres notions de compacité en topologie générale. La définition de la
+compacité est que tout recouvrement ouvert de la partie peut être réduit à un
+recouvrement fini. La compacité séquentielle implique la compacité (par
+l'absurde en construisant une suite de points qui sont dans la partie de $A$ pas
+couverte par un recouvrement fini), et la compacité implique la compacité
+séquentielle dans les espaces métriques avec l'axiome du choix dénombrable.
+
+Les intervalles fermés de $\mathbb{R}$ sont des compacts, car on peut procéder
+par dichotomie pour encercler des sous-intervalles de proche en proche contenant
+un nombre infini d'indices de la suite : il s'agit du théorème de
+Bolzano-Weierstrass.
+
+On a donc un équivalent des ensembles finis, et plus exactement du principe des
+tiroirs : toute suite à valeurs dans un ensemble fini/compact admet une valeur
+atteinte/approchée une infinité de fois.
+
+Pour $A$ compact, pour toute suite de fermés non nuls décroissante pour
+l'inclusion de $A$, leur intersection est non nulle.
+
+> Un compact est fermé et borné.
+
+On obtient ceci car si une suite converge, comme elle admet une valeur
+d'adhérence dans $A$, sa limite est dans $A$. La bornitude s'obtient avec cette
+même valeur d'adhérence.
+
+La réciproque ne se prouve que pour les espaces de dimension finie.
+
+### Construction de compacts
+> Soit $A,B$ des compacts, $A \times B$ est un compact.
+
+On peut le généraliser à tout produit fini, et les produits infinis sont prouvés
+par le Théorème de Tychonoff (qui fait les deux sens), juste un peu moins fort
+que l'axiome du choix (et qui l'utilise souvent dans ses preuves). Attention
+néanmoins à définir la topologie produit, qui est celle où les ouverts sont les
+produits d'un nombre fini d'ouverts des espaces du produit avec le produit de
+tous les autres espaces entier (contrairement à la topologie coproduit qui prend
+tous les produits, et où ce théorème échoue).
+
+On définit ici la norme produit comme la norme associant la borne supérieure des
+valeurs de normes sur chaque coordonnée.
+
+> Soit $A$ compact, $B \subset A$ est compact si et seulement si $B$ est fermé.
+
+> $A \subset \mathbb{K}^n$ est compact si et seulement si il est fermé et borné
+
+Le sens direct est déjà prouvé, et on montre la réciproque avec le théorème du
+produit plus haut (s'il est borné en $M$, alors toutes les coordonnées sont
+contenues dans $[-M;M]$, alors ce sont des compacts).
+
+### Compacité et continuité
+> L'image directe d'un compact par une fonction continue est compacte.
+
+(Dans le cas de la topologie générale, c'est vrai seulement si l'espace
+d'arrivée est séparé.)
+
+> L'image d'un compact par une fonction continue est bornée et atteint ses bornes.
+
+En effet c'est un compact donc elle est bornée, puis pour un suite tendant à
+travers $f$ vers la borne, celle-ci a pour unique valeur d'adhérence une valeur
+en laquelle la borne est atteinte et qui est dans le compact par compacité.
+
+Pour être un homéomorphisme, il faut non seulement la bijection mais aussi la
+continuité, donc que les images réciproques des ouverts soient des ouverts, donc
+pour une bijection que la fonction soit ouverte et fermée (l'image directe d'un
+ouvert est ouverte). Pour toute fonction bijective entre deux parties, on a donc
+leur restriction à un compact qui est un homéomorphisme (car les fermés à
+l'intérieur sont compacts).
+
+> La restriction d'une bijection continue d'un compact à son image est un homéomorphisme.
+
+Puisque la sphère unité pour la $N_\infty$ est compact, et que toute norme $N$ est
+continue pour $N_\infty$, $N$ est bornée et atteint ses bornes. Sa borne
+inférieure $m$ est supérieure à $0$ par séparation; ainsi, $N_\infty(x) = 1 \Rightarrow N(x) \geq m$.
+Or, par homogénéité $N(x) \geq m N_\infty(x)$ (car $\frac{x}{N_\infty(x)} \in S$).
+Ainsi, les normes en dimension finie sont équivalentes.
+
+### Compacité et suites
+> Une suite dans un espace de dimension finie converge si et seulement si elle a
+> une unique valeur d'adhérence.
+
+Une suite de Cauchy est une suite dans laquelle la distance entre les points
+devient arbitrairement petite ($d(u_{n+1}, u_{n}) \to 0$). Dans tout espace
+métrique, une suite convergente est de Cauchy. Un espace est complet quand la
+réciproque est vraie.
+
+> Tout espace normé de dimension finie est complet.
+
+__Preuve :__ On fait, sans vraiment de perte de généralité, la preuve dans
+$\mathbb{R}^n$. La preuve se résume alors à la séparation des coordonnées dans
+$\mathbb{R}$, qui est complet (par construction).
+
+Si un espace est fermé dans un espace complet, on obtient immédiatement que le
+sous-espace est complet.
+
+L'espace $L^\infty$ des fonctions bornées sur $[0;1] \to \mathbb{R}$ avec la
+norme $N_\infty$ (la borne supérieure sur $[0;1]$) est complet. En prouvant
+que $\mathcal{C}^0([0;1],\mathbb{R})$ avec $N_\infty$ est fermé dedans, on
+obtient que cet espace est complet. En effet, on a pour $f_n \in \mathcal{C}^0 \to f \in L^{\infty}$
+$|f(x) - f(x_0)| \leq |f(x) - f_n(x_)| + |f_n(x) - f_n(x_0)| + |f_n(x)- f(x_0)|$
+$\leq 2 N_\infty(f - f_n) + |f_n(x) - f_n(x_0)|$. On peut alors faire tendre
+arbitrairement petitement les deux parties, la première en augmentant $n$ et la
+deuxième en rapprochant $x$ de $x_0$.
