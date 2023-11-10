@@ -179,6 +179,21 @@ d'algèbre, $| \!| \!| uv | \!| \!| \leq | \!| \!| u | \!| \!| | \!| \!| v | \!|
 Cette propriété permet beaucoup d'inégalités très pratique, utiles pour la
 convergence de séries sur des objets étranges.
 
+#### Continuité uniforme
+> $f$ est une fonction continue uniforme si et seulement si
+> $\forall \varepsilon > 0, \exists \alpha > 0 \mid \forall x,y \in A$
+> $\| x - y \| \leq \alpha \Rightarrow \| f(x) - f(y) \| \leq \varepsilon$.
+
+Une fonction lipschitzienne est ainsi uniformément continue. Lorsque $f$ n'est
+pas uniformément continue, on ne peut pas déduire de $x_n - y_n \to 0$ que
+$f(x_n) - f(y_n)$. $f$ est uniformément continue si elle est continue sur un
+compact (par l'absurde sur ce précédent exemple).
+
+On généralise en fait le théorème des accroissement finis, qui est vrai sur $\mathbb{R}$
+car une fonction continue sur un intervalle fermé est uniformément continue.
+C'est le théorème d'Heine : toute application continue sur un compact est
+uniformément continue.
+
 ## Suites
 ### Valeurs d'adhérence
 > Une sous-suite extraite de $(u_{n})$ est la même suite, indexée par une fonction
@@ -357,3 +372,44 @@ $|f(x) - f(x_0)| \leq |f(x) - f_n(x_)| + |f_n(x) - f_n(x_0)| + |f_n(x)- f(x_0)|$
 $\leq 2 N_\infty(f - f_n) + |f_n(x) - f_n(x_0)|$. On peut alors faire tendre
 arbitrairement petitement les deux parties, la première en augmentant $n$ et la
 deuxième en rapprochant $x$ de $x_0$.
+
+## Densité
+### Densités classiques
+Soit $\mathcal{E}$, l'espace vectoriel des fonctions en escalier sur $[0;1]$,
+$\mathcal{A}$, l'espace vectoriel des fonctions affines par morceaux sur $[0;1]$,
+$\mathcal{P}$, l'espace vectoriel des fonctions polynomiales sur $[0;1]$,
+le théorème de Stone-Weirstrass donne que ces deux espaces sont denses
+dans $\mathcal{C}^0([0;1];\mathbb{R})$ pour $N_\infty$. Plus précisément,
+$\overline{\mathcal{A}} = \overline{\mathcal{P}} = \mathcal{C}^0 \subset \overline{\mathcal{E}} = \mathcal{C}^0_m$
+(les fonction continues par morceaux) pour $N_\infty$.
+
+### Sommes de Riemann
+Une somme de Riemann $S_n(f)$ est la somme $\frac{1}{n} \sum\limits_{k = 0}^{n} f(\frac{k}{n})$.
+Si $f \in \mathcal{C}^0([0;1],a\mathbb{R})$, $S_n \to \int\limits_{0}^{1}  f$
+(de façon générale $S_n \to \frac{1}{b - a} \int\limits_{a}^{b} f$).
+Ce n'est possible que pour l'espace de départ étant un compact (on peut s'en
+sortir dans tous les cas si $f$ est monotone).
+
+Soit $x_k = \frac{k}{n}$, et $I_k = \int\limits_{x_k}^{x_{k+1}} f dt$, avec $x \in [\![0;n-1]\!]$,
+et cela approche $\frac{1}{n} f(x_k)$.
+$\int\limits_{x_k}^{x_{k+1}} f dt - \frac{1}{n} f(x_{k}) = \int\limits_{x_k}^{x_{k+1}} f(t) - f(x_{k}) dt$,
+et $f$ est uniformément continue sur le compact $[x_k;x_{k+1}]$,
+donc $\| f(x) - f(y) \| \leq \varepsilon$ si $|x - y| \leq \alpha \Rightarrow |x - y| \leq \frac{1}{n}$.
+On obtient finalement que la norme de chaque $I_k - \frac{1}{n} f(x_k)$ est
+majorée par $\frac{\varepsilon}{n}$, majorant l'intégrale moins la somme par $\varepsilon$
+(il ne manque que $\frac{1}{n} f(1)$, qui tend vers $0$).
+
+> Lemme de Riemann-Lebesgue : Soit $f \in \mathcal{C}^0_m$ intégrable sur un
+> sous-intervalle de $[0;+\infty[$, $\hat{f}(\lambda) = \int\limits_{a}^{b} f(t) e^{i \lambda t}$
+> tend vers $0$ en $+\infty$.
+
+__Preuve :__
+1. Densité : $f = 1$ sur $]\alpha;\beta[$, donc $\hat{f}(\lambda) = \int\limits_{\alpha}^{\beta} e^{i \lambda t} = O(\frac{1}{\lambda})$
+   car $f \in \mathcal{E}$, et on conclut par linéarité. Dans le cas plus
+   général de la fonction continue par morceaux, on peut conclure par le
+   théorème interversion des limites en montrant que le $\hat{\cdot}$ de chaque
+   morceau converge pour $N_\infty$ vers $\hat{f}$ par convergence uniforme.
+2. Intégration par parties : On fait l'intégration par parties pour calculer
+   $\hat{f}$, donnant $[\frac{e^{i \lambda t}}{\lambda} f(t)]\limits_0^\lambda - \frac{1}{\lambda} \int\limits_{0}^{1} f'(t) e^{i \lambda t} dt$,
+   donnant $\hat{f}(\lambda) = O(\frac{1}{\lambda})$. On peut aussi utilise la
+   densité des fonction polynomiales.
