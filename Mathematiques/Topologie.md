@@ -412,6 +412,6 @@ __Preuve :__
    théorème interversion des limites en montrant que le $\hat{\cdot}$ de chaque
    morceau converge pour $N_\infty$ vers $\hat{f}$ par convergence uniforme.
 2. Intégration par parties : On fait l'intégration par parties pour calculer
-   $\hat{f}$, donnant $[\frac{e^{i \lambda t}}{\lambda} f(t)]\limits_0^\lambda - \frac{1}{\lambda} \int\limits_{0}^{1} f'(t) e^{i \lambda t} dt$,
+   $\hat{f}$, donnant $[\frac{e^{i \lambda t}}{\lambda} f(t)]_0^\lambda - \frac{1}{\lambda} \int\limits_{0}^{1} f'(t) e^{i \lambda t} dt$,
    donnant $\hat{f}(\lambda) = O(\frac{1}{\lambda})$. On peut aussi utilise la
    densité des fonction polynomiales.
