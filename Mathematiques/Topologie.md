@@ -351,8 +351,8 @@ Ainsi, les normes en dimension finie sont équivalentes.
 > une unique valeur d'adhérence.
 
 Une suite de Cauchy est une suite dans laquelle la distance entre les points
-devient arbitrairement petite ($d(u_{p}, u_{q}) \to 0$ POUR TOUT P ET Q TENDANT
-VERS $+\infty$) (cette notion est très forte, voir la suite $\ln(n)$ qui montre
+devient arbitrairement petite ($d(u_{p}, u_{q}) \to 0$ POUR TOUT P ET Q
+AU-DESSUS D'UN $n_0$) (cette notion est très forte, voir la suite $\ln(n)$ qui montre
 que $d(u_{n+1} - u_{n}) \to 0$ ne suffit pas). Dans tout espace métrique, une
 suite convergente est de Cauchy. Un espace est complet quand la réciproque est
 vraie.
