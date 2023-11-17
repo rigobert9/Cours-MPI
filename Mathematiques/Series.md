@@ -142,3 +142,59 @@ pour $\alpha \in \mathbb{R}$
 
 > Si $u_{n} = (-1)^n a_n$ pour $(a_n)$ décroissante convergeant en $0$,
 > $\sum u_{n}$ converge (par majoration de $|R_n|$ par $a_{n+1}$).
+
+### Transformation d'Abel
+C'est l'équivalent de l'intégration par parties pour les séries.
+
+Soit $u_{n} = a_n b_n$ pour tout $n$, on note $A_n = \sum\limits_{k = 0}^{n} a_k$,
+alors $\sum\limits_{k = p}^{q} u_k = \sum\limits_{k = p}^{q} (A_k - A_{k-1}) b_k$
+$= \sum\limits_{k = p}^{q - 1} A_k (b_k - b_{k+1}) + A_q b_q - A_{p - 1} b_p$.
+En pratique, on calcule $A_n$ et on en déduit la convergence ou d'autres
+propriétés.
+
+Par exemple $\frac{e^{in x}}{n^{\alpha}}$, avec $a_n = e^{i n x}$,
+ou encore $\frac{e^{i \sqrt{n} x}}{n^{\alpha}}$ avec
+$a_n = \frac{e^{i x \sqrt{n}}}{\sqrt{n}} !$.
+
+### Comparaison à une intégrale
+Un cadre simple d'étude est par exemple celui de $u_{n} = f(n)$ avec $f$
+monotone. Plus généralement, on pose $v_n = u_n - \int\limits_{n}^{n + 1} f$ et
+on cherche à avoir $\sum v_n$ convergente. Le problème se tourne alors vers la
+convergence d'une intégrale à l'infini de $f$
+
+Par exemple, pour $f(t) = \frac{e^{i x \sqrt{t}}}{t}$, on a
+$v_n = \int\limits_{n}^{n + 1} f(t) dt - \frac{e^{i x \sqrt{n}}}{n}$
+$=\int\limits_{n}^{n + 1} (f(t) - f(n)) dt$.
+On a $|f(t) - f(n)| \leq (1 + \frac{|x|}{2}) \frac{1}{n^{\frac{3}{2}}}$,
+donc $v_n = O(\frac{1}{n^{\frac{3}{2}}})$ et elle est donc absolument
+convergente. Ainsi, $S_n(u) = S_n(v) + \int\limits_{1}^{n+1} f(t) dt$
+
+### Sommabilité : ensemble $\ell^1$
+$\ell^1$ est l'espace des suite dont la série est absolument convergente.
+
+#### Produit de Cauchy
+Soit $a_n$, $b_n$ deux séries de $\ell^1$, la série de $c_n = \sum\limits_{p + q = n} a_p b_q$
+est absolument convergente et $\sum\limits_{n \geq 0} c_n = (\sum\limits_{n \geq 0} a_n) (\sum\limits_{n \geq 0} b_n)$.
+On appelle cette série le produit de Cauchy de deux séries absolument
+convergentes.
+
+Par exemple, connaissant pour $|x| < 1$, $- ln(1 - x) = s\sum\limits_{n \geq 1} \frac{x^n}{n}$
+et $\frac{1}{1 - x} = \sum\limits_{n \geq 0} x^n$, donnant
+$\frac{- \ln(1 - x)}{1 - x} = \sum  \sum\limits_{p + q = n} \frac{1}{p} 1 x^p x^q$
+$= \sum H_n x_n$.
+
+#### Théorème de Fubini
+Soit la suite $(u_{n,m})_{n,m}$, on note $S_n = \sum\limits_{m = 0}^{+\infty} u_{n,m}$
+et $T_m = \sum\limits_{n = 0}^{+\infty} u_{n,m}$. Si la suite est toujours
+positive, alors $\sum S_n$ converge si et seulement si $\sum T_m$
+et elles sont alors égales ($\sum\limits_{n \geq 0} \sum\limits_{m \geq 0} u_{n,m}$
+$= \sum\limits_{m \geq 0} \sum\limits_{n \geq 0} u_{n,m}$). On dit alors que
+cette suite à deux indices est $\ell^1$.
+
+De façon générale, on dire qu'une suite est sommable si la suite de la valeur
+absolue de chaque terme est sommable.
+
+#### Sommation par paquets
+Soit $(u_{n,m})$ sommable, et une décomposition de $\mathbb{N} \times \mathbb{N}$
+en union disjointe de $(I_k)$, alors si $R_p = \sum\limits_{(n,m) \in I_p} u_{n,m}$,
+$\sum\limits_{n} \sum\limits_{m} u_{n,m} = \sum\limits_{p} R_p$.
