@@ -41,7 +41,7 @@ $\Rightarrow T \cos \alpha = T_0$ (constant), et
 $\mu dx \frac{\partial^2}{\partial t^2} (y(x + \frac{dx}{2}, t)) = T_0 \tan \alpha(x + dx,t) - T_0 \tan \alpha(x,t)$.\
 Le premier élément, avec un développement de Taylor au premier ordre,
 donne $\mu \frac{\partial^2 y}{\partial t^2}(x,t) dx = T_0 \frac{\partial}{\partial x}(\tan(\alpha(x,t))) dx$
-et donc $\mu \frac{\partialsr y}{\partial t^2} = T_0 \frac{\partial \tan(\alpha)}{\partial x}$.\
+et donc $\mu \frac{\partial^2 y}{\partial t^2} = T_0 \frac{\partial \tan(\alpha)}{\partial x}$.\
 En outre, $\tan \alpha = \frac{y(x + dx,t) - y(x,t)}{dx} \Rightarrow \tan \alpha = \frac{\partial y}{\partial x}$
 (voir géométriquement ce résultat), donnant enfin
 $\mu \frac{\partial^2 y}{\partial t^2} = T_0 \frac{\partial \tan \alpha}{\partial x} = T_0 \frac{\partial^2 y}{\partial x^2}$,
@@ -137,3 +137,56 @@ source (qui impose l'oscillation), le milieu fait varier $\lambda$
 et $k$ (qui sont donc caractéristique d'une onde dans un certain milieu, et pas
 un invariant de l'onde). On définit donc l'indice de réfraction $n$
 comme ayant la valeur $\frac{\lambda_\text{vide}}{\lambda}$.
+
+> Les surfaces telles que $\varphi(\overrightarrow{\rm r}, t) = \overrightarrow{\rm k} \cdot \overrightarrow{\rm r} - \omega t + \varphi_0$
+> est de valeur constante à un instant donné sont les surfaces équiphases.
+
+Pour une OPPM, une surface équiphase est une surface d'onde car elle est
+entièrement définie par sa phase. En revanche, pour l'onde
+$s(\overrightarrow{\rm r},t) = s_0 e^{- \frac{y}{\delta}} \cos(\omega t - kx)$
+ce sont les plans pour lesquels $x$ est constant mais ce ne sont pas des
+surfaces d'onde.
+
+Pour une OPPM $s(x,t) = A \cos(\omega t - k x + \varphi_0)$, on peut utiliser
+les complexes avec la fonction $\underline{S}(r,t) = \underline{S}(\overrightarrow{\rm r}) e^{j \omega t}$
+où $\underline{S}(\overrightarrow{\rm r}) = r_0 e^{j (\overrightarrow{\rm k} \cdot \overrightarrow{\rm r}) + \varphi_0}$.
+
+Ces grandeurs sont très pratiques pour les calculs avant de revenir à une onde
+réelle en prenant la partie réelle, mais il est donc INTERDIT D'UTILISER DES
+GRANDEURS QUADRATIQUES (par exemple les grandeurs énergétiques). En effet,
+$\cos^2(\omega t)$ ne donne pas $\cos(2 \omega t)$.
+
+#### Ondes stationnaires
+##### Définition et condition d'apparition
+> Une onde stationnaire set une onde où les variables de temps et d'espace sont
+> découplées, et qui s'écrit donc comme le produit d'une fonction du temps et d'un
+> champ.
+
+Une onde stationnaire dépend toujours du temps, attention à son nom. En
+revanche, elle ne se propage pas au cours du temps.
+
+Elles apparaissent principalement lorsqu'on limite la propagation d'une onde
+progressive, en étudiant la superposition de l'onde et de sa reflection.
+
+Par exemple : On envoie une OPPM $s_i$ selon les $x$ croissants depuis $x = -\infty$,
+vers un obstacle tel que pour $x \geq 0$ l'onde ne peut se propager. On ajouter
+la condition à la limite que $s(0,t) = 0$.\
+On prouve l'existence d'une onde réfléchie par l'absurde, car s'il n'y a pas de
+reflection, $s(0,t) = s_i(0,t) = s_0(x) \cos(\omega t)$, ce qui est vrai pour tout $t$
+donnant $s_i = 0$ (donc pas d'onde incidente).\
+Ainsi, une onde réfléchie $s_r$ existe bien. En $x = 0$, le total des deux ondes
+est à $0$, et on peut déduire de la même façon que leurs pulsations sont égales,
+nous permettant de déduire que $s_{0,r} = - s_{0, i}$. Les deux ondes se
+déplaçant dans le même milieu, leurs $k$ sont les mêmes (car leur vitesse est la
+même, comme leur $\omega$), nous donnant que $s_r(x,t) = - s_0 \cos(\omega t + k x)$
+et donc que $s(x,t) = 2 s_0 \sin(k,x) \sin(\omega t)$, qui est stationnaire.
+
+On peut d'ailleurs remarquer dans ces expressions l'existence de nœuds tous les
+$\frac{p \lambda}{2}$ et de ventres.
+
+##### Cavité résonante
+Une cavité résonante est un milieu de propagation de taille fini, dans laquelle
+une OPPM doit respecter une condition aux deux limites comme l'exemple précédent
+: $s_\text{tot}(- L, t) = s_\text{tot}(0,t) = 0$. Ces conditions entraînent que
+les seules ondes qui peuvent y exister sont de longueur d'onde de la forme $\frac{2L}{n}$.
+Ainsi, seules une certaine fréquence et ses harmoniques peuvent exister.
