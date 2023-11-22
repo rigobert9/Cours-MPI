@@ -320,3 +320,45 @@ Pour un miroir plan de centre $S$, on a $\overline{SA'} = - \overline{SA}$.
 Pour d'autres systèmes, la loi de Descartes et les conditions de Gauss
 permettent d'applique la relation de conjugaison (on pourra alors l'appliquer
 par exemple sur un dioptre à la surface de l'eau, ou encore à une lentille boule).
+
+## Le chemin optique
+> On appelle chemin optique le long d'un rayon lumineux entre les points $A$ et
+> $A'$ la quantité $L_{A A'} = (A A') = \int\limits_{\hat{A A'}} n ds$.
+
+Comme on sait que $n = \frac{c}{v}$, on a $n ds = c \frac{ds}{v} = c dt_{ds}$
+(c'est à dire le temps parcouru par la lumière sur $ds$), donnant
+$(A A') = c \Delta t_{A A'}$, qui est une longueur proportionnelle au temps réel
+de parcours. Le coefficient étant $c$, on interprète cette longueur comme la
+distance qu'aurait parcouru la lumière sur le même temps de parcours. Elle nous
+permettra d'étudier le décalage entre des rayons.
+
+### Applications
+#### Calcul du déphasage
+Pour une onde, la phase spatiale peut s'écrire
+$\varphi(\overrightarrow{\rm r}) = \overrightarrow{\rm k} \cdot \overrightarrow{\rm r} + \varphi_0$.
+Ainsi, entre deux points $M$ et $M'$ espacés de $d \overrightarrow{\rm r}$,
+donnant leur déphasage comme $d \varphi = \overrightarrow{\rm k} \cdot d \overrightarrow{\rm r}$.
+Le long d'un rayon, $\overrightarrow{\rm k}$ est parallèle à $\overrightarrow{\rm r}$
+($\overrightarrow{\rm k}$ est tangent au rayon lumineux).
+
+Ainsi, on évalue le déphasage entre les deux points par $\varphi(M) - \varphi(S)$
+$= \int\limits_{\hat{SM}} d \varphi = \int\limits_{\hat{SM}} \overrightarrow{\rm k} \cdot d \overrightarrow{\rm r}$
+$= \int\limits_{\hat{SM}} \frac{2 \pi}{\lambda} ds$. Comme $\lambda = \frac{\lambda_0}{n}$,
+on a $\varphi(M) - \varphi(S) = \frac{2 \pi}{\lambda_0} (SM)$. On peut ainsi
+calculer facilement de déphasage entre deux points qui ont une source commune.
+Attention à toujours appliquer cette formule sur des rayons !
+
+Finalement, pour calculer les interférences en $M$
+issues de rayons venant d'un même point $S$,
+on a $\Delta \varphi(M) = \varphi_2(M) - \varphi_1(M) = \frac{2 \pi}{\lambda_0} ((SM)_2 - (SM)_1)$.
+
+#### Retour sur le théorème de Malus
+> Une surface d'onde est une surface de chemin optique d'égale longueur.
+
+#### Retour sur le stigmatisme
+Le stigmatisme nous assure en fait que le chemin optique de tout rayon d'un
+point $A$ à son image $A'$ par une lentille est de longueur égale.
+
+## Généralités sur la lumière
+### Ondes électromagnétiques
+(Voir un diagramme du spectre des ondes ELM)
