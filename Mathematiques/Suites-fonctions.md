@@ -121,3 +121,57 @@ pour cela, on a besoin de la compacité de $[0;x]$ et la convergence uniforme.
 On peut aussi travailler sur les primitives en obtenant leur convergence simple
 ou leur convergence en un point et sur la convergence uniforme de la fonction
 grâce aux théorèmes sur la dérivation vu plus haut.
+
+## Méthodes pratiques
+### Convergence uniforme pour une suite
+Soit $f_n$ convergeant simplement vers $f$, majorer $|f_n - f|(x)$ par une
+constante indépendante de $x$ tendant vers $0$. On peut ainsi trouver la
+convergence uniforme, ou éventuellement la convergence uniforme sur un
+intervalle.
+
+### Non convergence uniforme
+On peut chercher à calculer la borne supérieure de $|f_n - f|$ sur un intervalle
+bien choisi, minorer le sup par une valeur en un $x_n$ (par exemple, $x_n = \frac{1}{n^2}$
+pour travailler sur $n^2 x (1 - x)^{n^2}$), ou encore nier un
+théorème sous hypothèse de convergence uniforme.
+
+### Convergence normale d'une série
+Il faut bien choisir l'ensemble pour chaque paramètre sur lequel on peut espérer
+la convergence simple, uniforme, et enfin normale. Pour cela, il est souvent
+utile de refaire la convergence simple proprement et montrer les points à
+problèmes.
+
+### Convergence uniforme sur une série
+A priori, on peut l'établir par convergence normale, ou encore en trouvant un
+bon majorant de $|R_n|$ tendant vers $0$. On peut aussi l'obtenir, en trouvant
+quand c'est possible, avec le critère des séries alternées.
+
+Une fois de plus, on peut nier un théorème, notamment celui d'interversion des
+limites.
+
+### Rédaction - Une béquille classique
+On s'imagine l'étude d'une fonction $F(x) = \sum u_n(x)$.
+
+1. Continuité : on trouve la convergence simple pour un $x$ fixé, avec la
+   convergence simple ou absolue, un équivalent, le CSSA, d'Alembert, ou même
+   Abel ... Puis on cherche à obtenir sa convergence uniforme sur des
+   intervalles fermés. Ne pas essayer de faire des développement asymptotiques
+   sur plusieurs variables (sauf après avoir rendu l'expression dépendante d'une
+   variable unique). Enfin, on rédige la continuité de $F(x)$.
+
+2. Classe $\mathcal{C}^1$ : On peut d'abord réutiliser les mêmes techniques, en
+   se concentrant cette fois sur la convergence normale et uniforme pour obtenir
+   les théorèmes de ce cours.
+
+3. Classe $\mathcal{C}^{\infty}$ : Tout d'abord vérifier les dérivées $k$-ièmes
+   pour voir si ça marche, puis obtenir la convergence simple ou uniforme pour
+   un $k$ fixé. Cela peut aussi être le moment de sortir les séries entières,
+   sur les $u_n$ en appliquant Fubini, afin de montrer que $f_n$ est lui-même
+   une série entière et donc $C^{\infty}$.
+
+### Théorème d'interversion des limites
+> Soit $F = \sum u_n$ convergente uniformément au voisinage de $a$, et telle que
+> $u_{n} \xrightarrow[a]{} \ell_n$, alors $\sum \ell_n$ converge et
+> $F \xrightarrow[a]{} \sum \ell_n$.
+
+En général, on devra s'occuper du cas où $\ell_n = 0$.
