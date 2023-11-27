@@ -362,3 +362,49 @@ point $A$ à son image $A'$ par une lentille est de longueur égale.
 ## Généralités sur la lumière
 ### Ondes électromagnétiques
 (Voir un diagramme du spectre des ondes ELM)
+
+### Sources lumineuses
+#### Rayonnement thermique du corps noir
+Tout corps solide à la température $T$ émet des ondes électromagnétiques.
+On parle de rayonnement thermique.
+
+Le corps noir est un modèle ayant un rayonnement bien particulier à une
+température, on l'utilisera dans tous les cas mais il est normalement applicable
+seulement dans les bonnes conditions sur l'albédo et la nature du matériau.
+
+> Un corps noir à l'équilibre à la température $T$ est un corps qui absorbe tout
+> rayonnement incident et émet un rayonnement thermique aux propriétés suivantes :
+> - Le spectre émis suit la loi de Wien
+> - Il suit la loi de déplacement de Wien : $\lambda_t T$ est constant, de
+>   constante $\approx 3000 \mu m \cdot K$.
+> - Il suit la loi de Stefan : La puissance surfacique totale émise (pour toute
+>   longueur d'onde) est telle que $I_\text{tot} = \int g(\lambda) d \lambda = \sigma T^4$, avec $\sigma$ la
+>   constante de Stefan.
+
+De plus, on peut remarquer que $\int\limits_{\frac{\lambda_n}{2}}^{\lambda_n} g(\lambda) d \lambda$
+$= 80 % \times \sigma T^4$.
+
+#### Émission pour une vapeur atomique
+Dans une vapeur atomique ($G$, $P$), les atomes peuvent être considérés comme
+isolés. Lorsqu'un électron passe d'un état d'énergie $E_2$ à un état moins
+énergétique $E_1$, sa transition est radiative, produisant une onde
+électromagnétique telle que $h \nu = E_2 - E_1$.
+
+On note donc $\nu_{12} = \frac{E_2 - E_1}{h}$. Ces niveau d'énergie quantifiés
+de l'atome explique les spectres de raie.
+
+On modélise l'ondulation du photon émis comme un train d'onde de durée $\tau_c$
+et de fréquence $\nu = \frac{1}{\tau}$. On s'attend des ordres de grandeur
+$\nu \in [3,5;7,5] \times 10^{14} Hz$, $T \approx 10^{-15}$ et $\tau_c \approx 10^{-11}$.
+On a donc $\tau_c \gg T$, permettant de modéliser l'onde émise comme une onde
+quasi-monochromatique (dans la plupart des exercices en tout cas).
+Pour la représenter mathématiquement, on pourrait utiliser des sinusoïdes
+coupées hors d'une certaine zone, ou une enveloppe autour de l'onde ... Le
+meilleur modèle est la transformée de Fourier. On aura, pour $g(\omega)$
+le spectre en pulsation de $s(M,t)$. On a, encore une fois, la relation $\Delta \omega \tau_c \approx 1$.
+On a en général $\tau_c \approx 10^{-11}$, et $\omega = \frac{2 \pi}{T} \approx 10^{15} rad \cdot s^{-1}$.
+Le pic du spectre est très fin, c'est pour cela qu'on l'appelle raie.
+
+On peut, pour la culture, voir parmi les causes d'élargissement d'une raie,
+distinguer l'indétermination d'Heisenberg (qui entraîne la diffraction ?),
+l'effet Doppler, et la pression (chocs contre le gaz).
