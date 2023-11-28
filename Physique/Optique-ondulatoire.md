@@ -408,3 +408,48 @@ Le pic du spectre est très fin, c'est pour cela qu'on l'appelle raie.
 On peut, pour la culture, voir parmi les causes d'élargissement d'une raie,
 distinguer l'indétermination d'Heisenberg (qui entraîne la diffraction ?),
 l'effet Doppler, et la pression (chocs contre le gaz).
+
+#### LASER (Light amplification by stimulation emission of radiation)
+3 phénomènes expliquent le principe du fonctionnement du LASER : le pompage,
+l'émission stimulée, et la cavité.
+
+Le pompage est un dispositif qui permet d'exciter les électrons des atoms du
+milieu amplificateur contenu dans la cavité.
+
+L'émission stimulée fait émettre un photon aux électrons, pas par désexcitation,
+mais en émettant un photon dessus alors que l'électron est déjà excité, ce qui
+fait obtenir deux photon de même longueur d'onde et de même direction.
+
+Enfin, la cavité, comme vu plus haut, ne permet de créer des ondes que de
+certaines pulsations : seules les longueurs d'onde $\lambda$ telles que $L = n \frac{\lambda}{2}$
+avec $L$ la longueur de la cavité peuvent exister, permettant d'obtenir une onde
+monochromatique ou discrète. En réalité, au lieu d'avoir des miroirs
+parfaitement réfléchissants des deux côtés, l'un des côtés laisse passer un peu
+de lumière, laissant s'échapper un rayon quasiment monochromatique.
+
+Ainsi, par pompage, le milieu envoie de temps à autre des électrons en direction
+des miroirs, et va "rebondir" un grand nombre de fois (puisqu'il a peu de
+chances de sortir) et à la bonne fréquence. De plus, comme le milieu est excité,
+il se produit de nombreuses émissions stimulées, emballant rapidement le
+mécanisme et donnant un rayon monochromatique et unidirectionnel (le spectre se
+brouille un peu en passant de l'autre côté du miroir, et le trou par lequel le
+rayon sort le diffracte).
+
+### Détecteur intensité lumineuse
+L'intensité d'une onde lumineuse est liée à la puissance surfacique transportée
+par l'onde (voir vecteur de pointing $\overrightarrow{\rm \pi} = \frac{\overrightarrow{\rm E} \wedge \overrightarrow{\rm B}}{\mu_0}$
+avec $|\overrightarrow{\rm B}| \propto |\overrightarrow{\rm E}|$). On admet
+qu'on peut écrire que $I$ est lié à $s^2$.
+
+Les détecteurs lumineux sont sensibles à $\overrightarrow{\rm E}$ et mesurent
+l'énergie incidente sur leur surface active. Or, le temps de réponse d'un
+détecteur est de l'ordre $\tau_D \approx 10^{-6}$ et jusqu'à $10^{-9}$. Mais
+pour $T_0$ la période d'une onde visible, $T_0 \ll \tau_D$; le détecteur mesure
+en fait la moyenne sur $\tau_D$ de $s^2$, soit $I = < s^2 >_{\tau_D}$.
+Qualitativement, on peut considérer que $< s^2 >_{\tau_D} \approx < s^2 >_{\tau_0}$.
+
+On définit donc l'intensité lumineuse par $I = k < s^2 >$,
+avec $k$ une constante qui ne nous intéresse pas : nous n'étudierons que des
+rapports d'intensité. Pour une OPPM, cela donne $I = \frac{1}{2} k s_0^2$ (ce
+qu'on peut retrouver en passant par les complexes). De même, on ne s'occupera
+pas de cette partie $\frac{1}{2} k$ qui disparaîtra.
