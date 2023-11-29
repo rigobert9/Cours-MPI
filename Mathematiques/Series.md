@@ -178,10 +178,10 @@ est absolument convergente et $\sum\limits_{n \geq 0} c_n = (\sum\limits_{n \geq
 On appelle cette série le produit de Cauchy de deux séries absolument
 convergentes.
 
-Par exemple, connaissant pour $|x| < 1$, $- ln(1 - x) = s\sum\limits_{n \geq 1} \frac{x^n}{n}$
+Par exemple, connaissant pour $|x| < 1$, $- ln(1 - x) = \sum\limits_{n \geq 1} \frac{x^n}{n}$
 et $\frac{1}{1 - x} = \sum\limits_{n \geq 0} x^n$, donnant
-$\frac{- \ln(1 - x)}{1 - x} = \sum  \sum\limits_{p + q = n} \frac{1}{p} 1 x^p x^q$
-$= \sum H_n x_n$.
+$\frac{- \ln(1 - x)}{1 - x} = \sum\limits_{p + q = n} \frac{1}{p} 1 x^p x^q$
+$= \sum H_n x^n$.
 
 #### Théorème de Fubini
 Soit la suite $(u_{n,m})_{n,m}$, on note $S_n = \sum\limits_{m = 0}^{+\infty} u_{n,m}$
