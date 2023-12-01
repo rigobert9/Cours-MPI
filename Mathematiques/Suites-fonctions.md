@@ -175,3 +175,32 @@ On s'imagine l'étude d'une fonction $F(x) = \sum u_n(x)$.
 > $F \xrightarrow[a]{} \sum \ell_n$.
 
 En général, on devra s'occuper du cas où $\ell_n = 0$.
+
+### Théorème d'interversion somme-limite
+> Soit $f_n$ convergeant simplement vers $f$, toutes des fonction
+> $\mathcal{C}^0_m$ sur $I$, et $|f_n| \leq g$ sur $I$, avec $g \in L^1$,
+> alors $\int\limits_{I} f_n \to \int\limits_{I} f$.
+
+On peut remplacer l'hypothèse de convergence dominée, qui exige une fonction
+$L^1$, pour la compacité de $I$ avec la convergence uniforme de la suite si on
+peut la déterminer.
+
+> Soit $\sum u_n$ convergeant simplement sur $I$, $u_{n}$ et $\sum u_{n}$ étant
+> $\mathcal{C}^0_m$ sur $I$, et $\sum \int\limits_{I} |u_{n}|$ convergente,
+> on a $\int\limits_{I} \sum u_{n} = \sum \int\limits_{I} u_{n}$.
+
+En pratique, on pourra utiliser le théorème pour calculer des intégrales de
+fonctions en les divisant en sommes finies (qui marchent toujours) ou en séries.
+
+On peut avoir une sorte de remplacement de la convergence dominée par la
+monotonie de fonctions, l'un des moyens de trouver la convergence dominée.
+
+> Soit $f_n$ convergeant simplement vers $f$, toutes des fonction
+> $\mathcal{C}^0_m$ sur $I$, et tous les $f_n$ des fonctions croissantes,
+> $\int\limits_{I} f_n$ converge si $f$ est $L^1$, et si oui,
+> $\int\limits_{I} f_n \to \int\limits_{I} f$.
+
+Soit $\sum u_n$ convergeant simplement sur $I$, $u_{n}$ et $\sum u_{n}$ étant
+$\mathcal{C}^0_m$ sur $I$, et tous les $u_{n}$ sont positifs, alors $\sum \int\limits_{I} u_{n}$
+converge quand $\sum u_{n}$ est $L^1$ sur $I$, et le cas échéant
+on a $\int\limits_{I} \sum u_{n} = \sum \int\limits_{I} u_{n}$.
