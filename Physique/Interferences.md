@@ -149,3 +149,50 @@ Ainsi, $\Delta \varphi(M) = 2 \sin(\frac{\beta}{2}) z + \Delta \varphi(0)$,
 avec $z$ la composante en $\overrightarrow{\rm u_z}$ de $\overrightarrow{\rm OM}$. Pour $\Delta \varphi$
 une constante, $z$ est une constante, donc les franges sont les droites
 rectilignes de $z$ égal.
+
+#### Interférences d'ondes sphériques
+...
+
+### Remarques importantes
+On montrera que dans les trois cas suivants, il est nécessaire d'ajouter des
+déphasages de $\pi$ :
+- Réflexion vitreuse
+- Réflexion métallique (miroir)
+- Le passage par un foyer
+
+Si un rayon passe par l'un de ces appareils, on augmente le déphasage de $\pi$ ou
+le chemin optique de $\frac{\lambda}{2}$.
+
+## Applications et exemples
+### Trous d'Young
+#### Calculs de base
+Soit une source $S$ placée face à une barrière avec deux trous $S_1$ et $S_2$,
+derrière la quelle il y a un écran à une distance $D$ avec le point $O$ sur
+l'axe optique.
+
+$\delta_{2/1}(M) = (SM)_2 - (SM)_1 = ((S S_2) + (S_2 M)) - ((S S_1) + (S_1 M))$\
+$= (S_2 M) - (S_1 M) + ((S S_2) - (S S_1))$\
+Par symétrie si le point $S$ est sur la médiatrice du segment
+$[S_1 S_2]$, on a $(S S_1) = (S S_2)$.
+
+On admet, sauf contre-indication ou sauf si l'objectif est de mesurer l'indice
+de l'air, que l'expérience se déroule dans l'aire et que son indice est $1$.
+Ainsi, pour $S$ sur la médiatrice de $[S_1 S_2]$, donnant $\delta(M) = S_2 M - S_1 M$
+et permettant de faire des coordonnées pour chaque point. On calcule alors
+$S_1 M = D \sqrt{1 + \frac{y^2}{D^2} + \frac{(2 - \frac{a}{2})}{D^2}}$; avec
+$D \gg a,z,y$, on approxime $S_1 M \approx D (1 + \frac{y^2}{2D^2} + \frac{(z + \frac{a}{2})^2}{2 D^2})$,
+et en faisant de même avec $S_2 M$, on obtient $\delta(M) = \frac{2z  \times 2 \frac{1}{2}}{2 D} = \frac{z a}{D}$
+(en admettant qu'on mette les distances dans le bon sens, attention).
+
+#### Cas du montage à deux lentilles (dit de Fraunhofer)
+Le montage prend les rayons d'une source et les envoie comme des rayons à
+l'infini dans les trous : ils sortent comme des rayons à l'infini avant de
+croiser une nouvelle lentille qui forme l'image (un télescope avec des trous de
+Young).
+
+À l'aide du théorème de Malus, les points $S_1$ et $S_2$, donc
+$(S S_1) = (S S_2)$. On place alors une source fictive au point d'image $M$,
+et on applique le théorème de Malus à l'onde fictive, permettant de placer
+sur la même surface d'onde $S_1$ et un point $H$ perpendiculaire au premier
+rayon sur le deuxième rayon, donc $(M S_1) = (M H)$, donnant par principe du
+retour inverse de la lumière (PRIL) $(S_1 M) = (HM)$.
