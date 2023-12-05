@@ -79,6 +79,9 @@ Cela donne les contraintes $\left\{\begin{matrix} \omega_1 = \omega_2 \\ S_1 = S
 
 > Dans ce cas précis, on a $I = I_1 + I_2 + 2 \sqrt{I_1 I_2} \cos(\frac{2 \pi}{\lambda_0} ((S_1 M) - (S_2 M)))$.
 
+Dans le cas de deux sources incohérentes, les figures d'interférence s'ajoutent
+l'une à l'autre.
+
 #### Calcul à savoir refaire dans le cas d'interférences de deux rayons cohérents
 On retrouve la formule précédente à partir des hypothèse qu'on a déterminé. On
 dit que deux rayons sont cohérents s'ils sont issus d'une source ponctuelle
@@ -196,3 +199,64 @@ et on applique le théorème de Malus à l'onde fictive, permettant de placer
 sur la même surface d'onde $S_1$ et un point $H$ perpendiculaire au premier
 rayon sur le deuxième rayon, donc $(M S_1) = (M H)$, donnant par principe du
 retour inverse de la lumière (PRIL) $(S_1 M) = (HM)$.
+
+On calcule enfin la position de la figure d'interférence : $\delta = \frac{a z}{D}$
+y est constant, donc $z$ y est constant, donc les franges sont rectilignes
+et sont de position $z_n = n \frac{\lambda D}{a}$ ($\delta = n \lambda$).
+
+Une autre méthode (au programme) est qu'on observe plus en $M$ d'interférences si
+les rayons issus du centre de la source et du bord sont en opposition de phase.
+Ainsi, il faut $|P_{z = \frac{b}{2}}(M) - P_{z = 0}(M)| = \frac{1}{2}$, nous
+amenant à $\frac{ab}{2 d_S} = \frac{\lambda}{2} \Rightarrow b = \frac{d_S \lambda}{a}$.
+
+#### Un autre dispositif équivalent : le miroir de Lloyd
+On observe une source face à un écran, avec un miroir à l'horizontale sous la
+source. Les rayons allant vers l'écran sont alors ceux qui sont directs et ceux
+réfléchis par le miroir.
+
+Cette construction se ramène en fait aux trous d'Young en considérant une source
+symétrique de la source de l'autre côté du miroir; les calculs sont alors les
+mêmes.
+
+Le dispositif du miroir de Fresnel fait la même chose en encore plus compliqué,
+mais on se ramène encore aux trous d'Young une fois la source virtuelle
+trouvée.
+
+### Interféromètre de Michelson
+#### Présentation et remarque préliminaire
+La lame centrale (la séparatrice) est une lame de verre avec une fine couche de
+métal qui permet de réfléchir un peu d'un rayon et de laisser passer le reste.
+La lame de verre induisant une différence de marche, les calculs deviennent
+complexes : le premier rayon ne passe qu'une seule fois par la lame de verre
+après avoir été réfléchie, tandis que le deuxième passe trois fois par la lame.
+On a ajoute donc une lame de verre (la compensatrice) qui supprime cette
+différence de marche induite par la séparatrice.
+
+La différence de marche induite par la séparatrice est de $3ne - 1ne = 2ne$,
+avec $e$ l'épaisseur traversée dans la séparatrice, de valeur (pour
+l'orientation originale) $e = \frac{e_{Sp}}{\cos(\frac{\pi}{2})} = \sqrt{2} e_{Sp}$.
+
+#### Effet géométrique de la face métallisée
+La séparatrice permet, au final, de considérer que les deux rayons qui arrivent
+viennent comme de deux miroirs l'un derrière l'autre (le second miroir est vu
+comme son symétrique par la séparatrice); et ces rayons sont comme s'ils
+provenaient du symétrique de la source par la séparatrice.
+
+#### Interféromètre de Michelson en lame d'aire par division d'amplitude
+Si l'angle $\alpha$ entre le deuxième miroir et la perpendiculaire à l'axe optique
+est nul, on parle de lame d'air de distance $d$ (la distance entre l'image du
+deuxième miroir par la séparatrice et le premier miroir). Ainsi, le montage se
+comporte comme si le premier rayon allait sur le miroir tandis que le deuxième
+allait sur le deuxième miroir derrière lui, avec une distance $d$.
+
+Les deux rayons sortent alors parallèles du montage. On observe donc les
+interférences dans le plan focal d'une lentille convergente.
+
+Pour calculer la différence de marche, avec $I$ le point auquel les deux rayons
+frappent le premier miroir, $J$ le point auquel le deuxième rayon frappe le
+deuxième miroir et $K$ le point auquel il "repasse par" le deuxième miroir.
+$\delta(M) = (SM)_2 - (SM)_1 = (SI) + IJ + JK + (KM) - ((SI) + (IM))$.
+
+En réutilisant une source virtuelle, malus et le PRIL, on obtient avec $L$ le
+point sur la même surface d'onde que $K$, donnant $\delta(M) = IJ + JK + (KM) - (IM)$
+$= IJ + JK - IL = 2d \cos(\frac{\hat{IJK}}{2})$.
