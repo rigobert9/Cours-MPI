@@ -260,3 +260,40 @@ $\delta(M) = (SM)_2 - (SM)_1 = (SI) + IJ + JK + (KM) - ((SI) + (IM))$.
 En réutilisant une source virtuelle, malus et le PRIL, on obtient avec $L$ le
 point sur la même surface d'onde que $K$, donnant $\delta(M) = IJ + JK + (KM) - (IM)$
 $= IJ + JK - IL = 2d \cos(\frac{\hat{IJK}}{2})$.
+
+Les franges correspondent ainsi à des angles identiques, formant des franges qui
+sont des anneaux sur l'écran.
+
+La frange centrale, correspondant à $\delta = 0$ et donc à $\cos(i) = 0$, est
+celle des rayons $i = \frac{\pi}{2}$, qui sont à l'infini sur l'écran.
+
+On cherche ensuite à calculer le rayon des anneaux des franges. On pose $r = f' \tan i$.
+La frange d'ordre d'interférence $n$ vérifie $p(r_n) = n \Rightarrow \delta(r_n) = n \lambda$.
+Ainsi, $n \lambda = 2 d \cos(i_n)$ avec $f' \tan(i_n) = r_n$. Comme $i_n \ll 1$,
+on a $\left\{\begin{matrix} \tan(i_n) \approx i_n + o(i_n^2) \\ \cos(i_n) \approx 1 - \frac{i_n^2}{2} \end{matrix}\right.$
+$\Rightarrow \left\{\begin{matrix} 2d (1 - \frac{i_n^2}{2}) = n \lambda \\ i_n = \frac{r_n}{f'} \end{matrix}\right.$,
+donnant $n \lambda = 2d (1 - \frac{r_n^2}{2f'^2})$, soit finalement $r_n = f' \sqrt{2 (1 - \frac{n \lambda}{2d})}$.
+
+On constate que $\delta(i = 0) = \delta_\text{max} = 2d$, et $\delta(i)$ est
+décroissante sur l'intervalle qui nous intéresse. De même, $p(i = 0) = \frac{2d}{\lambda}$
+et $p$ est décroissante sur l'intervalle. On cherche à relier $q$ le numéro de
+l'anneau compté à partir du centre avec $n_q$ son ordre d'interférence entier :
+pour $q = 1$, $p(r_{n_1} = r_{q = 1}) = \left\lfloor \frac{2d}{\lambda} \right\rfloor$,
+et on arrive à $p(r_{n_q} = r_q) = \left\lfloor \frac{2d}{\lambda} \right\rfloor - q + 1$.
+En reprenant la formule pour $r_n$, on obtient $r_q = f' \sqrt{2 (1 - \frac{\lambda}{2d} (\left\lfloor \frac{2d}{\lambda} \right\rfloor - q + 1))}$
+$= f' \sqrt{\frac{\lambda}{d} (q - 1) + 2 - \frac{\lambda}{d} \left\lfloor \frac{2d}{\lambda} \right\rfloor}$,
+qui augmente bien avec $q$. En revanche, $r_{q+1} - r_q$ est décroissante et
+tend vers $0$, donc les franges se resserrent en s'éloignant du centre.
+
+L'interféromètre de Michelson utilisé en division d'amplitude fait interférer
+rayons rayons issus d'un même rayon initial. Les deux rayons sont nécessairement
+cohérents car issus du même point source.
+
+Si on prend deux points source, la figure formée est en fait la même qu'avant,
+en plus lumineuse car recevant au même endroit plusieurs sources.
+
+Ainsi, cet interféromètre de Michelson en lame d'air et division d'amplitude
+(écran à l'infini), on peut utiliser une source large et observer une figure
+d'interférence très lumineuse et bien contrastée.
+
+#### Interféromètre de Michelson en lame d'air et division du front d'onde
