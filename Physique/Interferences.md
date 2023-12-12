@@ -297,3 +297,187 @@ Ainsi, cet interféromètre de Michelson en lame d'air et division d'amplitude
 d'interférence très lumineuse et bien contrastée.
 
 #### Interféromètre de Michelson en lame d'air et division du front d'onde
+On place la source devant l'un des miroirs.
+
+On peut voir en assimilant les rayons revenant des miroirs à des rayons venant
+du symétrique de la source par le miroir que le montage est équivalent à deux
+sources sur le même axe projetant leurs rayons sur l'écran perpendiculaire à
+l'axe. Par symétrie de révolution, $\delta = f(r)$, donc la figure
+d'interférence forme des anneaux.
+
+$\delta = S_2 M - S_{1} M = \sqrt{L^2 + r^2} + \sqrt{(L - 2d)^2 + r^2}$\
+Comme $L \gg r,d$, on obtient $\delta = L (1 + \frac{r^2}{2 L^2}) - (L - 2d) (1 + \frac{r^2}{2 (L - 2d)^2})$\
+$= L + \frac{r^2}{2L} - (L - 2d) - \frac{r^2}{2 (L - 2d)}$\
+$= 2d + \frac{r^2}{2} (\frac{L - 2d - L}{L (L - 2d)})$\
+$= 2d (1 - \frac{r^2}{2 L (L - 2d)})$\
+$= 2d (1 - \frac{r^2}{2 L^2})$
+
+#### Autre dispositif équivalent
+Le modèle de la lame de verre dans laquelle "rebondit" un rayon incident,
+émettant avec une intensité de plus en plus faible des rayons parallèles des
+deux côtés de la lame.
+
+En prenant le rayon réfléchi et le premier rayon parallèle sortant du même côté,
+la différence de marche obtenue est, avec $r$ l'angle de réflexion à l'intérieur
+de la lame et $i$ l'angle d'incidence, de $\delta = 2n \frac{e}{\cos(r)} - 2 e \tan(r) \sin(i)$
+$= 2 e (\frac{n}{\cos(r)} - \tan(r) \sin(i)) = \frac{2 e}{\cos(r)} (n - \sin(i) \sin(r))$
+$= \frac{2 e n}{\cos(r)} (1 - \sin^2(r)) = 2 e n \cos(r)$.
+
+En reprenant la formule du contraste avec la formule de Fresnel, on a $C = \frac{2 \sqrt{I_1 I_2}}{I_1 + I_2}$,
+et comme en transmission $I_1 \gg I_2$ (donc $C \ll 1$) et en réflexion $C \approx 1$,
+on observe en transmission des anneaux peu contrastés mais lumineux et des anneaux
+très contrastés mais peu lumineux en réflexion.
+
+#### L'interféromètre de Michelson en coin d'air
+On règle les miroirs de façon à ce que la distance $d$
+entre le centre des miroirs soit très petite (qu'on considèrera comme
+approximation comme nulle), et orientés de façon à former un angle $\alpha$
+non nul.
+
+On traitera toujours le cas particulier du rayon incident en incidence normale
+sur le miroir qui n'a pas tourné du côté où le miroir qui a tourné est devant.
+Les rayons sont alors en division d'amplitude et se coupent sur le miroir qui a
+tourné.
+
+Si l'incidence du rayon n'est pas normale mais d'incidence $i$, les rayons se
+"coupent" sur un plan passant par le point $O$ où se croisent les miroirs et
+formant un angle $i + \alpha$ avec le miroir. Comme les angles sont d'amplitude
+très petite, on éclaire le dispositif avec un rayon quasi-parallèle d'incidence
+quasi-normale.
+
+> On éclaire l'interféromètre de Michelson en coin d'air avec un faisceau de
+> lumière quasi-parallèle en incidence quasi-normale sur "les miroirs". Les
+> interférences sont donc localisées "sur les miroirs".
+
+Pour observer les franges localisées sur les miroirs, on fait l'image des
+miroirs sur un écran à l'aide d'une lentille convergente. La relation de
+conjugaison de Descartes permet de trouver où placer cet écran (le placer dans
+le plan conjugué des miroirs par une lentille convergente).
+
+En notant $e(x)$ l'épaisseur du coin d'aire au point $M$ d'abscisse $x$,
+$\delta(M) = 2 e(x)$ et donc $\delta$ est constant pour $e(x)$ constant :
+les franges se font aux points d'égale épaisseur. Comme $e(x) = x \sin(\alpha)$,
+$\delta = 2 x \sin(\alpha)$, et comme $\alpha \ll \pi$,
+on approxime par $\delta = 2 \alpha x$.
+
+Les franges sont rectilignes, la frange centrale se situe au point
+d'intersection des deux miroirs et les franges sont positionnées aux points
+$x_n = n \frac{\lambda}{2 \alpha}$. L'interfrange est donc de $\frac{\lambda}{2 \alpha}$
+
+Idéalement, on éclaire le coin d'air avec un faisceau de lumière parallèle en
+incidence normale sur le miroir qui n'a pas tourné. En pratique, la source
+ponctuelle placée au foyer d'une lentille convergente a un rayon $R$. Le
+faisceau sortant de la lentille est donc un cône de demi-angle au sommet
+$\theta = \arctan(\frac{R}{f'}) \approx \frac{R}{f'}$.
+
+Comme on l'a vu, chaque inclinaison crée une figure d'interférence dans un plan
+passant par $O$. Quand on obtient l'image "des miroirs" par la lentille, tous
+ces plans se superposent, on obtient des franges d'interférences lumineuses, ais
+ceci est hors-programme.
+
+#### Source ponctuelle, division du front d'onde
+La différence de marche est alors $\delta(M) = \frac{2 \alpha ds x}{L}$, car le
+dispositif est équivalent aux trous d'Young.
+
+#### Autres franges d'égale épaisseur
+On peut trouver avec les dispositifs classique de la goutte et de la tâche
+d'huile, ou encore une bulle de savon (dont l'épaisseur est plus basse en bas à
+case de la pesanteur). De façon générale, Michelson en coin d'air permet de
+gérer tous les exercices qui traitent de variation d'épaisseur.
+
+## Condition d'obtention des interfaces : problèmes de cohérence
+### Effet de la polarisation des ondes électromagnétiques
+En tenant compte de la polarisation du champ électrique du rayon, on écrit
+les rayons comme $\overrightarrow{\rm E_1} = E_{10} e^{j(\omega t - \varphi_1(M))} \overrightarrow{\rm e_z}$
+et $\overrightarrow{\rm E_2} = E_{20} (\cos \alpha \overrightarrow{\rm e_y} + \sin \alpha \overrightarrow{\rm e_z}) \times e^{j (\omega t - \varphi_2(M))}$.
+On pose à nouveau $I_1 = k < E_1^2 > = \frac{k}{2} |\underline{E_1}|^2 = \frac{k}{2} E_\text{10}^2 = I_0$ et
+$I_2 = k < E_2^2 > = \frac{k}{2} |E_2^2| = \frac{k}{2} E_{10}^2 (\cos^2(\alpha) + \sin^2(\alpha))$
+$= \frac{k}{2} E_{20}^2 = I_0$.
+
+$I(M) = k < (\overrightarrow{\rm E_1} + \overrightarrow{\rm E_2})^2 >$\
+$= \frac{k}{2} |(\overrightarrow{\rm E_1} + \overrightarrow{\rm E_2})|^2$\
+$= \frac{k}{2} (E_{10} + E_{20}^2 \cos^2(\alpha) + E_{10} E_{20} \cos(\alpha) (e^{- i (\varphi_1 - \varphi_2)} + e^{i (\varphi_1 - \varphi_2)}) + E_{20}^2 \sin^2(\alpha))$\
+$= I_0 + I_0 \cos^2(\alpha) + 2 I_0 \cos(\alpha) \cos(\varphi_1 - \varphi_2) + I_0 \sin^2(\alpha)$.
+
+> Finalement, on obtient que $I(M) = 2 I_0 (1 + \cos(\alpha) \cos(\Delta \varphi))$.
+
+On obtient d'ailleurs avec les valeurs maximales et minimales que $C = |\cos \alpha|$
+(donc que le contraste est nul si $\alpha = \frac{\pi}{2}$). Ainsi, deux ondes
+polarisées perpendiculaires n'interfèrent pas.
+
+### Cohérence spatiale : taille de la source
+#### Définition
+> La cohérence spatiale d'un dispositif interférentiel est caractérisée par la
+> longueur $\ell_S$ de cohérence spatiale qui correspond à la taille maximale de
+> la source au-delà de laquelle on ne voit plus de figure d'interférence.
+
+Par exemple, pour les trous d'Young, $\ell_{S_y} = +\infty$ et
+$\ell_{S_x} = \frac{D_S \lambda}{a}$. Pour Michelson en lame d'air et division
+d'amplitude, $\ell_S = +\infty$.
+
+#### Calcul exact de  $\ell_{S_x}$ pour les trous d'Young
+C'est un exercice hors-programme mais qui peut être donné guidé.
+
+En plaçant les points de la source des trous d'Young sur un axe, soit une source
+de hauteur $X$, $\delta(M) = \frac{a X}{D_S} + \frac{ax}{D}$. Si la source
+totale émet une intensité $I_0$ de manière uniforme alors $S(X)$ de longueur $dX$
+émet $d I_0$, ce qui pour une source de largeur $b$ donne $d I_0 = \frac{I_0}{b} dX$.
+
+Chaque source $S(X)$ de largeur $dX$ crée une figure d'interférence incohérentes
+entre elles, donnant $I(M) = \int\limits_{\text{Tous les } S(X)} d I_{S(X)}(M)$
+$= \int\limits_{-\frac{b}{2}}^{\frac{b}{2}} 2 d I_0 (1 + \cos(\frac{2 \pi}{\lambda} \delta_{S(X)}(M)))$\
+$= \int\limits_{-\frac{b}{2}}^{\frac{b}{2}} 2 \frac{I_0}{b} (1 + \cos(\frac{2 \pi}{\lambda} \delta_{S(X)}(M))) dX$\
+$= \frac{2 I_0}{b} (b + \frac{\lambda D_S}{2 \pi a} (\sin(\frac{\pi}{\lambda} (\frac{ab}{2 D_S} + \frac{ax}{D})) - \sin(\frac{\pi}{\lambda} (- \frac{ab}{2 D_S} + \frac{ax}{D}))))$\
+$= 2 I_0 (1 + \frac{\lambda D_S}{\pi a b} \sin(\frac{2 \pi}{\lambda} \frac{ab}{2 D_S}) \cos(\frac{2 \pi}{\lambda} \frac{ax}{D}))$\
+$= 2 I_0 (1 + \text{sinc}(\frac{\pi ab}{\lambda D_S}) \cos(\frac{2 \pi a x}{\lambda D}))$
+
+On obtient alors avec les valeurs minimales et maximales de $I$ un contraste
+$C = |\text{sinc}(\frac{\pi a b}{\lambda D_S})|$.
+
+L'interfrange est $i = \frac{\lambda D}{a}$. Le contraste est nul quand le sinus
+cardinal s'annule, donnant $\ell_{S_X} = \frac{\lambda D_S}{a}$. Si $b$ augmente
+au-delà de cette limite, le contraste augmente à nouveau, mais le sinus cardinal
+est négatif, donc les franges brillantes deviennent sombre et inversement.
+
+#### Calcul qualitatif : méthode sur la différence d'ordre d'interférence
+Les franges disparaissent sur l'écran quand la source large est telle que en un
+point $M$ l'intensité créée par le centre de la source soit en opposition de
+phase avec l'intensité créée par un bord. Ainsi, il faut
+$|P_\text{centre}(M) - P_\text{bord}(M)| = \frac{1}{2}$, donc
+$|\Delta \delta(M)| = \frac{\lambda}{2}$, soit
+$|\frac{ax}{D} - (\frac{a \frac{b}{2}}{D_S} + \frac{ax}{D})| = \frac{\lambda}{2}$,
+donnant $\frac{ab}{2 D_S} = \frac{\lambda}{2} \Rightarrow b_i = \frac{\lambda D_S}{a}$.
+
+#### Cas de la division d'amplitude
+Dans le cas d'un dispositif de division d'amplitude, $I(M)$ ne dépend pas de la
+position de $S$, donc on peut utiliser une source large. Chaque point source crée
+ainsi la même figure, et donc elles se superposent et forment une figure plus
+lumineuse.
+
+### Influence du spectre de la source : cohérence temporelle
+#### Définition
+Il y a interférence seulement si $\delta < \ell_c$ la taille du train d'onde
+créé par la source de longueur spectrale $\Delta \omega$, soit $\ell_c = c \tau_c \nu \frac{c}{\Delta \tau}$.
+
+$\ell_c$ est la longueur de cohérence temporelle de la source, inversement
+proportionnelle à la longueur du spectre de la source (avec le coefficient de
+proportionnalité dépendant de la forme du spectre).
+
+#### Méthode qualitative
+Soit un spectre considéré comme une raie rectangulaire de largeur $\Delta \nu$
+centrée en $\nu_0$, on cherche à trouver quand la fréquence $\nu_0$
+est en opposition avec celle créée par le bord du spectre, soit
+$|p_{\nu_0}(M) - p_{\nu_0 + \frac{\Delta \nu}{2}}(M)| = \frac{1}{2}$.
+Comme $p(M) = \frac{\delta(M)}{c} \nu$, on a $|\frac{\delta(M)}{c} (\nu_0 - \nu_0 - \frac{\Delta \nu}{2})| = \frac{1}{2}$,
+soit $\frac{\delta(M)}{c} \frac{\delta \nu}{2} = \frac{1}{2}$,
+donnant $\delta(M) = \frac{c}{\Delta \nu} = \ell_c$.
+
+Si $\delta < \ell_c$, le contraste sera bon, et sera très bas si $\delta$ est
+plus grand que $\ell_c$.
+
+#### Cas des trous d'Young en lumière blanche
+Ayant $p(M) = \frac{ax}{D \lambda}$ et $i = \frac{\lambda D}{a}$, chaque $\lambda$ du spectre visible créé
+a une figure d'interférence incohérente avec les alors qu'elles se superposent.
+On obtient alors une frange blanche au milieu et des figures irisées sur le
+reste, en atteignant parfois des raies "blanches d'ordre supérieur" quand elles
+se superposent à nouveau.
