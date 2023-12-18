@@ -481,3 +481,36 @@ a une figure d'interférence incohérente avec les alors qu'elles se superposent
 On obtient alors une frange blanche au milieu et des figures irisées sur le
 reste, en atteignant parfois des raies "blanches d'ordre supérieur" quand elles
 se superposent à nouveau.
+
+#### Étude d'une raie spectrale
+On considère une raie constituée d sources quasi monochromatiques de largeur
+$d \nu$, incohérentes entre elles. On a donc $d I(M) = \int d I_\nu(M)$,
+donnant $d I_\nu(M) = 2 d I_{0_\nu} (1 + \cos(\frac{2 \pi}{c} \nu \delta(M)))$
+et $d I_{0_\nu} = g(\nu) d \nu$ (l'intensité de la source
+quasi-monochromatique, une expression qui est valable de toute façon pour toute
+forme de spectre $g$).
+
+Comme la raie est rectangulaire, $g(\nu)$ est constante sur la raie, donc
+l'intensité est uniforme sur $\Delta \gamma$, donnant une correspondance entre
+$d \nu$ et $d I_{0_\nu}$, plus exactement $d I_{0_\nu} = \frac{I_0}{\Delta \nu} d \nu$.
+On calcule alors $I(M) = \int\limits_{\nu_0 - \frac{\Delta \nu}{2}}^{\nu_0 + \frac{\Delta \nu}{2}} \frac{2 I_0}{\Delta \nu} (1 + \cos(\frac{2 \pi}{2}) \nu \delta) d \gamma$\
+$= 2 I_0 (1 + \text{sinc}(\frac{\pi \Delta \nu \delta}{c}) \cos(\frac{2 \pi}{c} \nu_0 \delta))$.
+Si $\Delta \nu$ tend vers $0$, on retrouve bien la formule de Fresnel originale.
+
+On constate que le contraste diminue en s'éloignant de la frange centrale.
+
+#### Étude d'un doublet
+Soit deux sources monochromatiques incohérentes entre elles et disjointes,
+on a $I(M) = I_{\lambda_0}(M) + I_{\lambda_0 + \Delta \lambda}(M)$
+$= 2 I_0 (1 + \cos(\frac{2 \pi}{\lambda} \delta)) + 2 I_0 (1 + \cos(\frac{2 \pi}{\lambda_0 + \Delta \lambda} \delta))$
+$= 4 I_0 (1 + \cos(\pi \delta (\frac{1}{\lambda_0} - \frac{1}{\lambda_0 + \Delta \lambda})) \cos(\pi \delta (\frac{1}{\lambda_0} - \frac{1}{\lambda_0 + \Delta \lambda})))$.
+
+Quand $\Delta \lambda \ll \lambda_0$, on peut obtenir des identités plus simples
+et
+$I(M) \approx 4 I_0 (1 + \cos(\frac{\pi \Delta \lambda \delta}{\lambda_0^2}) \cos(\frac{2 \pi \delta}{\lambda_0}))$.
+On observe alors un phénomène de battement où des zones de contraste $1$
+alternent avec des zones de contraste nul, appelée anticoïncidence. Il faut
+savoir retrouver leur période, ce qui peut se faire par l'utilisation de la
+courbe ou simplement avec la différence d'ordre d'interférence. En effet, les
+zones d'anticoïncidence correspondent à une différence d'ordre d'interférence de
+$\frac{1}{2}$, et on cherche alors l'écart.
