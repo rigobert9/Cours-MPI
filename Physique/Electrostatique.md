@@ -246,3 +246,47 @@ Soit un plan infini $(Oxy)$ portant une densité de charge $\sigma$. La
 distribution est invariante par translation par $\overrightarrow{\rm e_x}$
 et $\overrightarrow{\rm e_y}$, et est symétrique suivant les plans $(Oxz)$
 et $(Oyz)$, montrant que $\overrightarrow{\rm E} = E_z \overrightarrow{\rm e_z}$.
+
+On applique le théorème de Gauss à un cylindre $S_G$ de section $S$ et de
+génératrice $(Mz)$ et de hauteur $2 z$ symétrique à $(Oxy)$. Il ne faut pas
+oublier de considérer le côté du cylindre mais aussi les deux faces.
+
+Cette application du théorème de Gauss nous donne deux termes égaux sur les
+faces et un terme nul par le côté du cylindre (car le champ électrique est perpendiculaire
+au côté), donnant un résultat de $\frac{\sigma S}{\varepsilon_0}$ qui est égal à
+$E(z) S - E(-z) S$. On DOIT alors préciser la symétrie utilisée qui mène à
+$E(-z) = - E(z)$, et avec laquelle on conclut $2 E(z) S = \frac{\sigma S}{\varepsilon_0}$
+$\Rightarrow E(z) = \frac{\sigma}{2 \varepsilon_0}$ pour $z > 0$. On en dérive
+l'expression du champ dans tout l'espace $\overrightarrow{\rm E}(z) = \pm \frac{\sigma}{2 \varepsilon_0}$,
+positif pour $z$ positif et négatif pour $z$ négatif.
+
+On peut aussi arriver à la même conclusion via la relation de passage et Maxwell-Gauss
+(avec une densité volumique de charge nulle puisque la distribution est
+surfacique).
+
+#### Le modèle du condensateur plan
+##### Définition et constitution
+Un condensateur plan est constitué de deux plans infinis parallèles espacés
+d'une distance $e$ et de charge surfacique opposés, $\sigma$ et $- \sigma$.
+
+##### Calcul de $\overrightarrow{\rm E}$ dans tout l'espace
+Une première méthode est utile si on a déjà travaillé sur le modèle du plan
+infini. On utilise alors simplement le théorème de superposition. On peut aussi
+le faire avec la relation de passage.
+
+##### Définition et calcul de la capacité d'un condensateur
+La capacité d'un condensateur est définie comme $C = \frac{Q_{1}}{V_{1} - V_2} = \frac{Q_2}{V_2 - V_1}$.
+On le calcule avec $\overrightarrow{\rm E}$ entre les plaques, puis on calcule
+la circulation de $\overrightarrow{\rm E}$ d'une armature à l'autre, ce qui
+donne une relation entre $V_1 - V_2$ et $Q_1$.
+
+En effet, on a alors $\int\limits_{1}^{2} \overrightarrow{\rm E} \cdot d \overrightarrow{\rm \ell} = V_1 - V_2$
+$= \int\limits_{1}^{2} - \frac{\sigma}{\varepsilon_0} \overrightarrow{\rm e_z} d \ell \overrightarrow{\rm e_z}$
+$= \frac{- \sigma}{\varepsilon_0} e$. Or, $Q_1 = - \sigma S_1 \Rightarrow \sigma = \frac{- Q_1}{S_1}$,
+donnant finalement $V_1 - V_2 = \frac{Q_1 e}{S_1 \varepsilon_0}$, donnant
+$C = \frac{Q_1}{V_1 - V_2} = \frac{\varepsilon_0 S}{e}$.
+
+##### Validité du modèle
+Les plans infinis n'existent toujours pas, mais is $e \ll \sqrt{5}$, on dit
+qu'on néglige les effets de bord, et tout se passe comme si les plans étaient
+infinis.
