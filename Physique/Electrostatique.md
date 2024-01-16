@@ -290,3 +290,106 @@ $C = \frac{Q_1}{V_1 - V_2} = \frac{\varepsilon_0 S}{e}$.
 Les plans infinis n'existent toujours pas, mais is $e \ll \sqrt{5}$, on dit
 qu'on néglige les effets de bord, et tout se passe comme si les plans étaient
 infinis.
+
+##### Aspect énergétique
+On rappelle que $P = u i$ est la puissance reçue par un dipôle électrique.
+Pour le condensateur, $P = (V_1 - V_2) \frac{d Q_1}{dt}$. Or $C = \frac{Q_1}{V_1 - V_2} \Rightarrow V_1 - V_2 = \frac{Q_1}{C}$,
+donc $P = \frac{Q_1}{C} \frac{d Q_1}{dt} = \frac{d}{dt} (\frac{1}{2} \frac{Q_1^2}{C})$,
+la dérivée d'une énergie électrostatique stockée par le condensateur
+$E_\text{élec} = \frac{Q^2}{2 C} = \frac{1}{2} C (V_1 - V_2)^2$.
+
+On verra qu'on pourra définir une énergie volumique liée à la présence de charge
+(le simple fait qu'elle soit là statique) $e_\text{élec} = \frac{d E_\text{élec}}{d \tau} = \frac{1}{2} \varepsilon_0 E^2$.
+
+#### Quelques notions sur les conducteurs à l'équilibre électrique
+Un conducteur est un matériau dans lequel les charges peuvent se déplacer
+macroscopiquement. À l'équilibre électrique les charges sont immobiles, donc
+$som \overrightarrow{\rm F}_{\to \text{ charge}} = \overrightarrow{\rm 0}$. Dans
+le cas le plus simple, le champ électrique est simplement nul.
+
+Dans un conducteur, on suppose les électrons de conduction comme quasi libres
+(donc de PFD nul). En fait, en moyenne, la force moyenne du réseau sur les
+charge est de $- h \overrightarrow{\rm v_q}$, le ralentissant lorsqu'il essaie
+de se déplacer du réseau. Dans tous les cas, le PFD nul permet de déterminer que
+le champ électrique est nul dans le conducteur à l'équilibre, ce qui est
+équivalent au fait que le potentiel soit constant dans un conducteur.
+
+## Champ gravitationnel
+### Analogie gravitation/électrostatique
+La force de Coulomb peut être mise directement en comparaison avec la force de
+gravitation, en remplaçant les deux charges par les deux masses et $\frac{1}{2 \pi \varepsilon_0}$
+par $-G$. On peut donc aussi bien considérer le champ gravitationnel à la place
+du champ électrique, donnant un équivalent au théorème de Gauss pour la
+gravitation : $\circ\!\!\!\!\!\!\iint_{S_G} \overrightarrow{\rm \mathcal{G}} \cdot d \overrightarrow{\rm S} = - 4 \pi G M_\text{int}$.
+On peut en découler une équation locale de la même façon.
+
+## Dipôle électromagnétique
+### Définition et expression du dipôle électrostatique
+#### Définition
+> On appelle distribution électrostatique dipolaire une distribution de charge
+> dans un volume $V$ telle que $Q_\text{int} = 0$. On appelle sa longueur
+> caractéristique $L$ son diamètre, et on s'intéresse au champ $\overrightarrow{\rm E}$ créé en $M$
+> pour la distribution "de loin", c'est à dire que $OM = r \gg L$.
+
+Ce qui est alors intéressant, c'est la polarisation des molécules, qui ont un
+barycentre positif à un autre endroit que le barycentre négatif.
+
+On définit $G_+ = P$ le barycentre des charges positives, et $G_- = N$ celui des charges
+négatives. On rappelle précisément la définition comme $\overrightarrow{\rm OG_+}$
+$= \frac{\sum\limits_{i_+} q_{i+} \overrightarrow{\rm OP_{i+}}}{\sum\limits_{i+} q_{i+}}$,
+et on note $q = \sum\limits_{i+} q_{i+}$ et $-q = \sum\limits_{i-} q_{i-}$. On
+admet que le champ créé par la distribution est le même que celui créé par
+la distribution $\{N;P\}$.
+
+#### Ordre de grandeur et unité
+On cherche donc à montrer que $\overrightarrow{\rm E}$ créé par la distribution ne
+dépend que du moment dipolaire de la distribution qui vaut $\overrightarrow{\rm p} = q \overrightarrow{\rm NP}$.
+Ce moment dipolaire est d'unité SI $C \cdot m$, mais souvent d'ordre de grandeur
+$10^{-29}$. Les chimistes lui préfèrent donc le Debye, avec $1 D = \frac{1}{3} 10^{-29} C \cdot m$.
+
+### Expression du potentiel et du champ dipolaire
+#### Calcul de $V$ dans $\ell'$ et approximation dipolaire
+On reprend l'approximation dipolaire faite plus haut, c'est-à-dire que
+$OM = r \gg d$. Alors on a $V(M) = V_q(M) + V_{-q}(M) = \frac{q}{4 \pi \varepsilon_0 PM} + \frac{-q}{4 \pi \varepsilon_0 NM}$.
+$PM = \sqrt{(\overrightarrow{\rm PO} + \overrightarrow{\rm OM})^2} = \sqrt{(\frac{d}{2})^2 + r^2 + 2 \overrightarrow{\rm PO} \cdot \overrightarrow{\rm OM}}$\
+$= \sqrt{\frac{d^2}{4} + r^2 - d r \cos(\theta)}$\
+$= r \sqrt{1 - \frac{d}{r} \cos(\theta) + \frac{d^2}{4 r^2}}$\
+Ainsi, $\frac{1}{PM} \underset{r \gg d}{\sim} \frac{1}{r} (1 + \frac{d}{2r} \cos(\theta) + o(\frac{d}{r}))$.
+De même, $\frac{1}{NM} \underset{r \gg d}{\sim} \frac{1}{r} (1 - \frac{d}{2r} \cos \theta)$.
+
+On a donc $V(M) \approx \frac{q d \cos(\theta)}{4 \pi \varepsilon_0 r^2}$. Or $\overrightarrow{\rm p} = qd \overrightarrow{\rm e_z}$,
+et $\cos(\theta) = \overrightarrow{\rm e_r} \cdot \overrightarrow{\rm e_z}$,
+donnant finalement $V_{\text{créé par } \overrightarrow{\rm p}}(M) = \frac{\overrightarrow{\rm p} \cdot \overrightarrow{\rm e_r}}{4 \pi \varepsilon_0 r^2}$.
+
+On peut remarquer que ce potentiel dipolaire décroît plus vite (en $\frac{1}{r^2}$) que le potentiel créé par une charge seule
+($\frac{1}{r}$).
+
+#### $\overrightarrow{\rm E}$ créé par $\overrightarrow{\rm p}$
+Comme $\overrightarrow{\rm E} = - \overrightarrow{\rm \text{grad}} V$, on
+obtient l'expression
+$\overrightarrow{\rm E} = \left\{\begin{matrix} E_r = \frac{2 p \cos(\theta)}{4 \pi \epsilon_0 r^3} \\ E_\theta = \frac{p \sin(\theta)}{4 \pi \varepsilon_0 r^3} \\ E_\varphi = 0 \end{matrix}\right.$
+
+#### Lignes de champ du dipôle
+Pour que $\overrightarrow{\rm E} \wedge d \overrightarrow{\rm \ell}$ soit nul,
+il est nécessaire (en coordonnées sphériques) que $E_r r d \theta - E_\theta d r = 0$,
+soit $\frac{2 p \cos(\theta)}{4 \pi \epsilon_0 r^3} r d \theta = E_\theta = \frac{p \sin(\theta)}{4 \pi \varepsilon_0 r^3} dr$\
+$\Rightarrow \frac{dr}{r} = \frac{2 \cos(\theta)}{\sin(\theta)} d \theta$\
+$\Rightarrow ln(r) = 2 \ln(\sin(\theta)) + C$, soit $r = A \sin^2(\theta)$.
+
+On retrouve la figure en ailes de papillon qu'on retrouve souvent en
+magnétisme.
+
+#### Action d'un champ électrique extérieur sur un dipôle de moment dipolaire $\overrightarrow{\rm p}$
+Un dipôle de moment dipolaire $\overrightarrow{\rm p}$ dans un champ extérieur
+$\overrightarrow{\rm E}$ possède une énergie potentielle $E_p = - \overrightarrow{\rm p} \cdot \overrightarrow{\rm E}$,
+et subit un couple $\overrightarrow{\rm \Gamma} = \overrightarrow{\rm p} \wedge \overrightarrow{\rm E}$.
+Ce couple ne dépend pas du point $O$ où on le calcule (on peut retrouver cette
+expression à partir du moment sur $N$ et $P$).
+
+La résultante des forces donne $\overrightarrow{\rm F} = q \overrightarrow{\rm E} + - q \overrightarrow{\rm E} = \overrightarrow{\rm 0}$
+(dans un champ uniforme), donc le dipôle est soumis uniquement à un moment. Si
+$\overrightarrow{\rm E}$ n'est pas uniforme, $\overrightarrow{\rm F} = (\overrightarrow{\rm p} \cdot \overrightarrow{\rm \text{grad}}) \overrightarrow{\rm E}$.
+
+Si le champ électrique n'est pas uniforme, et dans tous les cas plus compliqués
+en général, on peut voir que la position d'équilibre à laquelle arrive le dipole
+est un minimum local d'énergie potentielle (étude lagrangienne).
