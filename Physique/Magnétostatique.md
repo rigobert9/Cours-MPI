@@ -45,7 +45,41 @@ avec $n$ la densité volumique des charges et $V$ le volume du cylindre. Or
 $d S' = dS \cos(\theta)$, donnant $V = v dt dS \cos(\theta) = \overrightarrow{\rm v} \cdot d \overrightarrow{\rm S} dt$,
 soit $\delta q_T(d \overrightarrow{\rm S}) = n \overrightarrow{\rm v} \cdot d \overrightarrow{\rm S} dt q$,
 donc $d I(d \overrightarrow{\rm S}) = n q \overrightarrow{\rm v} \cdot d \overrightarrow{\rm S}$.
-On défini le vecteur densité de courant volumique de charge comme $\overrightarrow{\rm j} = n q \overrightarrow{\rm v}$.\
+On définit le vecteur densité de courant volumique de charge comme $\overrightarrow{\rm j} = n q \overrightarrow{\rm v}$.\
 Finalement, $d I (d \overrightarrow{\rm S}) = \overrightarrow{\rm j} \cdot d \overrightarrow{\rm S}$,
 soit $I(\overrightarrow{\rm S}) = \iint_S \overrightarrow{\rm j} \cdot d \overrightarrow{\rm S}$.
 On obtient quelque chose de similaire même s'il y a plusieurs types de charges.
+
+### Raisonnement élémentaire à utiliser
+Pour un petit bout de fil électrique parcouru par un courant $I$, on travaillera
+souvent avec un modèle simplifié filiforme. Puisqu'on a $I = \overrightarrow{\rm j} \cdot \overrightarrow{\rm s}$,
+on a $I d \overrightarrow{\rm \ell} = (\overrightarrow{\rm j} \cdot \overrightarrow{\rm s}) d \overrightarrow{\rm \ell}$
+donnant $I d \overrightarrow{\rm \ell} = \overrightarrow{\rm j} d \tau$.
+
+Cette dernière équation permet d'utiliser les connaissances en induction de
+première année, comme la force de Laplace notée
+$d \overrightarrow{\rm F_L} = \overrightarrow{\rm j} \cdot d \overrightarrow{\rm \ell} \wedge \overrightarrow{\rm B}$.
+
+### Modèles de courant
+On peut en tout cas travailler avec le courant volumique dans tous les modèles
+de charge.
+
+Pour le modèle volumique, $I = \iint \overrightarrow{\rm j} \cdot d \overrightarrow{\rm S}$.
+Le modèle surfacique est hors programme mais peut se retrouver aisément. Le
+modèle filiforme est le précédent. Enfin, une charge potentielle en mouvement
+produit un courant de $I = \frac{q}{T} = \frac{q V}{2 \pi r}$ (en faisant bien attention à l'orientation).
+
+### Propriété de continuité, de symétrie et d'invariance
+#### Continuité
+Seule la modélisation volumique est réaliste, dans le sens où $\overrightarrow{\rm B}$ est continu.
+Les modèles surfacique et linéïque sont approximés dans le sens où $\overrightarrow{\rm B}$ n'est pas continu au niveau
+des sources de champ magnétique.
+
+#### Symétrie
+Le champ magnétique est antisymétrique. Les axes de symétrie du courant donnent
+donc l'opposé du symétrique du vecteur de l'autre côté des symétries. Ainsi, le
+champ magnétique est perpendiculaire aux plans de symétrie, et le champ magnétique
+dans les plans d'antisymétrie appartient au plan d'antisymétrie.
+
+#### Invariances
+$\overrightarrow{\rm B}$ possède les mêmes invariances que le courant.
