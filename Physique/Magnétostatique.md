@@ -83,3 +83,128 @@ dans les plans d'antisymétrie appartient au plan d'antisymétrie.
 
 #### Invariances
 $\overrightarrow{\rm B}$ possède les mêmes invariances que le courant.
+
+#### Lignes de champ
+Les lignes de champ appartiennent aux plans d'antisymétrie, se coupent
+uniquement aux points $\overrightarrow{\rm B} = 0$, et forment des courbes
+fermées qui s'enroulent autour des courants. Leur orientation dépend de
+l'orientation de la règle de la main droite.
+
+## Lois de la magnétostatique
+### Lois sur le flux de $\overrightarrow{\rm B}$
+#### Le champ magnétique est à flux conservatif
+$\circ \!\!\!\!\!\! \iint_{S_G} \overrightarrow{\rm B} \cdot d \overrightarrow{\rm S} = 0$
+
+#### Conséquence
+Comme $\overrightarrow{\rm B}$ est à flux conservatif, $\overrightarrow{\rm B}$
+est constant le long d'un tube de champ.
+
+On doit savoir démontrer cette propriété : si on prend deux contours successifs
+sur lequel s'appuie un tube de champ, on obtient en prenant le volume entre les
+deux que le contour du tube a un flux nul, et donc que les deux bouts du tube
+reçoivent un même flux (attention aux orientations !).
+
+Ainsi, si les lignes de champ se resserrent (façon tuyau d'arrosage), $\overrightarrow{\rm B}$
+croît, et inversement. Dans tous les cas, on retiendra que $B S$ (le champ
+magnétique fois la surface) est constante le long d'un tube de champ.
+
+#### Équation locale
+En utilisant à nouveau le théorème d'Ostrogradski, on adapte la loi en
+$\iiint_{V_G} \text{div} \overrightarrow{\rm B} d \tau = 0$, donnant l'équation
+locale $\text{div} \overrightarrow{\rm B} = 0$ (Maxwell-flux/Maxwell-Thompson).
+
+### Loi sur la circulation de $\overrightarrow{\rm B}$
+On a vu que $\overrightarrow{\rm B} \propto I$ et que les lignes de champ $\overrightarrow{\rm B}$
+s'enroulent autour de $I$, ce qui s'explique par le théorème d'Ampère :
+$\circ \!\!\!\! \int_C \overrightarrow{\rm B} \cdot d \overrightarrow{\rm l} = \mu_0 I_\text{enlacé}$
+(avec $\mu_0$ la perméabilité magnétique du vide, de dimension $MLT^{-2}I^{-2}$).
+
+Pour l'appliquer, il est nécessaire de définir $I_\text{enlacé}$ et son signe.
+
+#### Définition et unicité de $I_\text{enlacé}$ (conservation de la charge)
+On choisit de définir ce $I_\text{enlacé}$ comme le flux de la densité de
+courant volumique à travers une surface s'appuyant sur le contour. Mais il
+existe un infinité de ces surfaces. Pour obtenir une définition, il est donc
+nécessaire que ce flux ne dépende pas de la surface.
+
+##### Preuve d'unicité et équation locale de conservation de charge
+Or, si on prend deux surfaces différentes $S_{C_1}$ et $S_{C_2}$, on veut
+obtenir $\iint_{S_{C_1}} \overrightarrow{\rm j} \cdot d \overrightarrow{\rm S_{C_1}} = \iint_{S_{C_2}} \overrightarrow{\rm j} \cdot d \overrightarrow{\rm S_{C_2}}$.
+Or, ces surfaces forment une surface fermée qui définit un volume.
+On obtient donc la condition $\circ \!\!\!\!\!\! \iint_{S_G} \overrightarrow{\rm j} \cdot d \overrightarrow{\rm S_G} = 0$,
+donnant avec le fait que ceci doive être vrai pour toutes surfaces et
+Ostrogradski que $\text{div} \overrightarrow{\rm j} = 0$. Il reste donc à
+interpréter cette condition.
+
+La condition $\text{div} \overrightarrow{\rm j} = 0$ est liée à la loi de
+conservation de la charge. En effet, la variation de charge dans notre volume
+correspond au nombre de charges qui entrent et sortent par la surface fermée
+(puisqu'aucune charge ne se créée ou disparaît). On a ainsi
+$\frac{d Q(V_G)}{dt} = - \frac{d \delta \overline{Q_\text{sortant}(S_G)}}{dt}$.
+
+Le théorème de Gauss et Ostrogradski permettent enfin de conclure
+que la conservation de la charge nous donne $\circ \!\!\!\!\!\! \iiint_{V_G} (\frac{d \rho}{dt} + \text{div} \overrightarrow{\rm j}) d \tau = 0$
+sur toute surface fermée, donnant $\frac{d \rho}{dt} + \text{div} \overrightarrow{\rm j} = 0$, qu'on appelle équation de continuité ou équation
+locale de la conservation de charge.
+
+Ainsi, pour que $\text{div} \overrightarrow{\rm j}$ soit nul, il est nécessaire
+que $\frac{d \rho}{dt}$ soit nul. En magnétostatique, "rien ne bouge", et on
+peut donc en déduire que notre $I_\text{enlacé}$ est indépendant du choix de la
+surface sur le contour, nous donnant une définition cohérente.
+
+##### Conclusion
+Le théorème d'Ampère tel qu'on l'a vu est donc valable uniquement en statique
+(ou dans l'ARQS qui simule la statique). On en tire une équation locale avec le
+théorème de Stokes, l'équation de Maxwell-Ampère en statique, $\overrightarrow{\rm \text{rot}} \overrightarrow{\rm B} = \mu_0 \overrightarrow{\rm j}$.
+
+### Relation de passage
+On obtient une relation de passage entre deux points $M$ et $M'$ avec $\overrightarrow{\rm N_{MM'}}$
+le vecteur perpendiculaire à la surface $S$ entre les deux points qui est
+$\overrightarrow{\rm B}(M') - \overrightarrow{\rm B}(M) = \mu_0 \overrightarrow{\rm j_S} \wedge \overrightarrow{\rm M_{MM'}}$.
+
+Le champ magnétique normal est toujours continu en traversant un nappe
+surfacique de courant, et le champ tangentiel est discontinue en traversant une
+nappe surfacique de courant.
+
+## Calcul de champ
+### Solénoïde infini
+Le solénoïde est caractérisé par son nombre de spires par unité de longueur $n = \frac{d N}{dz}$.
+On applique le modèle à un solénoïde réel lorsque son rayon est petit devant sa
+longueur.
+
+On repère les plans de symétrie, qui sont toutes les sections du cylindre
+enroulé dans le solénoïde. Comme le champ magnétique est perpendiculaire à ces
+plans, en utilisant des contours rectangulaires entièrement à l'extérieur et
+entièrement à l'intérieur du solénoïde, on trouve que le champ magnétique y est
+homogène.
+
+En utilisant finalement un contour à cheval entre l'extérieur et l'intérieur, on
+obtient assez facilement $B(r < R \text{(à l'intérieur du solénoïde)}) = \mu_0 n I$.
+
+## Dipôle magnétique
+### Dipôle magnétique et moment dipolaire magnétique
+Vu de loin, une source de $\overrightarrow{\rm B}$ semble globalement nulle,
+donc le champ magnétique est toujours un champ dipolaire. On cherche donc à
+étudier l'expression de $\overrightarrow{\rm B}(M)$ créée par $\overrightarrow{\rm j}(P)$
+dans le volume $V$, dans le cadre de l'approximation dipolaire $r = OM \gg L_C$.
+
+On peut montrer que $\overrightarrow{\rm B}(M)$ ne dépend que d'une grandeur
+appelée moment dipolaire magnétique ed la distribution de courant $\overrightarrow{\rm \mathcal{M}}$.
+Pour un spire, $\overrightarrow{\rm \mathcal{M}} = I \overrightarrow{\rm S_C}$.
+On peut voir que c'est le cas peu importe la forme de la surface choisie.
+
+Il n'est demandé que de connaître le cas de la spire circulaire de moment $I 2 \pi r^2 \overrightarrow{\rm e_z}$.
+Les autres cas se ramènent presque toujours à une somme de spires (ou à une
+intégrale d'une infinité de spires).
+
+Le moment magnétique est en $A \cdot m^2$. Une spire macroscopique avec un
+courant d'intensité $10^{-2} A$ et d'un mètre carré de surface a un moment
+magnétique de l'ordre de $10^{-2}$, et la rotation d'un électron autour du noyau
+génère un moment d'ordre $10^{-24}$ (ce qui est non négligeable si tous les
+atomes d'un matériau s'alignent).
+
+### Champ magnétique créé par un dipôle magnétique
+Les lignes de champ sont identiques à celles de $\overrightarrow{\rm p}$
+donc $\overrightarrow{\rm B}$ est de même forme que $\overrightarrow{\rm E}$.
+On a $\overrightarrow{\rm B}$ qui en $r$ est de valeur $\frac{\mu_0 2 \mathcal{M} \cos(\theta)}{4 \pi r^3}$
+et en $\theta$ de $\frac{\mu_0 \mathcal{M} \sin(\theta)}{4 \pi r^3}$.
