@@ -81,8 +81,8 @@ continus.
 Il est utile de retenir l'équation de la conservation de la charge, qui est
 contenue dans l'équation de Maxwell-Ampère.
 
-## Bilans d'énergie électromagnétique
-### Bilan d'énergie électromagnétique, définition de la densité d'énergie électromagnétique
+# Bilans d'énergie électromagnétique
+## Bilan d'énergie électromagnétique, définition de la densité d'énergie électromagnétique
 On note le vecteur de densité de courant d'énergie électromagnétique par un
 vecteur $\overrightarrow{\rm R}$ ou $\overrightarrow{\rm \pi}$, aussi appelé
 vecteur de Poynting, et on note la puissance électromagnétique absorbée $p_0$.
@@ -108,7 +108,7 @@ $\frac{d u_\text{elm}}{dt} + \text{div} \overrightarrow{\rm \pi} + p_{v_\text{cr
 qu'on appelle équation locale de Poynting ou équation locale de conservation de
 l'énergie électromagnétique.
 
-### Expression des termes
+## Expression des termes
 Il reste à exprimer concrètement $p_{v_\text{créée}}$, $\overrightarrow{\rm \pi}$
 et $u_\text{elm}$.
 
@@ -139,7 +139,7 @@ On exprime donc :
 - La puissance électromagnétique volumique créée en valeur absolue est $p_{v_\text{elm abs}}$
   $= \overrightarrow{\rm j} \cdot \overrightarrow{\rm E}$
 
-### Bilan d'énergie dans une résistance $R$
+## Bilan d'énergie dans une résistance $R$
 On modélise une résistance par un cylindre d'un métal de conductivité $\gamma$.
 On pose dans ce modèle une loi d'Ohm locale qui compare la conductivité à un
 fluide qui ralentit linéairement le courant, $\overrightarrow{\rm j} = \gamma \overrightarrow{\rm E}$.
@@ -167,3 +167,98 @@ et on obtient en intégrant que la puissance absorbée est de $R I^2$.
 Le bilan s'écrit donc $0 = RI^2 - RI^2$, qu'on interprète comme le fait
 qu'il n'y ait pas de variation à l'intérieur de la résistance car la puissance
 rayonnée sortante par les côtés est égale à l'opposé la puissance reçue à la matière.
+
+# Ondes électromagnétiques dans le vide
+## Équations d'onde
+Dans le vide, $\rho = 0$ et $\overrightarrow{\rm j} = \overrightarrow{\rm 0}$,
+donc $\text{div} \overrightarrow{\rm E} = 0$, $\text{div} \overrightarrow{\rm B} = 0$,
+$\overrightarrow{\rm \text{rot}} \overrightarrow{\rm E} = - \frac{\partial \overrightarrow{\rm B}}{\partial t}$
+et $\overrightarrow{\rm \text{rot}} \overrightarrow{\rm B} = \mu_0 \varepsilon_0 \frac{\partial \overrightarrow{\rm E}}{\partial t}$.
+
+On a $\overrightarrow{\rm \text{rot}} \overrightarrow{\rm \text{rot}} \overrightarrow{\rm E} = \overrightarrow{\rm 0} s \Delta \overrightarrow{\rm E}$,
+donnant $- \mu_0 \varepsilon_0 \frac{\partial^2 \overrightarrow{\rm E}}{\partial t^2} = - \Delta \overrightarrow{\rm E}$, une équation fondamentale pour notre problème.
+De la même façon, on obtient $\Delta \overrightarrow{\rm B} - \mu_0 \varepsilon_0 \frac{\partial^2 \overrightarrow{\rm B}}{\partial t^2} = \overrightarrow{\rm 0}$.
+
+Ces deux équations sont la même équation de d'Alembert, avec des constantes $\mu_0 \varepsilon_0$
+qui sont de dimension $L^{-2} T^2$. On pose donc une constante de vitesse $c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$,
+qui est la vitesse de la lumière, puisque la lumière est une onde
+électromagnétique.
+
+## Formes des solutions possibles
+### Ondes planes progressives
+Une onde plane est une onde dont les surfaces d'onde sont des plans. En prenant
+la variable $x$ dans la direction normale à ces plans, on a l'équation planaire
+d'Alembert $\frac{\partial^2 s}{\partial x^2} - \frac{1}{c^2} \frac{\partial^2 s}{\partial t^2} = 0$.
+En posant $u,v = x \mp ct$, on a $\frac{\partial^2 s}{\partial u \partial v} = 0$,
+donnant $s(u,v) = f(u) + g(v)$, permettant de réécrire $s$ comme la somme de
+deux ondes progressives à la vitesse $c$, l'une vers les $x$ croissants et
+l'autre vers les $x$ décroissants.
+
+### Ondes sphériques
+Les surfaces d'onde étant sphériques, on obtient
+$\Delta s = \frac{1}{r^2} \frac{\partial^2 (r^2 s)}{\partial r^2}$,
+soit $\frac{1}{r} \frac{\partial^2 (r s)}{\partial r^2} - \frac{1}{c^2} \frac{\partial^2 s^2}{\partial t^2} = 0$,
+donnant finalement $s(r,t) = \frac{f(r - ct)}{r} + \frac{g(r + ct)}{r}$,
+c'est-à-dire la somme d'ondes progressives de vitesse $c$, l'une centrifuge et
+l'autre centripète. Le facteur en $\frac{1}{r}$ traduit la conservation de
+l'énergie, ce qui montre que le milieu est non absorbant (c'est le vide).
+
+### Onde stationnaire
+Une onde stationnaire est une onde qui se réécrit sous la forme
+$s(M,t) = f(M) g(t)$.
+
+Pour une onde stationnaire plane, on a alors l'équation de d'Alembert
+$g(t) f''(x) = \frac{1}{c^2} f(x) g''(t)$, donnant après un peu de travail
+$s(x,t) = S_0 \cos(\alpha x + \varphi) \cos(c \alpha t + \psi)$.
+
+### Onde plane progressive sinusoïdale (OPPS) / harmonique (OPPH) / monochromatique (OPPM)
+Une telle onde s'écrit $s = s_0 \cos(\overrightarrow{\rm k} \cdot \overrightarrow{\rm r} - \omega t + \varphi_0)$,
+avec $s$ l'amplitude, $\varphi(M) = \overrightarrow{\rm k} \cdot \overrightarrow{\rm r} + \varphi_0$
+la phase spatiale, $\varphi_0$ la phase à l'origine (qu'on peut décaler pour
+être nulle si on étudie une seule onde, mais il est très important de prendre en
+compte la différence de phase quand il y en a plusieurs), et $\varphi(M,t) =
+\varphi(M) - \omega t$ la phase de l'onde. $\omega$ est la pulsation de l'onde,
+et $\overrightarrow{\rm k}$ le vecteur d'onde (la pulsation spatiale).
+
+Cette onde est alors périodique en $\lambda$ spatialement (dans le vide) et en $T$
+temporellement. On note la vitesse de propagation, à la fois de l'onde vers les
+$x$ croissants, mais aussi de la phase, comme $v_\varphi = \frac{\omega}{k}$.
+On parle de vitesse de groupe pour $V_g = \frac{d \omega}{dk}$.
+
+Dans un milieu linéaire, homogène, et isotrope, tout se passe comme dans le vide
+à condition de remplacer $\varepsilon_0$ par $\varepsilon_0 \varepsilon_r$,
+faisant le lien avec l'indice optique.
+
+### Structure d'une OPPM dans le vide
+On souvent écrire des dérivations spatiales sous la forme complexe. Pour un
+champ scalaire $V$, le potentiel d'un champ $\overrightarrow{\rm E} = \overrightarrow{\rm E_0} e^{j (\overrightarrow{\rm k} \cdot \overrightarrow{\rm r} - \omega t)}$,
+qui s'écrit donc $V_0 e^{j (\overrightarrow{\rm k} \cdot \overrightarrow{\rm r} - \omega t)}$,
+on a $\overrightarrow{\rm \text{grad}} V = j \overrightarrow{\rm k} V$,
+donnant avec $\overrightarrow{\rm \nabla} = j \overrightarrow{\rm k}$ ou $- j\overrightarrow{\rm k}$,
+les formes habituelles $\text{div} \overrightarrow{\rm E} = \overrightarrow{\rm \nabla} \cdot \overrightarrow{\rm E}$
+et $\overrightarrow{\rm \text{rot}} = \overrightarrow{\rm \nabla} \wedge \overrightarrow{\rm E}$.
+De même, $\frac{d \overrightarrow{\rm E}}{dt} = j \omega \overrightarrow{\rm E}$
+ou $- j \omega \overrightarrow{\rm E}$.
+
+On détermine les propriétés des OPPM grâce aux équations de Maxwell.
+
+####  $\overrightarrow{\rm E}$ et $\overrightarrow{\rm B}$ sont transverses
+Puisque dans le vide, $\text{div} \overrightarrow{\rm E} = 0$, on a $\overrightarrow{\rm E} \perp \overrightarrow{\rm n}$,
+montrant que le champ électrique est polarisé perpendiculairement à la direction
+de propagation. De même, $\overrightarrow{\rm B} \perp \overrightarrow{\rm n}$.
+Les deux champs sont donc transverses à la direction de propagation de l'OPPM.
+De façon générale, les divergences vont permettre de déterminer la direction de
+polarisation.
+
+#### Lien entre $\overrightarrow{\rm E}$ et $\overrightarrow{\rm B}$
+Les expressions des rotationnels donne la relation de structure des OPPM
+dans tous les milieux $\overrightarrow{\rm B} = \frac{\overrightarrow{\rm k} \wedge \overrightarrow{\rm E}}{\omega}$.
+Dans le vide, $\frac{\omega}{k} = c$, donnant $\overrightarrow{\rm B} = \frac{\overrightarrow{\rm n} \wedge \overrightarrow{\rm E}}{c}$.
+
+Ainsi, $\overrightarrow{\rm k}$, $\overrightarrow{\rm E}$ et $\overrightarrow{\rm B}$ forment une famille orthogonale.
+
+Un équation de dispersion est une relation entre $k$ et $\omega$, qu'on obtient
+en injectant l'onde dans l'équation de propagation :
+$\Delta \overrightarrow{\rm E} = \nabla^2 \overrightarrow{\rm E} = (j \overrightarrow{\rm k})^2 \overrightarrow{\rm E}$
+donnant $- k^2 \overrightarrow{\rm E} - \mu_0 \varepsilon_0 (-j \omega)^2 \overrightarrow{\rm E} = 0$
+donnant l'équation finale $k^2 = \mu_0 \varepsilon_0 \omega^2 = \frac{\omega^2}{c^2}$.
