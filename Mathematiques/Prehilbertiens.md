@@ -131,3 +131,42 @@ lequel les matrices sont de déterminant $1$) sont des groupes compacts.
 
 Si $F$ est un sous-espace stable par une isométrie, $F^{\top}$
 est stable par cette isométrie.
+
+### Théorème spectral : réduction des matrices symétriques
+On cherche à prouver que $u$ est diagonalisable en base orthonormée,
+si et seulement si $u$ est symétrique. On le prouve par la série de lemmes
+suivants, dont on peut trouver la preuve détaillée facilement.
+
+- Si $u$ est symétrique, et que $F$ est stable par $u$, $F^{\top}$ est stable
+  par $u$, et $u\restriction_{F}$ est symétrique (en utilisant la définition par
+  le produit scalaire de la symétrie (qu'un endomorphisme symétrique est son
+  propre transposé)).
+- Les valeurs propres d'un endomorphisme symétrique sont réelles, ce qu'on
+  montre en passant au produit hermitien du produit scalaire sur des matrices
+  complexes, et on trouve alors pour les vecteurs propres des valeurs propres
+  (encore une fois avec la caractérisation au produit scalaire).
+- On fait la preuve finale par récurrence sur la dimension de l'espace, qu'on
+  sépare ensuite en $F$ l'espace orthogonal à tous les espaces propres et
+  $F^{\top}$, sur lesquels $u$ est diagonalisable en BON, ce qui contredit la
+  définition de $F$ et permet de diagonaliser sur tout l'espace.
+
+Les matrices symétriques peuvent devenir un produit scalaire sont les matrices
+symétriques définies positives $S^{++}$, pour lesquelles $(u(x)|x) > 0$ pour
+tout $x$ non nul. On définit les matrices symétrique positives $S^+$ comme
+celles pour lesquelles $(u(x)|x) \geq 0$ pour tout $x$.
+
+Une matrice est symétrique (définie) positive si et seulement si
+son spectre est réel (strictement) positif.
+
+On peut poser certaines questions en notant $u \geq v$ quand
+$u - v \in S^+$, et en étudiant des suites ou les particularités de cet ordre.
+
+Pour $u$ symétrique, $\text{Ker} u = (\text{Im} u)^{\top}$.
+
+### Rayon spectral
+Pour $u$ une matrice symétrique, on définit $\rho(u) = \text{sup} Sp(u)$. On
+peut remarquer que cette valeur est celle de la norme triple de $u$ associée à
+la norme euclidienne. On va pouvoir, plus précisément, déterminer que la norme
+triple d'un endomorphisme quelconque $u$ est de $\sqrt{\rho(u^{\top} u)}$.
+
+On retiendra l'identité $\| u(x) \|^2 = (u(x) | u(x)) = (u^{\top} u(x) | x)$.
