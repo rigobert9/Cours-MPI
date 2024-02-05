@@ -262,3 +262,61 @@ en injectant l'onde dans l'équation de propagation :
 $\Delta \overrightarrow{\rm E} = \nabla^2 \overrightarrow{\rm E} = (j \overrightarrow{\rm k})^2 \overrightarrow{\rm E}$
 donnant $- k^2 \overrightarrow{\rm E} - \mu_0 \varepsilon_0 (-j \omega)^2 \overrightarrow{\rm E} = 0$
 donnant l'équation finale $k^2 = \mu_0 \varepsilon_0 \omega^2 = \frac{\omega^2}{c^2}$.
+
+En utilisant ces différentes relations sur une OPPM, on obtient que $k = \frac{\omega}{c}$.
+Le vecteur de Poynting d'une telle onde est alors de
+$\overrightarrow{\rm R} = \frac{\overrightarrow{\rm E} \wedge \overrightarrow{\rm B}}{\mu_0}$.
+Il est impératif de ne pas faire ce calcul avec des complexes, puisqu'il s'agit
+d'un terme quadratique (car terme énergétique) : il faut repasser aux valeurs
+réelles avec des fonctions trigonométriques. On obtient
+$\overrightarrow{\rm R} = \frac{k E_0^2}{\mu_0 \omega} \cos^2(\omega t - k z) \overrightarrow{\rm e_z}$,
+donnant une énergie qui rayonne dans la direction de propagation de l'onde. En
+moyenne, ce terme est de $\frac{k E_0^2}{2 \mu_0 \omega} \overrightarrow{\rm e_z}$,
+confirmant que de l'énergie se déplace avec l'onde.
+
+#### Transport de l'énergie par une OPPM dans le vide
+Soit une OPPM se propageant dans la direction $\overrightarrow{\rm u}$.
+L'énergie traversant la face d'un cylindre aux faces penchées à cause de l'onde
+pendant $dt$ est contenue dans le cylindre s'appuyant sur la face et de côté
+$\overrightarrow{\rm v_E} dt$, avec $\overrightarrow{\rm v_E} = v_E \overrightarrow{\rm u}$
+la vitesse de propagation de l'énergie. On obtient alors $\frac{d E_\text{elm transverse}}{dt} = \overrightarrow{\rm R} \cdot d \overrightarrow{\rm S}$,
+donnant par identification $\overrightarrow{\rm R} = e_\text{volumique de l'onde} \overrightarrow{\rm v_E}$.
+
+En appliquant cette relation à une OPPM dans le vide, comme $e_\text{volumique de l'onde} = \frac{1}{2} \varepsilon_0 E^2 + \frac{B^2}{2 \mu_0}$
+et $\overrightarrow{\rm B} = \frac{k E}{\omega}$ donc $e_\text{volumique de l'onde} = \frac{1}{2} \varepsilon_0 E^2 + \frac{k^2}{\mu_0 \omega^2} E^2$,
+et avec $k = \frac{\omega}{c}$ et $\frac{1}{\mu_0 c^2} = \omega_0$, on a
+finalement $e_\text{volumique de l'onde} = \varepsilon_0 E^2$. On calcule aussi
+le vecteur de Poynting qui est $\frac{k E^2}{\mu_0 \omega} \overrightarrow{\rm u}$.
+On obtient donc $\overrightarrow{\rm v_E} = c \overrightarrow{\rm u}$.
+
+### Polarisation des ondes électromagnétiques
+> La polarisation d'une onde caractérise la trajectoire que fait la pointe de $\overrightarrow{\rm E}$
+> dans un plan perpendiculaire à $\overrightarrow{\rm u}$ quand on regarde venir
+> l'onde vers nous.
+
+On prend l'origine des temps telle que le déphasage à l'origine soit nul. On
+peut observer dans le plan normal à $\overrightarrow{\rm u}$ en $t = 0$ que le
+vecteur $\overrightarrow{\rm E}$ forme une ellipse dans le plan.
+
+La lumière naturelle est dite non polarisée, car chaque train d'onde a une phase
+différente. La polarisation ne peut donc être définie que pendant une temps $\tau_c \approx \frac{1}{\Delta f}$.
+On supposera en général qu'une onde naturelle est à moitié polarisée sur $\overrightarrow{\rm e_x}$
+et l'autre moitié sur $\overrightarrow{\rm e_y}$, et que ces deux
+composantes sont incohérentes l'une avec l'autre.
+
+Un polariseur est une appareil qui polarise rectilignement les ondes
+électromagnétiques en ne laissant passer que la composant parallèle à un $\overrightarrow{\rm u_p}$
+en coupant les composantes perpendiculaires à $\overrightarrow{\rm u_p}$. On
+applique alors la loi de Malus : $I_\text{transmis} = I_0 \cos^2(\alpha)$.
+
+### Réflexion d'une OPPM en incidence normale sur un conducteur parfait
+#### Notion de conducteur parfait
+> Le modèle du conducteur parfait est celui d'un matériau de conductivité infinie,
+> donc dans lequel $\overrightarrow{\rm E} = \overrightarrow{\rm 0}$.
+
+Dans un tel conducteur, en réécrivant les équations de Maxwell, on a
+$\text{div} \overrightarrow{\rm E} = \frac{\rho}{\varepsilon_0} \Rightarrow \rho = 0$,
+$\text{rot} \overrightarrow{\rm E} = - \frac{\partial \overrightarrow{\rm B}}{\partial t} \Rightarrow \overrightarrow{\rm \mathbb{B}} = \overrightarrow{\rm 0}$
+(pour une onde)
+et $\overrightarrow{\rm j} = \overrightarrow{\rm 0}$.
+On peut en revanche ajouter des charges et des courants surfaciques.
