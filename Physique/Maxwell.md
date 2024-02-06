@@ -319,4 +319,99 @@ $\text{div} \overrightarrow{\rm E} = \frac{\rho}{\varepsilon_0} \Rightarrow \rho
 $\text{rot} \overrightarrow{\rm E} = - \frac{\partial \overrightarrow{\rm B}}{\partial t} \Rightarrow \overrightarrow{\rm \mathbb{B}} = \overrightarrow{\rm 0}$
 (pour une onde)
 et $\overrightarrow{\rm j} = \overrightarrow{\rm 0}$.
-On peut en revanche ajouter des charges et des courants surfaciques.
+On peut en revanche ajouter des charges et des courants surfaciques, dont on
+s'occupera avec les relations de passage.
+
+#### Forme de l'onde réfléchie
+Soit une OPPM arrivant en incidence normale sur le conducteur $\overrightarrow{\rm k_i} = \frac{\omega}{c} \overrightarrow{\rm e_z}$,
+on a alors $\overrightarrow{\rm B_i} = \frac{\overrightarrow{\rm k} \wedge E_i}{\omega} = \frac{E_0}{c} e^{j (kz - \omega t) \overrightarrow{\rm e_z}}$.
+
+Par l'absurde, l'onde réfléchie existe puisqu'il y a continuité de $\overrightarrow{\rm E_z}$ en $z = 0$,
+quand l'onde atteint le conducteur, empêchant d'avoir l'onde seule qui passe. On
+recherche alors cette OPPM $\overrightarrow{\rm E_r} = \overrightarrow{\rm
+E_{0_r}} e^{j (\overrightarrow{\rm k_r} \cdot \overrightarrow{\rm r} - \omega_r t)}$.
+
+On connaît les lois de Descartes, donnant $\overrightarrow{\rm k_r} = - k_r \overrightarrow{\rm e_z}$,
+montrant que $k_{r_x} = k_{r_y} = 0$. La relation de passage en $z = 0$ donne
+$\overrightarrow{\rm E_\text{tot}}(z = 0^+, t) - \overrightarrow{\rm E_\text{tot}}(z = 0^-, t) = \frac{\sigma}{\varepsilon_0} \overrightarrow{\rm e_z}$.
+On obtient en déroulant $E_{r_{0_y}} = 0$, que $\omega_r = \omega$ (avec
+l'équation sur $\overrightarrow{\rm e_x}$) et que $E_{r_{0_x}} = - E_0$.
+
+Ainsi, l'onde réfléchie est une OPPM dans le vide se propageant suivant $- \overrightarrow{\rm e_z}$,
+donc $\overrightarrow{\rm E_r}$ est transverse, donnant $E_{r_{0_z}} = 0$, donc
+$\lambda(x_0,y_0,t) = 0$ (on ne fait pas apparaître de charges à la surface du
+conducteur). On obtient avec l'équation de dispersion que $k = \pm k_r$,
+et on prendra $k = - k_r$. Finalement, $\overrightarrow{\rm E_r} = - E_0 e^{-j
+(kz + \omega t)} \overrightarrow{\rm e_z}$. On obtient $\overrightarrow{\rm B}$
+à partir de la relation de structure et des relations de passage.
+
+#### Les champ électromagnétiques exercent une force sur le conducteur
+
+Ce champ électromagnétique exerce une force sur le conducteur :
+$d \overrightarrow{\rm F} = \sigma d S \overrightarrow{\rm E}(0) + \overrightarrow{\rm j_S} d S \wedge \overrightarrow{\rm B}(0)$.
+On prend $\overrightarrow{\rm E}(0) = \frac{\overrightarrow{\rm E}(0^+) + \overrightarrow{\rm E}(0^-)}{2} = \overrightarrow{\rm 0}$, et de la même
+façon $\overrightarrow{\rm B}(0) = B i e^{-j \omega t} = \frac{1}{2} \overrightarrow{\rm B}(0^-)$.
+On définit une pression dite de radiation, $P_\text{rad} = < \| \frac{1}{2} \overrightarrow{\rm j_S} \wedge B(0^-) \| >$.
+
+#### Interprétation du fonctionnement d'un polariseur
+Un polariseur est constitué d'une série de barreaux conducteurs parallèles
+équidistants, espacés d'une distance plus petite que la longueur d'onde.
+
+#### Onde résultante
+En faisant les calculs du champ total, on obtient une onde stationnaire, comme
+une corde de Melde, avec pour extrémité le conducteur et des noeuds
+régulièrement espacés, et $\overrightarrow{\rm E_\text{tot}} = 2 E_0 \sin(k z) \sin(\omega t)$.
+Le champ magnétique décrit une figure identique mais avec un ventre au niveau du
+conducteur.
+
+## Milieux dispersifs : définition et exemples
+### Phénomène de dispersion
+#### Ondes réelles
+On travaille avec le modèle de l'OPPM déjà décrit de $\overrightarrow{\rm E}$
+$= \overrightarrow{\rm E_0} e^{j (\overrightarrow{\rm k} \cdot \overrightarrow{\rm r} - \omega t)}$.
+On considèrera ce modèle comme acceptable localement sur les ondes réelles si
+$D \gg L$, ou bien en l'utilisant comme les composantes de la transformée de
+Fourier.
+
+On rappelle que la transformée de Fourier $g(\omega)$ d'une fonction périodique est telle que
+$\underline{f(t)} = \int\limits_{-\infty}^{+\infty} g(\omega) e^{-j \omega t} d \omega$.
+On retiendra que $\tau \times \Delta \omega \approx 2 \pi$ et $\tau \times \Delta f \approx 1$,
+avec $\tau$ la période de l'onde, $\Delta \omega$ la largeur du spectre et $\Delta f$
+l'amplitude de la fonction. Dans le cas d'une onde plane, on peut d'ailleurs
+généraliser en $s(z,t) = \int\limits_{-\infty}^{+\infty} g(\omega) e^{j (k(\omega) z - \omega t)} d \omega$.
+
+#### Propagation d'onde réelle
+##### Milieu dispersif
+Pour une OPPM, la vitesse de propagation de la phase ne dépend que de sa phase :
+c'est la célérité de l'onde $v_\varphi = \frac{\omega}{k}$. Quand une onde
+réelle se déplace dans un milieu d'équation de dispersion $k = k(\omega)$,
+chacun des composantes de l'onde se déplace à une vitesse $v_\varphi(\omega) = \frac{\omega}{k(\omega)}$.
+
+> Un milieu dispersif est un milieu dans lequel $v_\varphi$ est une fonction non
+> constante de $\omega$.
+
+> Un milieu dispersif est tel que $v(\omega) = v_\varphi \Leftrightarrow k \neq a \omega \Leftrightarrow n = n(\omega)$.
+> Un milieu non dispersif est tel que $v_\varphi = \text{const} \Leftrightarrow k = a \omega \Leftrightarrow n = \text{const}$.
+
+En réalité, seul le vide est un milieu non dispersif.
+
+##### Cas d'une onde quasi-monochromatique
+On parle d'onde quasi-monochromatique lorsque $\Delta \omega \ll \omega_0$, ce
+qui décrit la plupart des ondes lumineuses. On pourrait alors écrire
+$E(z,t) = \int\limits_{-\infty}^{+\infty} a(\alpha) e^{j(k(\omega) z - \omega t)} d \omega$,
+donnant avec l'approximation quasi-monochromatique
+que $k(\omega) \approx k(\omega_0) + \frac{d k}{d \omega}(\omega_0) (\omega - \omega_0)$,
+donnant $E(z,t) = A(z - \frac{1}{k_0'} t) e^{j (k_0' z - \omega_0 t)}$.
+
+Une onde quasi-monochromatique apparaît donc comme une sinusoïde se propageant à
+la vitesse $v_{\varphi_0} = \frac{\omega_0}{k_0}$, avec une une enveloppe se
+propageant à la vitesse $\frac{1}{k_0'} = \frac{1}{\frac{d k}{d \omega}(\omega_0)} = \frac{d \omega}{dk}(\omega_0)$.
+
+On en déduit que pour onde quasi-monochromatique $v_g(\omega_0)$ est la
+vitesse de l'enveloppe de l'onde. Or, les détecteurs sont sensibles à $<E^2>$,
+donc à l'enveloppe, et $v_g$ apparaît comme la vitesse de propagation de l'onde
+réelle (de l'énergie). On définit cette vitesse de groupe $v_g = \frac{d \omega}{dk}$.
+Pour des ondes au spectre plus large, on peut faire des DLs à l'ordre supérieur.
+
+Pour une onde réelle, on peut alors voir que l'enveloppe se déforme en
+s'étalant, en s'aplatissant (mais en conservant l'aire sous la courbe).
