@@ -16,7 +16,6 @@ vouloir retrouver les résultats d'induction à deux variables évoqués l'anné
 dernière.
 
 ### Équation de conservation de charge
-
 On avait de plus l'équation de continuité, aussi appelée équation de
 conservation de la charge : $\frac{d Q_\text{int}(V)}{dt} = - \frac{\delta \overline{Q_T}(S_G)}{dt}$.
 On peut la réécrire $\frac{d}{dt} (\iiint_V \rho d \tau) = - \circ\!\!\!\!\!\!\iint_{V} \overrightarrow{\rm j} \cdot d \overrightarrow{\rm S}$,
@@ -27,7 +26,6 @@ $\frac{d}{dt} (\iiint_V \frac{\partial \rho}{\partial t} + \text{div} \overright
 qu'on ramène à l'équation locale toujours vraie $\frac{\partial \rho}{\partial t} + \text{div} \overrightarrow{\rm j} = 0$.
 
 ### Équation de Faraday
-
 Les deux équations sur les rotationnels ne sont donc valables qu'en statique, et
 il faut prendre en compte dans le cas général le flux, comme avec la loi de
 Faraday $e = - \frac{d \varphi_C}{dt}$.
@@ -415,3 +413,63 @@ Pour des ondes au spectre plus large, on peut faire des DLs à l'ordre supérieu
 
 Pour une onde réelle, on peut alors voir que l'enveloppe se déforme en
 s'étalant, en s'aplatissant (mais en conservant l'aire sous la courbe).
+
+### Exemple de milieu dispersif : le plasma
+Un plasma est constitué d'un gaz ionisé c'est à dire d'un mélange d'ions et
+d'électrons. Il est localement neutre électriquement.
+
+On travaille avec l'hypothèse d'un plasma monovalent (avec des atome ionisés une
+seule fois) et à l'équilibre neutre électriquement, et dans le modèle d'un gaz
+parfait (pas trop dense, sans interaction entre les particules).
+
+On note :
+- $m$ et $M$ les masses des électrons et des ions
+- $n_+$ et $n_-$ les densités particulaires, et $n_0 = n_+ + n_-$ à l'équilibre
+
+En l'absence d'une onde électromagnétique, il y a électroneutralité locale et
+les vitesses moyennes des électrons et des ions sont nulles.
+
+On effectue une étude à l'ordre 1, en supposant que la perturbation de l'état
+d'équilibre du plasma par l'onde est faible, donc que localement,
+$\delta n_-, \delta n_+ \ll n_0$. $\rho$ et $\overrightarrow{\rm j}$ se
+réécrivent alors $\rho = n_i e - n_e e = (\delta n_+ - \delta n_-) e$
+et $\overrightarrow{\rm j} = n_0 e (\overrightarrow{\rm v_i} - \overrightarrow{\rm v_e})$.
+
+#### Loi constitutive
+Une OPPM met en mouvement les charges, et donc crée un $\overrightarrow{\rm j}$,
+pour lequel on cherche une loi $f(\overrightarrow{\rm E})$. On applique le
+principe fondamental de la dynamique à un électron. On observe d'ailleurs que la
+force magnétique est petite devant la force électrique pour des électrons non
+relativistes, car ...
+
+Ainsi, $m \frac{d \overrightarrow{\rm v_e}}{dt} = - e \overrightarrow{\rm E}$
+avec $\overrightarrow{\rm E} = \overrightarrow{\rm E_0} e^{j (\overrightarrow{\rm k} \cdot \overrightarrow{\rm r} - \omega t)}$.
+On cherche des solutions en le régime forcé permanent, donnant en posant
+l'équation sur $\overrightarrow{\rm V} = \overrightarrow{\rm V_0} e^{j (\overrightarrow{\rm k} \cdot \overrightarrow{\rm r} - \omega t)}$.
+
+On obtient en utilisant une relation fondamentale de la dynamique à nouveau
+que $\overrightarrow{\rm v_i} = - \frac{e}{j \omega M} \overrightarrow{\rm E}$,
+donnant que $\overrightarrow{\rm j} = - \frac{n_0 e^2}{j \omega} (\frac{1}{m} + \frac{1}{M}) \overrightarrow{\rm E}$.
+Puisque $\overrightarrow{\rm j} = \underline{\gamma} \overrightarrow{\rm E}$,
+nous donnant la valeur de $\underline{\gamma}$. Comme en réalité $m \ll M$,
+on peut approximer au premier ordre $\underline{\gamma} \approx - \frac{n_0 e^2}{j \omega m}$.
+On peut le justifier par le fait que les ions soit tellement lourds qu'ils ne
+participent que peu à la conduction.
+
+Énergétiquement, puisque la puissance volumique est de $p_v = \overrightarrow{\rm j} \cdot \overrightarrow{\rm E}$,
+on a $p_v = - \frac{n_0 e^2}{m \omega^2} E_0^2 \cos(\overrightarrow{\rm k} \cdot \overrightarrow{\rm r} - \omega t) \sin(\overrightarrow{\rm k} \cdot \overrightarrow{\rm r} - \omega t)$,
+de moyenne nulle, ce qui nous montre qu'il n'y a pas d'échange d'énergie entre
+l'onde et les charges, seulement des échanges instantanés où les charges créent
+du champ pendant $\frac{T}{4}$ puis absorbent de l'énergie pendant
+$\frac{T}{4}$.
+
+#### Détermination de $\rho$
+En reprenant les équations de Maxwell, la conservation des charges et la loi
+d'Ohm locale, on étudie ce qui se passe lors de la propagation d'une OPPM,
+donnant à partir de l'équation de la charge $\rho (\frac{\gamma}{\varepsilon_0} - j \omega) = 0$.
+On peut en développant le deuxième terme du produit
+obtenir $\frac{j \rho}{\omega} (\omega_p^2 - \omega^2) = 0$ avec
+$\omega_p^2 = \frac{n_0 e^2}{m \varepsilon_0}$, permettant de conclure
+soit que $\rho$ est nul (dans la plupart des cas) et l'onde est transverse,
+soit la pulsation de l'onde est bien particulière et l'onde a une composante
+longitudinale.
