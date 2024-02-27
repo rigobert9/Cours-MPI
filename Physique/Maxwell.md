@@ -450,7 +450,7 @@ l'équation sur $\overrightarrow{\rm V} = \overrightarrow{\rm V_0} e^{j (\overri
 On obtient en utilisant une relation fondamentale de la dynamique à nouveau
 que $\overrightarrow{\rm v_i} = - \frac{e}{j \omega M} \overrightarrow{\rm E}$,
 donnant que $\overrightarrow{\rm j} = - \frac{n_0 e^2}{j \omega} (\frac{1}{m} + \frac{1}{M}) \overrightarrow{\rm E}$.
-Puisque $\overrightarrow{\rm j} = \underline{\gamma} \overrightarrow{\rm E}$,
+$\overrightarrow{\rm j} = \underline{\gamma} \overrightarrow{\rm E}$,
 nous donnant la valeur de $\underline{\gamma}$. Comme en réalité $m \ll M$,
 on peut approximer au premier ordre $\underline{\gamma} \approx - \frac{n_0 e^2}{j \omega m}$.
 On peut le justifier par le fait que les ions soit tellement lourds qu'ils ne
@@ -473,3 +473,34 @@ $\omega_p^2 = \frac{n_0 e^2}{m \varepsilon_0}$, permettant de conclure
 soit que $\rho$ est nul (dans la plupart des cas) et l'onde est transverse,
 soit la pulsation de l'onde est bien particulière et l'onde a une composante
 longitudinale.
+
+#### Propagation d'une OPPM dans le plasma
+##### Équation d'onde
+On obtient de propagation comme d'habitude, avec $\overrightarrow{\rm j} = \underline{\gamma} \overrightarrow{\rm E}$.
+
+##### Équation de dispersion
+On injecte dans l'équation d'onde un champ électrique d'OPPM, on obtient
+$k^2 = \mu_0 \varepsilon_0 \omega^2 + j \mu_0 \underline{\gamma} \omega$
+(puisque $\gamma$ est imaginaire pur, cette valeur est réelle)
+$= \frac{\omega^2}{c^2 - \frac{\mu_0 \varepsilon_0 n e^2}{m \varepsilon_0}}$,
+et en posant $\omega_p = \sqrt{\frac{n e^2}{m \varepsilon_0}}$, on a
+$k^2 = \frac{\omega^2 - \omega_p}{c^2}$.
+
+##### Conséquences sur la propagation
+Si $\omega > \omega_p$, on trouve bien une onde plane composée de deux OPPM de
+pulsations opposées progressives selon le sens et la direction de $\overrightarrow{\rm u}$
+de vitesse de phase $v_\varphi = \frac{c}{\sqrt{1 - \frac{\omega_p^2}{\omega^2}}} > c$
+et de vitesse de groupe $v_g = \frac{d \omega}{d k}$, qui comme
+$k^2 = \frac{\omega^2}{c^2} - \frac{\omega_p}{c^2} \Rightarrow 2k dk = \frac{2 \omega d \omega}{c^2}$
+est égale à $v_g = \frac{c^2}{v_\pi} = c \sqrt{1 - \frac{\omega_p^2}{\omega^2}} < c$.
+
+Dans le cas où $\omega < \omega_p$, on obtient à nouveau une onde plane mais
+avec une exponentielle réelle, qui est stationnaire et qui disparaît au bout
+d'une distance caractéristique (onde évanescente). En calculant le champ
+magnétique à partir de $\overrightarrow{\rm \text{rot}} \overrightarrow{\rm E}$
+et en intégrant, on obtient que le vecteur de Poynting est de moyenne nulle (ce
+qui et normal, l'onde est stationnaire).
+
+Ainsi, qualitativement, le plasma se comporte comme un filtre passe-bas qui
+réfléchit les ondes de pulsation plus faible que $\omega_p$ (par conservation
+d'énergie).
