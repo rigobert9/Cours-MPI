@@ -68,3 +68,24 @@ d'habitude.
 Si $f$ est $\mathcal{C}^1$ et si $a$ __intérieur__ est un extremum, c'est un
 point critique : $df(a) = 0$, $Jac f(a) = 0$ et toutes les dérivées partielles
 en $a$ sont nulles (c'est par ces dernières qu'on peut faire la preuve).
+
+## Calculs d'équations à dérivations partielles
+### Difféomorphismes
+> Un difféomorphisme $\mathcal{C}^k$ est une fonction $\varphi : U \subset E \to V \subset F$
+> ($U$ et $V$ ouverts) si elle est bijective et sa fonction inverse sur ces ensembles est
+> $\mathcal{C}^k$.
+
+> Théorème d'inversion locale : Si $\varphi: U \to F$ est $\mathcal{C}^1$, et
+> si $a \in U$ est tel que le déterminant de la jacobienne de $\varphi$ en $a$
+> est non nulle, et que $d \varphi(a) \in GL(E,F)$, $\varphi$ est un
+> difféomorphisme $\mathcal{C}^1$ entre un voisinage de $a$
+> et un voisinage de $\varphi(a)$.
+
+> Si $\varphi \in \mathcal{C}^1(U,F)$ et que pour tout $a \in U$,
+> $\text{det} Jac(\varphi)(a) \neq 0$, alors $\varphi(U)$
+> est ouvert et l'image d'un ouvert par $\varphi$ est ouverte.
+
+> Théorème d'inversion globale : Si $\varphi: U \subset E \to F$
+> est injective et $\mathcal{C}^1$ et $\text{det} Jac(\varphi)$
+> ne s'annule pas sur $U$, $\varphi$ est un difféomorphisme $\mathcal{C}^1$
+> de $U$ sur son image, qui est un ouvert.
