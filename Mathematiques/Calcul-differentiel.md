@@ -89,3 +89,5 @@ en $a$ sont nulles (c'est par ces dernières qu'on peut faire la preuve).
 > est injective et $\mathcal{C}^1$ et $\text{det} Jac(\varphi)$
 > ne s'annule pas sur $U$, $\varphi$ est un difféomorphisme $\mathcal{C}^1$
 > de $U$ sur son image, qui est un ouvert.
+
+## Calculs de différentielles
