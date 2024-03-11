@@ -198,3 +198,43 @@ Ce $h$ dépend de la nature de gaz et de l'épaisseur de la couche limite, car o
 peut l'étudier comme les particules de gaz qui viennent régulièrement frapper
 une paroi solide. On obtient pour $\lambda_g$ la conductivité thermique du gaz
 et $e$ l'épaisseur de la paroi $h = \frac{\lambda_g}{e}$.
+
+#### Cas particulier
+Dans certains exercices, l'analyse qualitative du problème impose des flux
+thermiques au niveau de certaines surfaces.
+
+#### Irréversibilité
+##### Dans l'équation différentielle
+La diffusion thermique est caractérisée par $\lambda \Delta T = \rho c \frac{\partial T}{\partial t}$.
+Puisque l'une des dérivées est impaire en $t$, l'équation différentielle est
+différente sur $-t$ et donc le phénomène est irréversible.
+
+La propagation caractérisée par $\Delta X - \frac{1}{c^2} \frac{\partial^2 X}{\partial t^2} = 0$
+est un phénomène réversible.
+
+##### Dans le modèle de Fourier
+Dans le modèle de Fourier, l'échange élémentaire de chaleur est toujours orienté
+du chaud vers le froid et est donc irréversible.
+
+##### À l'aide du second principe de la thermodynamique
+...
+
+#### Résolution de l'équation de diffusion en régime variable
+##### Analyse qualitative
+On cherche un ordre de grandeur du temps caractéristique $\tau$ de la diffusion
+de la chaleur sur une distance $L$. On l'obtient en raisonnant sur l'équation
+de diffusion en termes d'ordres de grandeur, en assimilant les dérivées aux taux
+d'acroissement. On a donc à partir de $\lambda \Delta T = \rho c \frac{\partial T}{\partial t}$
+avec $\Delta T \approx \frac{\delta T}{L^2}$ et $\frac{\partial T}{\partial t} \approx \frac{\delta T}{\tau}$,
+que $L = \sqrt{\frac{\lambda}{\rho c} \tau}$ et donc $\tau = \frac{\rho c L^2}{\lambda}$.
+On peut ainsi remarquer que la diffusion est un phénomène lent : $L$ est
+proportionnel à $\sqrt{\tau}$
+
+##### Étude de solutions particulières
+L'énoncé fournit une forme de solution dont il faut vérifier la validité.
+Par exemple, pour un barreau, on recherche des solutions de la forme $T(x,t) = T_0 + \delta T(x,t)$,
+qu'on formule avec la forme complexe $\underline{\delta T} = f(x) e^{j \omega t}$, donnant
+$\frac{- \rho c j \omega}{\lambda} = (\frac{1 - j}{\sqrt{\frac{2 \lambda}{\rho c \omega}}})^2$,
+soit une équation de la forme finale avec $D = \frac{\rho c}{\lambda}$
+$T(x,t) = T_0 + \frac{\theta}{\sqrt{1 + \frac{D t}{\ell_0^2}}} \exp(- \frac{x^2}{\ell_0^2 + 4 D t})$,
+et donc une longueur caractéristique de $\ell \approx \sqrt{4 D t}$.
