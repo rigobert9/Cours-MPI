@@ -130,7 +130,7 @@ d'avoir un grand nombre d'énergies ou de vitesses différentes. On s'intéresse
 donc à $<E>$ et $<p>$.
 
 Par la propriété fondamentale de la transformée de Fourier,
-$\Delta x \Delta k \approx 1$, donc $\Deltax x \Delta (\frac{p}{\hbar}) \approx 1$,
+$\Delta x \Delta k \approx 1$, donc $\Delta x \Delta (\frac{p}{\hbar}) \approx 1$,
 soit $\Delta x \Delta p \approx \hbar$, donnant une version approximative du
 plus exact théorème d'incertitude d'Heisenberg.
 
@@ -182,3 +182,73 @@ de création de la grandeur), nous donnant un principe de conservation de charge
 
 On admet que pour un quanton de De Broglie, on pose un vecteur $\overrightarrow{\rm J}$
 de densité de courant de probabilité $\overrightarrow{\rm J} = \rho \overrightarrow{\rm v_g} = |\Psi|^2 \frac{\hbar \overrightarrow{\rm k}}{m}$.
+
+## Équation de Schrödinger (1926), dynamique de la fonction d'onde
+> Dans le cas où un quanton évolue dans un milieu dans lequel il a une énergie
+> potentielle (qu'on appelle "potentiel" en mécanique quantique) $E_p = V(x,t)$,
+> sa fonction d'onde $\Psi$ vérifie l'équation
+> $j \hbar \frac{\partial \Psi}{\partial t} = - \frac{\hbar^2}{2 m} \frac{\partial^2 \Psi}{\partial x^2} + V(x,t) \Psi$.
+
+On peut essayer de retrouver l'équation à partir de l'injection d'un quanton de
+De Broglie dans l'équation. Le principe correspond alors simplement à la
+conservation de l'énergie.
+
+En trois dimension, on a
+$j \hbar \frac{\partial \Psi}{\partial t} = - \frac{\hbar^2}{2 m} \Delta \Psi + V(x,t) \Psi$.
+
+On introduit l'opérateur hamiltonien $\hat{H}(f) = - \frac{\hbar^2}{2 m} \Delta f + V \times f$.
+
+Puisque l'équation de Schrödinger est linéaire d'ordre, on peut facilement
+construire des solutions supplémentaires par superposition.
+
+### Résolution de l'équation de Schrödinger indépendante du temps
+On se place dans le cas ou $E_p$ ne dépend que de la position et pas du temps.
+
+La méthode de la séparation des variables nous fait chercher des solution $\Psi(x,t)$
+$= f(x) g(t)$. On obtient alors $j \hbar f(x) g'(t) = - \frac{\hbar}{2 m} f''(x) g(t) + V f(x) g(t)$,
+donnant $j \hbar f(x) \frac{g'(t)}{g(t)} = - \frac{\hbar}{2 m} \frac{f''(x)}{f(x)} + V = E$,
+avec $E$ l'énergie de la particule comme on peut l'observer dans le cas d'un
+quanton de De Broglie. On a finalement
+$\left\{\begin{matrix} g'(t) = - j \frac{E}{\hbar} g(t) \\ - \frac{\hbar^2}{2 m} f''(x) + V(x) f(x) = E f(x) \end{matrix}\right.$.
+
+### États stationnaires
+> On appelle états stationnaires de l'équation de Schrödinger les fonctions d'onde
+> solution de la forme $\Psi_\text{es}(x,t) = \varphi_s(x) e^{- j \omega t}$, avec
+> $\hbar \omega = E$, et $\varphi_s$ vérifiant $\hat{H}(\varphi_s) = E \varphi_s$.
+
+Comme $\varphi_s$ est indépendante du temps pour un état stationnaire, il s'agit
+d'un vecteur propre de $\hat{H}$ de valeur propre $E$. Les états stationnaires
+sont donc une base orthonormée de vecteur propres pour toutes les solutions.
+
+Si plusieurs vecteurs propres ont la même valeur propre alors on parle de
+"dégénérescence de l'ordre".
+
+> Les états stationnaires solution de l'équation de Schrödinger indépendante du
+> temps forment une base des solutions.
+
+On peut choisir les $\varphi_s$ comme une base orthonormée pour le produit
+scalaire $\int\limits_{-\infty}^{+\infty} f^{\ast} g$ en prenant les $\varphi_s$
+normalisés (donc de probabilité de présence normalisée).
+
+La fonction d'onde d'un état stationnaire $\varphi_s(x,t)$ est continue et
+bornée. Dans le cas où $V(x)$ est continue et bornée, alors $\frac{d \varphi_s}{dx}$ est
+continue et bornée (ce qu'on démontre en intégrant l'équation de Schrödinger sur
+un intervalle infinitésimal).
+
+Si le problème est symétrique autour de $O$, c'est à dire que $V(x)$ est pair,
+alors $\varphi_s(x)$ est soit paire soit impaire.
+
+### Superposition de deux états stationnaires
+On "prépare" un quanton dans un état correspondant à la superposition de deux
+états stationnaires $\varphi_{s_1}$ et $\varphi_{s_2}$. Ainsi, on a
+$\Psi(x,t) = \alpha_1 \varphi_{s_1}(x) e^{- j \frac{E_1}{\hbar} t} + \alpha_2 \varphi_{s_2} e^{- j \frac{E_2}{\hbar} t}$.
+Les deux états stationnaires étant orthogonaux, la superposition est normalisée
+si et seulement si $|\alpha_1|^2 + |\alpha_2|^2$. On choisit $\alpha_1 = \frac{1}{\nu_1}$
+et $\alpha_2 = \frac{1}{\nu_2}$.
+
+Le quanton est donc dans un état de superposition avec
+$\Psi(x,t) = \frac{1}{2} (\rho_1 + \rho_2 + \varphi_{s_2} \varphi_{s_1}^{\ast} e^{- j \frac{E_2 - E_1}{\hbar} t} + \varphi_{s_2}^{\ast} \varphi_{s_1} e^{j \frac{E_2 - E_1}{\hbar} t})$
+$= \frac{1}{2} (\rho_1 + \rho_2 + 2 |\varphi_{s_1}^{\ast} \varphi_{s_2}| \cos(\frac{E_2 - E_1}{\hbar} t - arg(\varphi_{s_1}^{\ast} \varphi_{s_2})))$.
+
+Un quanton en superposition de deux états stationnaires oscille entre deux états
+avec une pulsation $\omega_0 = \frac{E_2 - E_1}{\hbar}$.
