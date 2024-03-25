@@ -299,7 +299,7 @@ La condition de normalisation donne que $|B| = \sqrt{\frac{2}{L}}$, et donc
 $B = \sqrt{\frac{2}{L}} e^{i \alpha}$. On choisit $\alpha = 0$.
 
 Au final, les états stationnaires du quanton dans le puits infini sont
-les $\left\{\begin{matrix} \Phi_{\text{ES}_n}(x,t) = \sqrt{\frac{2}{L}} sin(n \frac{\pi}{L} x) e^{-i \frac{E_n}{h^} t \\ E_n = \frac{n^2 h^2}{8 m L^2}} \end{matrix}\right.$.
+les $\left\{\begin{matrix} \Phi_{\text{ES}_n}(x,t) = \sqrt{\frac{2}{L}} sin(n \frac{\pi}{L} x) e^{-i \frac{E_n}{\hbar} t \\ E_n = \frac{n^2 h^2}{8 m L^2}} \end{matrix}\right.$.
 Toutes solution réelle s'écrit donc comme la combinaison linéaires infinie
 normalisée de ces solutions.
 
