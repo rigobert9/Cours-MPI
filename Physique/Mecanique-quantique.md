@@ -252,3 +252,60 @@ $= \frac{1}{2} (\rho_1 + \rho_2 + 2 |\varphi_{s_1}^{\ast} \varphi_{s_2}| \cos(\f
 
 Un quanton en superposition de deux états stationnaires oscille entre deux états
 avec une pulsation $\omega_0 = \frac{E_2 - E_1}{\hbar}$.
+
+## Applications
+### Formes des solutions en fonction du signe de $V - E$
+#### Remarque préliminaire
+On va étudier des dispositifs où le potentiel (l'énergie potentielle) du quanton
+est constant par morceaux. Si $\lambda_\text{DB} \gg L$, avec $L$ une distance
+caractéristique de variation de $V(x)$, le quanton voit une discontinuité.
+
+#### Résolution de l'équation de Schrödinger
+On cherche les états stationnaires, de la forme $\Psi_\text{es}(x,t)$
+$= \varphi_s(x) e^{- i \frac{E}{\hbar} t}$. On cherche à résoudre l'équation de
+Schrödinger spatiale $- \frac{\hbar^2}{2 m} \frac{d^2 \varphi_s}{dx^2} + V \varphi_s(x) = E \varphi_s(x)$
+$\Leftrightarrow \frac{d^2 \varphi_s}{dx^2} + \frac{2m}{\hbar^2} (E - V) \varphi_s = 0$.
+
+Si $V$ est constant, on a deux cas :
+- Si $V < E$, $\varphi_s(x) = \underline{A} e^{i k x} + \underline{B} e^{- i k x}$
+  $= \underline{A'} \cos(kx) + \underline{B'} \sin(kx)$ avec $k = \sqrt{\frac{2 m (E - V)}{\hbar^2}}$
+- Si $E < V, \varphi_s(x) = \underline{A} e^{K x} + \underline{B} e^{- Kx}$ avec
+  $K = \sqrt{\frac{2 m (V - E)}{\hbar^2}}$
+
+Dans le second cas est une configuration purement quantique, qui ne peut pas
+s'interpréter en mécanique classique : en effet, dans ce cas, un quanton peut
+pénétrer dans une zone où son énergie est inférieure à $E_p$. Sa probabilité de
+présence est exponentiellement décroissante, et on peut alors réécrire la
+solution avec $\underline{A}$ et $\underline{B}$ qui disparaissent
+respectivement en $-\infty$ et $+\infty$. Ces quantons ont une probabilité de
+présence non nulle seulement dans une épaisseur de quelques $\delta = \frac{1}{K}$.
+
+### Puits infini
+On considère un potentiel $V(x)$ nul dans $[0;L]$ et infini en dehors.
+Ainsi, l'équation d'onde stationnaire du quanton dans ce puits est nulle hors du
+puits. De plus $\varphi_s(x)$ est continue en $0$ et $L$, bien que sa dérivée ne
+soit pas continue, car le potentiel est infini.
+
+On résout $\frac{d^2 \varphi_s}{d x^2} + \frac{2 m}{\hbar^2} (E - V) \varphi_s = 0$.
+Dans le cas où $E < V$, on ne peut pas réaliser les conditions initiales,
+donc on a $E > V \geq 0$ (dans les cas de diffusion, on sélectionne la forme
+exponentielle, et on prend la forme trigonométrique dans les cas liés).
+
+Les conditions aux limites donnent alors $\varphi_S(x) = B sin(k x)$,
+avec un $k$ tel que $k L = n \pi$ avec $n \in \mathbb{N}$, quantifiant les
+fonctions d'onde possibles : on a donc $\sqrt{\frac{2m E}{\hbar^2}} = \frac{n \pi}{2}$,
+soit des $E$ de la forme $E = \frac{n^2 \pi^2 \hbar^2}{2 m L^2} = \frac{n^2 h^2}{8 m L^2}$.
+La condition de normalisation donne que $|B| = \sqrt{\frac{2}{L}}$, et donc
+$B = \sqrt{\frac{2}{L}} e^{i \alpha}$. On choisit $\alpha = 0$.
+
+Au final, les états stationnaires du quanton dans le puits infini sont
+les $\left\{\begin{matrix} \Phi_{\text{ES}_n}(x,t) = \sqrt{\frac{2}{L}} sin(n \frac{\pi}{L} x) e^{-i \frac{E_n}{h^} t \\ E_n = \frac{n^2 h^2}{8 m L^2}} \end{matrix}\right.$.
+Toutes solution réelle s'écrit donc comme la combinaison linéaires infinie
+normalisée de ces solutions.
+
+- Pour chaque $E_n$, il n'y a qu'un $\varphi_{S_n}(x)$ (donc il n'y a pas
+  dégénérescence de l'ordre)
+- En mécanique quantique, les conditions aux limites peuvent avoir pour
+  conséquence une quantification de l'énergie, en confinant une onde et en la
+  faisant se comporter comme une corde vibrante
+- Un changement de repère permet de mettre le centre en $0$
