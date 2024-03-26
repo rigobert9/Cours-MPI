@@ -1,4 +1,4 @@
-# Cours-MP2I
+# Cours-MPI
 Notes personnelles de Cours en MPI*. Ces notes sont publiquement disponibles, mais aussi
 participatives; n'hésitez pas à apporter des corrections, des additions ou vos
 propres cours à ce dépôt (voir "Contribuer" plus bas). Ces notes sont prises personnellement par des élèves,

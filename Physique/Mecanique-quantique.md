@@ -299,7 +299,7 @@ La condition de normalisation donne que $|B| = \sqrt{\frac{2}{L}}$, et donc
 $B = \sqrt{\frac{2}{L}} e^{i \alpha}$. On choisit $\alpha = 0$.
 
 Au final, les états stationnaires du quanton dans le puits infini sont
-les $\left\{\begin{matrix} \Phi_{\text{ES}_n}(x,t) = \sqrt{\frac{2}{L}} sin(n \frac{\pi}{L} x) e^{-i \frac{E_n}{\hbar} t \\ E_n = \frac{n^2 h^2}{8 m L^2}} \end{matrix}\right.$.
+les $\left\{\begin{matrix} \Phi_{\text{ES}_n}(x,t) = \sqrt{\frac{2}{L}} sin(n \frac{\pi}{L} x) e^{-i \frac{E_n}{\hbar} t} \\ E_n = \frac{n^2 h^2}{8 m L^2} \end{matrix}\right.$.
 Toutes solution réelle s'écrit donc comme la combinaison linéaires infinie
 normalisée de ces solutions.
 
@@ -309,3 +309,94 @@ normalisée de ces solutions.
   conséquence une quantification de l'énergie, en confinant une onde et en la
   faisant se comporter comme une corde vibrante
 - Un changement de repère permet de mettre le centre en $0$
+
+### Marche de potentiel
+#### Introduction
+On va chercher les solutions stationnaires du problème avec un potentiel nul
+avant $0$ et $V_0$.
+
+En mécanique classique, si $E > V_0$, la particule franchit la marche mais
+ralentit par conservation de l'énergie mécanique. Si $V_0 > E$ , la particule ne
+peut pas franchir la marche et "rebondit" en repartant à la même vitesse dans
+l'autre sens.
+
+Cette marche de potentiel correspond à un cas réel : celui des électrons qui
+s'arrachent à un métal ou passent d'un métal à un autre.
+
+#### Étude du cas $V_0 < E$
+On cherche les états stationnaires du problème, qui ont tous deux la même forme
+avec $k_1 = \sqrt{\frac{2 m E}{\hbar^2}}$ et $k_2 = \sqrt{\frac{2m (E - V_0)}{\hbar^2}}$,
+et pour lesquels on a $4$ constantes d'intégration à considérer, pour lesquelles
+on a des relations à partir des conditions aux limites sur la fonction et ses
+dérivées.
+
+En observant les quantons créés, on peut voir que l'un d'eux provient de $+\infty$
+et n'a donc pas de sens physique : sa constante étant nulle, on obtient aisément
+toutes les constantes d'intégration. On peut attribuer à ces constantes
+l'amplitude de l'onde incidente, réfléchie, et transmise. On calcule donc
+facilement des coefficients $r = \frac{k_1 - k2}{k1 + k_2}$ de réflexion et $t = \frac{2 k_1}{k1 + k_2}$ de transmission.
+
+Finalement, on obtient $\Psi_{ES}(x,t) = \left\{\begin{matrix} A_1 e^{i(1 x - \omega t)} + r A_1 e^{-i (k_1 x + \omega t)} \text{ pour } x < 0 \\ t A_1 e^{i (k_1 x + \omega t)} \text{ pour } x > 0 \end{matrix}\right.$
+
+Le calcul de la densité de probabilité de présence donne, d'ailleurs
+indépendamment du temps (ce qui est heureux puisque l'onde est stationnaire),
+$\rho(x < 0,t) = |A_1|^2 (1 + r^2 + 2r \cos(2k_1 x))$ et $\rho(x > 0) = t^2 |A_1|^2$.
+On a donc des interférences entre l'onde incidente et l'onde réfléchie avant la
+marche, et une probabilité constante après (attention, tout ceci n'est pas
+normalisé, on est dans le cas d'un quanton de De Broglie).
+
+On exprime des coefficients de transmission et de réflexion plus
+concrets à l'aide du courant de probabilité de présence. Ayant $J(x) = \rho(x) \frac{h^ k}{m}$
+pour un quanton de De Broglie, on obtient $R = r^2 = (\frac{k_1 - k2}{k1 + k_2})^2$ et
+$T = t^2 \frac{k_2}{k_1} = \frac{4 k_1 k_2}{(k1 + k_2)^2}$. On vérifie
+d'ailleurs bien $R + T = 1$.
+
+En reprenant ces valeurs avec les valeurs de $k_1$ et de $k_2$, on dégage des
+cas limites : si l'énergie tend vers l'infini, la transmission est totale (comme
+dans le cas classique), et si l'énergie tend par le haut vers $V_0$, la
+réflexion est totale (un cas purement quantique, qui contredit le cas
+classique).
+
+#### Étude du cas $V_0 > E$
+La même étude préliminaire donne, avec des expressions en exponentielle complexe
+cette fois-ci, $r = \frac{k_1 - i k_2}{k1 + i k_2}$ et $t = \frac{2 k_1}{k_1 + i k_2}$,
+puisque le module de $r$ est unitaire, on l'obtient comme l'exponentielle
+complexe de $\alpha$, la différence d'argument.
+
+La fonction d'onde finale est donc $\Psi_{ES}(x,t) = \left\{\begin{matrix} A_1 e^{i (k_1 x - \omega t)} + A_1 e^{-i (k_1 x + \omega t - \alpha)} \\ \ldots \end{matrix}\right.$
+
+On constante que pour $E < V_0$ le quanton pénètre dans la zone interdite pour
+une longueur $\delta$. On ne peut pas se permettre de calculer les courants
+comme avant puisque nous ne sommes pas en présence de quantons de De Broglie,
+mais la conservation de la probabilité de présence
+
+???
+
+### Barrière de potentiel : Effet tunnel
+#### Cas $E < V_0$ (Effet tunnel)
+On considère une barrière de potentiel de valeur $V_0$ sur
+$[0;d]$.
+
+À L'aide de la résolution de l'équation de Schrödinger dans chaque zone et les
+condition de continuité aux fonctions et aux dérivées, on obtient un système de
+4 inconnues sur les coefficients, qu'on peut résoudre. En définissant à nouveau
+les coefficients de réflexion et transmission, on calcule enfin
+$T = \frac{|A_3|^2}{|A_1|^2} = \frac{1}{1 + \frac{V_0}{4E} \frac{1}{1 - \frac{E}{V_0}} \sinh^2(k2)}$
+exactement.
+
+Cette expression nous donne dans le cas $E \ll V_0$ et $d \gg \delta \Rightarrow k_1 \ll k_2$
+le développement limité $T \approx 16 \frac{E}{V_0} \exp(-2 \frac{d}{\delta})$.
+
+#### Approche qualitative
+On sait que dans une zone où $E < V0$ l'amplitude de probabilité de présence est
+de l'ordre de $\varphi_S(x \in [0;d]) \approx C e^{- K_2 x}$.
+On suppose que $A_3 \approx \varphi_S(d^-)$ par continuité, donnant $T \propto e^{-2 K_2 d}$.
+
+Dans un microscope à effet tunnel, on distingue la profondeur d'une surface
+grâce à la mesure de l'intensité obtenue par effet tunnel des électrons à la
+surface du matériau.
+
+#### Cas $E > V_0$
+Les calculs sont les mêmes, mais on peut observer un résultat amusant :
+l'effet Ramsauer est que certaines énergies passent toujours à travers la
+barrière de potentiel, tandis que d'autres peuvent être réfléchies.
